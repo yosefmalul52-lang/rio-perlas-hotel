@@ -1,0 +1,4538 @@
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;1,400&family=Montserrat:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Mea+Culpa&family=Tangerine:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Heebo:wght@300;400;500;600;700&family=Frank+Ruhl+Libre:wght@400;500;600;700&display=swap');
+@import "tailwindcss";
+
+:root {
+  /* Backgrounds */
+  --pura-bg: #F7F3EA;
+  --pura-bg-soft: #FBF9F4;
+  --pura-surface: #FDFBF7;
+
+  /* Brand teal */
+  --pura-green: #02777A;
+  --pura-green-hover: #0D3F39;
+  --pura-green-dark: #014E50;
+  --pura-green-deep: #035052;
+
+  /* Gold accents */
+  --pura-gold: #A58A55;
+  --pura-gold-soft: #C6B992;
+
+  /* Shared page CTA band (teal footer blocks) */
+  --pura-band-teal: #0C4B45;
+  --pura-band-gold: #b89a58;
+
+  /* Typography */
+  --pura-text: #2B3028;
+  --pura-text-body: #565C53;
+  --pura-text-muted: #6F726B;
+  --pura-muted: #6F726B;
+  --pura-text-light: #85867F;
+
+  /* UI */
+  --pura-border: #DCD4C5;
+  --pura-border-soft: #E7E1D6;
+
+  /* White */
+  --pura-white: #FFFFFF;
+
+  /* Effects */
+  --pura-shadow: 0 18px 45px rgba(1, 78, 80, 0.08);
+  --pura-shadow-soft: 0 8px 24px rgba(1, 78, 80, 0.06);
+}
+
+@theme {
+  --font-cormorant: "Cormorant Garamond", "Playfair Display", Georgia, serif;
+  --font-serif: "Playfair Display", Georgia, serif;
+  --font-sans: "Montserrat", sans-serif;
+  --font-script: "Tangerine", "Mea Culpa", cursive;
+
+  --container-max: 1400px;
+  --spacing-margin-desktop: 5rem;
+  --spacing-gutter: 2rem;
+  --radius-sm: 2px;
+  --radius: 4px;
+  --radius-md: 6px;
+
+  --shadow-sm: 0 4px 14px rgba(1, 78, 80, 0.05);
+  --shadow: var(--pura-shadow-soft);
+  --shadow-md: var(--pura-shadow-soft);
+  --shadow-lg: var(--pura-shadow);
+  --shadow-xl: var(--pura-shadow);
+  --shadow-2xl: 0 18px 45px rgba(1, 78, 80, 0.1);
+
+  --color-pura-bg: var(--pura-bg);
+  --color-pura-bg-soft: var(--pura-bg-soft);
+  --color-pura-surface: var(--pura-surface);
+  --color-pura-green: var(--pura-green);
+  --color-pura-green-hover: var(--pura-green-hover);
+  --color-pura-green-dark: var(--pura-green-dark);
+  --color-pura-green-deep: var(--pura-green-deep);
+  --color-pura-gold: var(--pura-gold);
+  --color-pura-gold-soft: var(--pura-gold-soft);
+  --color-pura-text: var(--pura-text);
+  --color-pura-text-body: var(--pura-text-body);
+  --color-pura-text-muted: var(--pura-text-muted);
+  --color-pura-text-light: var(--pura-text-light);
+  --color-pura-border: var(--pura-border);
+  --color-pura-border-soft: var(--pura-border-soft);
+
+  --color-bg-main: var(--pura-bg);
+  --color-bg-soft: var(--pura-bg-soft);
+  --color-bg-aqua: #DFF0F1;
+  --color-light-aqua: #DFF0F1;
+  --color-bg-card: var(--pura-surface);
+  --color-border-custom: var(--pura-border);
+  --color-border-soft: var(--pura-border-soft);
+
+  --color-teal-dark-primary: var(--pura-green-dark);
+  --color-teal-ocean: var(--pura-green);
+  --color-teal-dark-hover: var(--pura-green-hover);
+  --color-teal-fresh: var(--pura-green);
+  --color-teal-footer: var(--pura-green-deep);
+
+  --color-gold-main: var(--pura-gold);
+  --color-gold-dark: var(--pura-gold);
+  --color-gold-soft: var(--pura-gold-soft);
+
+  --color-text-heading: var(--pura-green-dark);
+  --color-text-main: var(--pura-text);
+  --color-text-muted: var(--pura-text-muted);
+  --color-text-on-dark: var(--pura-bg);
+
+  --color-surface: var(--pura-bg);
+  --color-background: var(--pura-bg);
+  --color-surface-container: var(--pura-bg-soft);
+  --color-surface-container-low: var(--pura-surface);
+  --color-surface-container-lowest: var(--pura-surface);
+  --color-surface-container-high: var(--pura-border);
+  --color-surface-container-highest: var(--pura-border);
+  --color-outline: var(--pura-border);
+
+  --color-primary: var(--pura-green-dark);
+  --color-on-primary: var(--pura-bg);
+  --color-secondary: var(--pura-gold);
+  --color-on-secondary: var(--pura-green-dark);
+
+  --color-primary-container: var(--pura-green-deep);
+  --color-on-primary-container: var(--pura-bg);
+  --color-secondary-container: var(--pura-gold-soft);
+  --color-on-secondary-container: var(--pura-text);
+
+  --color-tertiary: var(--pura-green);
+  --color-on-tertiary: var(--pura-bg);
+  --color-tertiary-container: var(--pura-green-deep);
+  --color-on-tertiary-container: var(--pura-bg);
+
+  --color-secondary-fixed: var(--pura-gold);
+  --color-secondary-fixed-dim: var(--pura-gold-soft);
+  --color-on-surface-variant: var(--pura-text-body);
+  --color-on-surface: var(--pura-text);
+}
+
+@utility font-headline-xl {
+  font-family: var(--font-serif);
+  font-weight: 600;
+}
+@utility text-headline-xl {
+  font-size: 64px;
+  line-height: 1.1;
+  letter-spacing: -0.02em;
+}
+@utility font-headline-lg {
+  font-family: var(--font-serif);
+  font-weight: 500;
+}
+@utility text-headline-lg {
+  font-size: 48px;
+  line-height: 1.2;
+  letter-spacing: -0.01em;
+}
+@utility font-headline-md {
+  font-family: var(--font-serif);
+  font-weight: 500;
+}
+@utility text-headline-md {
+  font-size: 32px;
+  line-height: 1.3;
+}
+@utility font-headline-sm {
+  font-family: var(--font-serif);
+  font-weight: 600;
+}
+@utility text-headline-sm {
+  font-size: 24px;
+  line-height: 1.4;
+}
+@utility font-display-script {
+  font-family: var(--font-script);
+  font-weight: 700;
+}
+@utility text-display-script {
+  font-size: clamp(3.35rem, 5.8vw, 4.75rem);
+  line-height: 1.12;
+  letter-spacing: 0.01em;
+}
+@utility text-display-script-sm {
+  font-size: clamp(2rem, 3.2vw, 2.65rem);
+  line-height: 1.18;
+  letter-spacing: 0.01em;
+}
+@utility font-body-lg {
+  font-family: var(--font-sans);
+  font-weight: 400;
+}
+@utility text-body-lg {
+  font-size: 18px;
+  line-height: 1.6;
+}
+@utility font-body-md {
+  font-family: var(--font-sans);
+  font-weight: 400;
+}
+@utility text-body-md {
+  font-size: 16px;
+  line-height: 1.6;
+}
+@utility font-label-caps {
+  font-family: var(--font-sans);
+  font-weight: 600;
+}
+@utility text-label-caps {
+  font-size: 12px;
+  line-height: 1;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+/* Custom styles from HTML */
+.glass-nav {
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+}
+
+.horizontal-scroll-container::-webkit-scrollbar {
+  display: none;
+}
+
+img.image-crisp {
+  image-rendering: auto;
+  image-rendering: high-quality;
+  -webkit-optimize-contrast: auto;
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+}
+
+@utility scale-102 {
+  scale: 1.02;
+}
+
+@utility btn-cta {
+  background-color: var(--pura-green);
+  color: var(--pura-bg);
+  &:hover {
+    background-color: var(--pura-green-hover);
+  }
+}
+
+@utility btn-cta-outline {
+  border-color: var(--pura-green);
+  color: var(--pura-green-dark);
+  background-color: color-mix(in srgb, var(--pura-surface) 92%, transparent);
+  &:hover {
+    background-color: var(--pura-bg-soft);
+    color: var(--pura-green-hover);
+    border-color: var(--pura-green-hover);
+  }
+}
+
+@utility btn-cta-on-dark {
+  background-color: var(--pura-bg);
+  color: var(--pura-green-dark);
+  &:hover {
+    background-color: var(--pura-surface);
+  }
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 84px;
+}
+
+body {
+  overflow-x: clip;
+  -webkit-text-size-adjust: 100%;
+  text-size-adjust: 100%;
+  background-color: var(--pura-bg);
+  color: var(--pura-text-body);
+  accent-color: var(--pura-green);
+}
+
+/* Mobile typography & layout clarity */
+@media (max-width: 767px) {
+  html {
+    scroll-padding-top: 84px;
+  }
+
+  .text-headline-xl {
+    font-size: 2rem;
+    line-height: 1.15;
+  }
+
+  .text-headline-lg {
+    font-size: 1.75rem;
+    line-height: 1.2;
+  }
+
+  .text-headline-md {
+    font-size: 1.4rem;
+    line-height: 1.3;
+  }
+
+  .text-headline-sm {
+    font-size: 1.2rem;
+    line-height: 1.35;
+  }
+
+  .text-body-lg {
+    font-size: 1rem;
+    line-height: 1.65;
+  }
+
+  .text-display-script {
+    font-size: clamp(2.4rem, 11vw, 3.1rem);
+  }
+
+  .text-display-script-sm {
+    font-size: clamp(1.65rem, 7vw, 2rem);
+  }
+
+  /* Prefer readable tap targets without oversized desktop gaps */
+  button,
+  a {
+    -webkit-tap-highlight-color: transparent;
+  }
+}
+
+@supports (padding: env(safe-area-inset-top)) {
+  #top-nav {
+    height: calc(84px + env(safe-area-inset-top));
+    padding-top: env(safe-area-inset-top);
+  }
+
+  .pura-hero {
+    margin-top: 0;
+    height: 100dvh;
+    min-height: 100dvh;
+  }
+}
+
+.horizontal-scroll-container {
+  scroll-behavior: smooth;
+  -webkit-overflow-scrolling: touch;
+  overscroll-behavior-x: contain;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  html:focus-within {
+    scroll-behavior: auto;
+  }
+
+  .horizontal-scroll-container {
+    scroll-behavior: auto;
+  }
+
+  .btn-premium-hover:hover {
+    transform: none;
+  }
+}
+
+/* Accessible keyboard focus — does not change resting visuals */
+:focus {
+  outline: none;
+}
+
+:focus-visible {
+  outline: 2px solid color-mix(in srgb, var(--pura-green) 70%, transparent);
+  outline-offset: 2px;
+}
+
+a:focus-visible,
+button:focus-visible,
+summary:focus-visible,
+[role="button"]:focus-visible {
+  outline: 2px solid color-mix(in srgb, var(--pura-green) 70%, transparent);
+  outline-offset: 2px;
+}
+
+input:focus-visible,
+textarea:focus-visible,
+select:focus-visible {
+  outline: 2px solid var(--pura-green);
+  outline-offset: 1px;
+  border-color: var(--pura-green);
+}
+
+.overlay-olive {
+  background: rgb(1 78 80 / 0.2);
+}
+
+.overlay-olive-soft {
+  background: rgb(1 78 80 / 0.16);
+}
+
+.overlay-olive-radial {
+  background: radial-gradient(
+    ellipse 75% 60% at 50% 55%,
+    rgb(1 78 80 / 0.38) 0%,
+    rgb(1 78 80 / 0.12) 48%,
+    rgb(1 78 80 / 0) 75%
+  );
+}
+
+.overlay-olive-hero {
+  background: radial-gradient(
+    ellipse 70% 55% at 50% 48%,
+    rgb(1 78 80 / 0.42) 0%,
+    rgb(1 78 80 / 0.18) 45%,
+    rgb(1 78 80 / 0) 72%
+  );
+}
+
+/* Homepage header + hero — pixel-accurate to approved reference */
+.pura-header {
+  height: 84px;
+  background: var(--pura-bg-soft);
+  border-bottom: 1px solid var(--pura-gold);
+  transition:
+    background 280ms ease,
+    border-color 280ms ease;
+}
+
+.pura-header > * {
+  position: relative;
+  z-index: 1;
+}
+
+.pura-header.is-over-hero,
+#top-nav.pura-header.is-over-hero {
+  background: transparent !important;
+  background-color: transparent !important;
+  border-bottom: 1px solid var(--pura-gold);
+  box-shadow: none;
+}
+
+.pura-header.is-over-hero .pura-header__link,
+.pura-header.is-over-hero .pura-header__menu {
+  color: #f7f3ea;
+}
+
+.pura-header__bar {
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
+  align-items: center;
+  height: 100%;
+  width: 100%;
+  padding: 0 28px;
+  gap: 40px;
+}
+
+.pura-header__logo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  justify-self: center;
+  height: 100%;
+}
+
+.pura-header__logo img {
+  height: 72px;
+  width: auto;
+  max-height: 72px;
+  object-fit: contain;
+  object-position: center;
+}
+
+.pura-header__nav {
+  display: none;
+  align-items: center;
+  gap: 36px;
+  min-width: 0;
+}
+
+.pura-header__nav--left {
+  justify-content: flex-end;
+}
+
+.pura-header__nav--right {
+  justify-content: flex-start;
+  flex: 1;
+}
+
+.pura-header__end {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 22px;
+  min-width: 0;
+}
+
+.pura-header__menu {
+  color: var(--pura-text);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 44px;
+  min-width: 44px;
+  background: none;
+  border: 0;
+  cursor: pointer;
+}
+
+@media (min-width: 1200px) {
+  .pura-header__nav {
+    display: flex;
+  }
+
+  .pura-header__menu {
+    display: none;
+  }
+}
+
+.pura-header__link {
+  position: relative;
+  font-family: var(--font-sans);
+  font-size: 16px;
+  font-weight: 500;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--pura-text);
+  line-height: 1;
+  white-space: nowrap;
+  padding: 0;
+  background: none;
+  border: 0;
+  text-decoration: none;
+  opacity: 0.78;
+  transition: opacity 200ms ease;
+}
+
+.pura-header__link:hover {
+  opacity: 1;
+}
+
+.pura-header__link.is-active {
+  opacity: 1;
+}
+
+.pura-header__link.is-active::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: -8px;
+  height: 1px;
+  background: var(--pura-gold);
+}
+
+html.rtl .pura-header__link {
+  text-transform: none;
+  letter-spacing: 0.04em;
+}
+
+.pura-hero {
+  position: relative;
+  height: 100dvh;
+  min-height: 100dvh;
+  margin-top: 0;
+  overflow: hidden;
+}
+
+.pura-hero__media {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: -20px;
+  height: calc(100% + 40px);
+  will-change: transform;
+}
+
+.pura-hero__image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center center;
+  transform: translateZ(0);
+}
+
+.pura-hero__overlay {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  pointer-events: none;
+  background:
+    linear-gradient(
+      90deg,
+      rgba(13, 63, 57, 0.70) 0%,
+      rgba(13, 63, 57, 0.48) 28%,
+      rgba(13, 63, 57, 0.18) 58%,
+      rgba(13, 63, 57, 0.03) 100%
+    ),
+    linear-gradient(
+      0deg,
+      rgba(8, 42, 44, 0.48) 0%,
+      rgba(8, 42, 44, 0.22) 32%,
+      transparent 62%
+    );
+}
+
+html.rtl .pura-hero__overlay {
+  background:
+    linear-gradient(
+      270deg,
+      rgba(13, 63, 57, 0.70) 0%,
+      rgba(13, 63, 57, 0.48) 28%,
+      rgba(13, 63, 57, 0.18) 58%,
+      rgba(13, 63, 57, 0.03) 100%
+    ),
+    linear-gradient(
+      0deg,
+      rgba(8, 42, 44, 0.48) 0%,
+      rgba(8, 42, 44, 0.22) 32%,
+      transparent 62%
+    );
+}
+
+.pura-hero__container {
+  position: relative;
+  z-index: 2;
+  height: 100%;
+  width: 100%;
+  margin: 0;
+  padding-left: clamp(24px, 4vw, 56px);
+  padding-right: clamp(24px, 4vw, 56px);
+  padding-top: 32px;
+  padding-bottom: clamp(80px, 12vh, 140px);
+  display: flex;
+  align-items: flex-end;
+  justify-content: flex-start;
+}
+
+.pura-hero__content {
+  max-width: 680px;
+  text-align: start;
+}
+
+.pura-hero__badge {
+  display: inline-flex;
+  align-items: center;
+  padding: 7px 16px;
+  margin-bottom: 28px;
+  border-radius: 999px;
+  background: rgba(2, 119, 122, 0.55);
+  border: 1px solid rgba(198, 185, 146, 0.65);
+  color: var(--pura-gold-soft);
+  font-family: var(--font-sans);
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: 0.02em;
+}
+
+.pura-hero__title {
+  font-family: var(--font-cormorant);
+  font-size: clamp(60px, 6.4vw, 88px);
+  line-height: 1.02;
+  font-weight: 400;
+  letter-spacing: -0.025em;
+  color: var(--pura-bg);
+  margin: 0 0 28px;
+}
+
+.pura-hero__title-gold {
+  color: var(--pura-gold-soft);
+  font-style: italic;
+}
+
+html.rtl .pura-hero__title {
+  font-family: "Frank Ruhl Libre", Georgia, serif;
+  font-weight: 400;
+  letter-spacing: 0;
+  font-size: clamp(46px, 5vw, 68px);
+  line-height: 1.14;
+}
+
+html.rtl .pura-hero__title-gold {
+  font-style: normal;
+}
+
+.pura-trust__title {
+  font-family: var(--font-cormorant);
+  font-size: clamp(40px, 4.2vw, 56px);
+  line-height: 1.08;
+  font-weight: 400;
+  letter-spacing: -0.025em;
+  color: var(--pura-bg);
+  margin: 0 0 48px;
+}
+
+html.rtl .pura-trust__title {
+  font-family: "Frank Ruhl Libre", Georgia, serif;
+  letter-spacing: 0;
+  font-size: clamp(34px, 3.8vw, 48px);
+  line-height: 1.18;
+}
+
+.pura-experiences__title {
+  font-family: var(--font-cormorant);
+  font-size: clamp(40px, 4.2vw, 56px);
+  line-height: 1.08;
+  font-weight: 400;
+  letter-spacing: -0.025em;
+  color: var(--pura-green);
+  margin: 0 0 16px;
+}
+
+html.rtl .pura-experiences__title {
+  font-family: "Frank Ruhl Libre", Georgia, serif;
+  letter-spacing: 0;
+  font-size: clamp(34px, 3.8vw, 48px);
+  line-height: 1.18;
+}
+
+.pura-trust__icon {
+  filter: brightness(0) saturate(100%) invert(86%) sepia(18%) saturate(450%) hue-rotate(6deg) brightness(95%);
+}
+
+.pura-intro__icon {
+  filter: brightness(0) saturate(100%) invert(58%) sepia(28%) saturate(520%) hue-rotate(6deg) brightness(88%);
+}
+
+.pura-intro__divider {
+  width: 100%;
+  height: 1px;
+  background: var(--pura-gold);
+}
+
+.pura-page-hero__title {
+  font-family: var(--font-cormorant);
+  font-size: clamp(42px, 5vw, 64px);
+  line-height: 1.06;
+  font-weight: 400;
+  letter-spacing: -0.025em;
+  color: var(--pura-bg);
+  margin: 0 0 16px;
+  text-shadow: 0 4px 24px rgba(1, 78, 80, 0.35);
+}
+
+.pura-page-hero__title--on-teal {
+  text-shadow: none;
+}
+
+html.rtl .pura-page-hero__title {
+  font-family: "Frank Ruhl Libre", Georgia, serif;
+  letter-spacing: 0;
+  font-size: clamp(34px, 4.2vw, 52px);
+  line-height: 1.16;
+}
+
+.pura-page-cta {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 180px;
+  min-height: 46px;
+  padding: 0 22px;
+  border: 1px solid var(--pura-band-gold);
+  border-radius: 0;
+  background: var(--pura-band-gold);
+  color: #fffdf7;
+  font-family: var(--font-sans);
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  text-decoration: none;
+  transition: background 220ms ease, color 220ms ease, border-color 220ms ease;
+}
+
+.pura-page-cta:hover {
+  background: transparent;
+  color: #fffdf7;
+  border-color: var(--pura-band-gold);
+}
+
+.pura-page-cta-band {
+  background: var(--pura-band-teal);
+  padding: clamp(56px, 7vw, 88px) 20px;
+  text-align: center;
+}
+
+.pura-page-cta-band__inner {
+  max-width: 40rem;
+  margin-inline: auto;
+}
+
+.pura-page-cta-band__title {
+  margin: 0 0 12px;
+  font-family: var(--font-serif);
+  font-size: clamp(1.6rem, 3vw, 2.4rem);
+  font-weight: 400;
+  line-height: 1.15;
+  color: #fffdf7;
+}
+
+html.rtl .pura-page-cta-band__title {
+  font-family: "Frank Ruhl Libre", Georgia, serif;
+}
+
+.pura-page-cta-band__body {
+  margin: 0 auto 26px;
+  max-width: 34rem;
+  font-family: var(--font-sans);
+  font-size: 1rem;
+  line-height: 1.6;
+  color: rgba(255, 253, 247, 0.84);
+}
+
+.pura-page-cta:focus-visible {
+  outline: 2px solid var(--pura-gold-soft);
+  outline-offset: 3px;
+}
+
+.pura-hero__body {
+  max-width: 500px;
+  margin: 0 0 36px;
+  font-family: var(--font-sans);
+  font-size: 18px;
+  line-height: 1.6;
+  font-weight: 400;
+  color: rgba(247, 243, 234, 0.92);
+}
+
+.pura-hero__actions {
+  display: flex;
+  gap: 14px;
+}
+
+.pura-hero__cta {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  height: 48px;
+  padding: 0 18px;
+  border-radius: 1px;
+  font-family: var(--font-sans);
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.pura-hero__cta--primary {
+  min-width: 172px;
+  background: var(--pura-green);
+  border: 1px solid #697359;
+  color: #ffffff;
+  transition: background 250ms ease, transform 250ms ease;
+}
+
+.pura-hero__cta--primary:hover {
+  background: var(--pura-green-hover);
+  transform: translateY(-2px);
+}
+
+.pura-hero__cta--secondary {
+  min-width: 190px;
+  background: transparent;
+  border: 1px solid var(--pura-gold-soft);
+  color: var(--pura-gold-soft);
+  transition: background 250ms ease, color 250ms ease;
+}
+
+.pura-hero__cta--secondary:hover {
+  background: var(--pura-gold-soft);
+  color: var(--pura-green-dark);
+}
+
+.pura-pesach {
+  background: #F7F3EA;
+  padding: 56px 0 0;
+}
+
+.pura-pesach__inner {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 clamp(24px, 4vw, 56px);
+}
+
+.pura-pesach__intro {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.pura-pesach__eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 16px;
+  margin: 0 0 6px;
+  padding: 0;
+  border: 0;
+  border-radius: 0;
+  background: none;
+  color: var(--pura-text);
+}
+
+.pura-pesach__eyebrow::before,
+.pura-pesach__eyebrow::after {
+  content: "";
+  width: 36px;
+  height: 1px;
+  background: var(--pura-gold-soft);
+}
+
+html.rtl .pura-pesach__eyebrow {
+  font-family: "Frank Ruhl Libre", Georgia, serif;
+  letter-spacing: 0.12em;
+  text-transform: none;
+}
+
+.pura-pesach__title {
+  font-family: var(--font-serif);
+  font-size: clamp(56px, 7.2vw, 92px);
+  font-weight: 400;
+  letter-spacing: -0.02em;
+  color: var(--pura-gold);
+  line-height: 1.1;
+  margin: 0 0 12px;
+}
+
+html.rtl .pura-pesach__title,
+html.rtl .pura-pesach__sub {
+  font-family: "Frank Ruhl Libre", Georgia, serif;
+  letter-spacing: 0;
+}
+
+.pura-pesach__sub {
+  font-family: var(--font-serif);
+  font-size: 18px;
+  font-weight: 400;
+  color: var(--pura-muted);
+  margin: 0;
+}
+
+.pura-pesach__grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 28px;
+  align-items: start;
+  width: 100%;
+  padding: 8px clamp(20px, 3.5vw, 48px) 96px;
+}
+
+.pura-pesach__card {
+  display: block;
+  text-decoration: none;
+  color: inherit;
+  min-width: 0;
+  overflow: hidden;
+  background: #1c241d;
+  box-shadow:
+    0 2px 4px rgba(1, 78, 80, 0.08),
+    0 12px 28px rgba(1, 78, 80, 0.14),
+    0 28px 56px rgba(1, 78, 80, 0.10);
+  transition:
+    transform 250ms ease,
+    box-shadow 250ms ease;
+}
+
+.pura-pesach__card:hover {
+  transform: translateY(-4px);
+  box-shadow:
+    0 4px 8px rgba(1, 78, 80, 0.10),
+    0 18px 36px rgba(1, 78, 80, 0.16),
+    0 36px 64px rgba(1, 78, 80, 0.12);
+}
+
+.pura-pesach__card:nth-child(odd) {
+  margin-top: 0;
+}
+
+.pura-pesach__card:nth-child(even) {
+  margin-top: 96px;
+}
+
+.pura-pesach__photo {
+  position: relative;
+  aspect-ratio: 4 / 5;
+  overflow: hidden;
+  background: #1c241d;
+}
+
+.pura-pesach__photo::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  pointer-events: none;
+  background: linear-gradient(
+    to top,
+    rgba(1, 78, 80, 0.78) 0%,
+    rgba(1, 78, 80, 0.28) 38%,
+    transparent 64%
+  );
+}
+
+.pura-pesach__photo img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 500ms ease;
+}
+
+.pura-pesach__card:hover .pura-pesach__photo img {
+  transform: scale(1.03);
+}
+
+.pura-pesach__label {
+  position: absolute;
+  left: 20px;
+  bottom: 18px;
+  z-index: 2;
+  margin: 0;
+  padding: 0 0 0 12px;
+  color: var(--pura-gold-soft);
+  font-family: var(--font-sans);
+  font-size: 15px;
+  font-weight: 700;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  line-height: 1.2;
+}
+
+.pura-pesach__label::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0.08em;
+  bottom: 0.08em;
+  width: 2px;
+  background: #F7F3EA;
+}
+
+html.rtl .pura-pesach__label {
+  left: auto;
+  right: 20px;
+  padding: 0 12px 0 0;
+  letter-spacing: 0.06em;
+  text-transform: none;
+}
+
+html.rtl .pura-pesach__label::before {
+  left: auto;
+  right: 0;
+}
+
+@media (max-width: 767px) {
+  .pura-pesach {
+    padding: 40px 0 0;
+  }
+
+  .pura-pesach__grid {
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+    padding: 0 16px 56px;
+  }
+
+  .pura-pesach__card:nth-child(even) {
+    margin-top: 48px;
+  }
+
+  .pura-pesach__photo {
+    aspect-ratio: 4 / 5;
+  }
+}
+
+@media (max-width: 1199px) {
+  .pura-header__link.is-active::after {
+    bottom: 8px;
+  }
+}
+
+@media (max-width: 767px) {
+  .pura-hero__image {
+    object-position: 65% center;
+  }
+
+  .pura-hero__container {
+    padding-left: 22px;
+    padding-right: 22px;
+  }
+
+  .pura-hero__title {
+    font-size: 46px;
+    line-height: 1;
+  }
+
+  .pura-hero__actions {
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .pura-hero__cta,
+  .pura-hero__cta--primary,
+  .pura-hero__cta--secondary {
+    width: 100%;
+    min-width: 0;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .pura-hero__cta--primary:hover {
+    transform: none;
+  }
+
+  .pura-pesach__card:hover {
+    transform: none;
+  }
+
+  .pura-pesach__card:hover .pura-pesach__photo img {
+    transform: none;
+  }
+}
+
+/* Homepage concierge inquiry — flush to the section above and the footer */
+.pura-inquire {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+  display: grid;
+  grid-template-columns: 0.95fr 1.15fr;
+  width: 100%;
+  min-height: 370px;
+  direction: ltr;
+  background: var(--pura-green);
+}
+
+.pura-inquire__media {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+}
+
+.pura-inquire__media img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center 40%;
+}
+
+.pura-inquire__overlay {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  pointer-events: none;
+  background: linear-gradient(
+    180deg,
+    rgba(1, 78, 80, 0.32) 0%,
+    rgba(2, 119, 122, 0.38) 48%,
+    rgba(1, 78, 80, 0.46) 100%
+  );
+}
+
+.pura-inquire__info {
+  position: relative;
+  z-index: 2;
+  color: #F7F3EA;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+}
+
+.pura-inquire__info-content {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  padding: 48px 54px;
+}
+
+.pura-inquire__title {
+  font-family: var(--font-serif);
+  font-size: clamp(38px, 3.4vw, 50px);
+  font-weight: 400;
+  line-height: 1;
+  letter-spacing: -0.025em;
+  color: #F7F3EA;
+  margin: 0;
+}
+
+html.rtl .pura-inquire__title {
+  font-family: "Frank Ruhl Libre", Georgia, serif;
+  letter-spacing: 0;
+}
+
+.pura-inquire__rule {
+  width: 52px;
+  height: 1px;
+  background: #C6B992;
+  margin: 14px 0 18px;
+}
+
+html.rtl .pura-inquire__info .pura-inquire__rule {
+  margin-inline-start: auto;
+}
+
+.pura-inquire__body {
+  max-width: 390px;
+  margin: 0 0 26px;
+  font-family: var(--font-sans);
+  font-size: 13px;
+  font-weight: 400;
+  line-height: 1.65;
+  color: rgba(247, 243, 234, 0.84);
+  white-space: pre-line;
+}
+
+.pura-inquire__contacts {
+  display: flex;
+  flex-direction: column;
+}
+
+.pura-inquire__contact {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  margin-bottom: 15px;
+  color: inherit;
+  text-decoration: none;
+}
+
+.pura-inquire__contact:last-child {
+  margin-bottom: 0;
+}
+
+a.pura-inquire__contact:hover .pura-inquire__icon,
+a.pura-inquire__contact:focus-visible .pura-inquire__icon {
+  transform: translateY(-1px);
+}
+
+.pura-inquire__icon {
+  width: 36px;
+  height: 36px;
+  flex-shrink: 0;
+  border-radius: 50%;
+  border: 1px solid rgba(198, 185, 146, 0.7);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #F7F3EA;
+  transition: transform 200ms ease;
+}
+
+.pura-inquire__contact-primary,
+.pura-inquire__contact-secondary {
+  display: block;
+}
+
+.pura-inquire__contact-primary {
+  font-family: var(--font-sans);
+  font-size: 12px;
+  font-weight: 500;
+  color: #F7F3EA;
+}
+
+.pura-inquire__contact-secondary {
+  font-family: var(--font-sans);
+  font-size: 10px;
+  font-weight: 400;
+  color: rgba(247, 243, 234, 0.68);
+  margin-top: 2px;
+}
+
+.pura-inquire::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 3;
+  height: 1px;
+  background: var(--pura-gold);
+  pointer-events: none;
+}
+
+.pura-inquire__panel {
+  position: relative;
+  z-index: 2;
+  background: transparent;
+  padding: 42px 54px;
+  display: flex;
+  align-items: center;
+  min-width: 0;
+}
+
+.pura-inquire__panel::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 1px;
+  height: 50%;
+  background: rgba(247, 243, 234, 0.5);
+  pointer-events: none;
+}
+
+.pura-inquire__form {
+  width: 100%;
+}
+
+.pura-inquire__fields {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 12px;
+}
+
+.pura-inquire__field {
+  min-width: 0;
+}
+
+.pura-inquire__field--wide {
+  margin-top: 12px;
+}
+
+.pura-inquire__field input,
+.pura-inquire__field select,
+.pura-inquire__field textarea {
+  width: 100%;
+  background: #FDFBF7;
+  border: 1px solid #DCD4C5;
+  border-radius: 1px;
+  color: #2B3028;
+  font-family: var(--font-sans);
+  font-size: 12px;
+  box-shadow: none;
+}
+
+.pura-inquire__field input,
+.pura-inquire__field select {
+  height: 45px;
+  padding: 0 14px;
+}
+
+.pura-inquire__field textarea {
+  min-height: 82px;
+  resize: vertical;
+  padding: 12px 14px;
+  line-height: 1.5;
+}
+
+.pura-inquire__field input::placeholder,
+.pura-inquire__field textarea::placeholder {
+  color: #85867F;
+  font-size: 11px;
+}
+
+.pura-inquire__field select {
+  appearance: none;
+  background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 24 24' fill='none' stroke='%2385867F' stroke-width='1.6' stroke-linecap='round' stroke-linejoin='round'><polyline points='6 9 12 15 18 9'/></svg>");
+  background-repeat: no-repeat;
+  background-position: right 14px center;
+  padding-right: 36px;
+  cursor: pointer;
+}
+
+html.rtl .pura-inquire__field select {
+  background-position: left 14px center;
+  padding-right: 14px;
+  padding-left: 36px;
+}
+
+.pura-inquire__field select[data-empty="true"] {
+  color: #85867F;
+  font-size: 11px;
+}
+
+.pura-inquire__field input:focus,
+.pura-inquire__field select:focus,
+.pura-inquire__field textarea:focus,
+.pura-inquire__field input:focus-visible,
+.pura-inquire__field select:focus-visible,
+.pura-inquire__field textarea:focus-visible {
+  border-color: color-mix(in srgb, var(--pura-green) 62%, white);
+  box-shadow: 0 0 0 3px rgba(2, 119, 122, 0.07);
+  outline: none;
+}
+
+.pura-inquire__field-error {
+  margin: 6px 0 0;
+  font-size: 10px;
+  line-height: 1.4;
+  color: #F0C9C2;
+}
+
+.pura-inquire__optin {
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+  margin: 14px 0 0;
+  font-family: var(--font-sans);
+  font-size: 9px;
+  line-height: 1.45;
+  color: rgba(247, 243, 234, 0.78);
+  cursor: pointer;
+}
+
+.pura-inquire__optin input[type="checkbox"] {
+  width: 13px;
+  height: 13px;
+  margin-top: 1px;
+  flex-shrink: 0;
+  accent-color: var(--pura-green);
+  cursor: pointer;
+}
+
+.pura-inquire__optin input[type="checkbox"]:focus-visible {
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(2, 119, 122, 0.12);
+}
+
+.pura-inquire__error {
+  margin: 12px 0 0;
+  font-size: 11px;
+  line-height: 1.55;
+  color: #F0C9C2;
+  white-space: pre-line;
+}
+
+.pura-inquire__submit {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  width: 100%;
+  height: 48px;
+  margin-top: 14px;
+  background: transparent;
+  color: #F7F3EA;
+  border: 1px solid var(--pura-gold-soft);
+  border-radius: 1px;
+  font-family: var(--font-sans);
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: background 250ms ease, color 250ms ease, transform 250ms ease;
+}
+
+.pura-inquire__submit:hover:not(:disabled) {
+  background: var(--pura-gold-soft);
+  color: var(--pura-green-dark);
+  transform: translateY(-2px);
+}
+
+.pura-inquire__submit:focus-visible {
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(198, 185, 146, 0.28);
+}
+
+.pura-inquire__submit:disabled {
+  cursor: wait;
+  opacity: 0.88;
+}
+
+.pura-inquire__spinner {
+  animation: pura-inquire-spin 0.8s linear infinite;
+}
+
+.pura-inquire__success {
+  width: 100%;
+  background: rgba(247, 243, 234, 0.94);
+  border: 1px solid rgba(198, 185, 146, 0.45);
+  padding: 18px;
+  color: var(--pura-green);
+  animation: pura-inquire-fade 450ms ease;
+}
+
+.pura-inquire__success-title {
+  font-family: var(--font-serif);
+  font-size: 28px;
+  font-weight: 400;
+  letter-spacing: -0.02em;
+  margin: 0 0 8px;
+}
+
+.pura-inquire__success-body {
+  font-family: var(--font-sans);
+  font-size: 13px;
+  line-height: 1.65;
+  margin: 0;
+  white-space: pre-line;
+}
+
+@keyframes pura-inquire-spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes pura-inquire-fade {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@media (max-width: 1024px) {
+  .pura-inquire__fields {
+    grid-template-columns: 1fr;
+  }
+
+  .pura-inquire__info-content,
+  .pura-inquire__panel {
+    padding: 42px 32px;
+  }
+}
+
+@media (max-width: 767px) {
+  .pura-inquire {
+    grid-template-columns: 1fr;
+    min-height: 0;
+  }
+
+  .pura-inquire__info-content {
+    padding: 38px 22px;
+  }
+
+  .pura-inquire__panel {
+    padding: 12px 20px 36px;
+  }
+
+  .pura-inquire__panel::before {
+    left: 50%;
+    top: 0;
+    transform: translateX(-50%);
+    width: 50%;
+    height: 1px;
+  }
+
+  .pura-inquire__title {
+    font-size: 38px;
+  }
+
+  .pura-inquire__fields {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .pura-inquire__submit:hover:not(:disabled) {
+    transform: none;
+  }
+
+  a.pura-inquire__contact:hover .pura-inquire__icon,
+  a.pura-inquire__contact:focus-visible .pura-inquire__icon {
+    transform: none;
+  }
+
+  .pura-inquire__spinner,
+  .pura-inquire__success {
+    animation: none;
+  }
+}
+
+@layer components {
+  .editorial-collage {
+    --editorial-torn: polygon(
+      0% 1.5%,
+      2.5% 0%,
+      7% 0.8%,
+      14% 0%,
+      22% 1.2%,
+      32% 0%,
+      44% 0.9%,
+      56% 0%,
+      68% 1.1%,
+      80% 0%,
+      90% 0.8%,
+      97% 0%,
+      100% 2%,
+      99.2% 10%,
+      100% 22%,
+      98.8% 34%,
+      100% 48%,
+      99% 62%,
+      100% 76%,
+      98.5% 88%,
+      100% 98%,
+      97% 100%,
+      88% 99.2%,
+      76% 100%,
+      64% 98.8%,
+      52% 100%,
+      40% 99%,
+      28% 100%,
+      16% 98.5%,
+      6% 100%,
+      0% 97.5%,
+      0.8% 86%,
+      0% 72%,
+      1.2% 58%,
+      0% 44%,
+      0.9% 30%,
+      0% 16%
+    );
+    position: relative;
+    width: 100%;
+    max-width: min(100%, 17rem);
+    aspect-ratio: 4 / 5;
+    margin-inline: auto;
+    filter: drop-shadow(0 18px 36px rgba(1, 78, 80, 0.1));
+  }
+
+  @media (min-width: 768px) {
+    .editorial-collage {
+      max-width: min(100%, 19rem);
+    }
+  }
+
+  @media (min-width: 1024px) {
+    .editorial-collage {
+      max-width: 22rem;
+      margin-inline: 0;
+    }
+  }
+
+  .editorial-collage__teal {
+    position: absolute;
+    inset: 6% 3% 2% 10%;
+    background: var(--pura-green-deep);
+    transform: rotate(2.25deg);
+    box-shadow: 0 10px 28px rgba(1, 78, 80, 0.18);
+    z-index: 0;
+  }
+
+  .editorial-collage__paper {
+    position: absolute;
+    inset: 0% 8% 6% 1%;
+    background: var(--pura-bg-soft);
+    transform: rotate(-2.75deg);
+    clip-path: var(--editorial-torn);
+    box-shadow: 0 6px 18px rgba(1, 78, 80, 0.08);
+    z-index: 1;
+  }
+
+  .editorial-collage__frame {
+    position: relative;
+    z-index: 2;
+    margin: 2% 3% 3% 1%;
+    padding: 0.55rem;
+    background: var(--pura-surface);
+    clip-path: var(--editorial-torn);
+    box-shadow:
+      0 14px 34px rgba(1, 78, 80, 0.1),
+      0 2px 8px rgba(1, 78, 80, 0.05);
+    transition:
+      transform 500ms cubic-bezier(0.22, 1, 0.36, 1),
+      box-shadow 500ms ease;
+  }
+
+  .editorial-collage:hover .editorial-collage__frame {
+    transform: translateY(-3px);
+    box-shadow:
+      0 18px 40px rgba(1, 78, 80, 0.12),
+      0 4px 12px rgba(1, 78, 80, 0.06);
+  }
+
+  .editorial-collage__photo-wrap {
+    overflow: hidden;
+    aspect-ratio: 4 / 5;
+    clip-path: inset(0 round 1px);
+  }
+
+  .editorial-collage__photo {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center 42%;
+    transform: scale(1.04);
+    transition: transform 700ms cubic-bezier(0.22, 1, 0.36, 1);
+  }
+
+  .editorial-collage:hover .editorial-collage__photo {
+    transform: scale(1.07);
+  }
+
+  .editorial-collage__branch {
+    position: absolute;
+    right: -0.35rem;
+    bottom: -0.15rem;
+    width: 5.5rem;
+    height: 4rem;
+    color: var(--pura-gold);
+    opacity: 0.82;
+    z-index: 3;
+  }
+
+  .btn-premium-hover {
+    transition:
+      transform 300ms cubic-bezier(0.22, 1, 0.36, 1),
+      opacity 300ms cubic-bezier(0.22, 1, 0.36, 1),
+      background-color 300ms ease,
+      border-color 300ms ease,
+      box-shadow 300ms ease,
+      color 300ms ease;
+  }
+
+  .btn-premium-hover:hover {
+    transform: translateY(-2px);
+  }
+
+  .btn-premium-hover:active {
+    transform: translateY(0);
+  }
+}
+
+html.rtl {
+  font-family: "Heebo", sans-serif;
+}
+
+html.rtl .font-headline-xl,
+html.rtl .font-headline-lg,
+html.rtl .font-headline-md,
+html.rtl .font-headline-sm {
+  font-family: "Frank Ruhl Libre", Georgia, serif;
+}
+
+html.rtl .font-display-script {
+  font-family: "Frank Ruhl Libre", Georgia, serif;
+  font-weight: 400;
+  font-style: italic;
+}
+
+html.rtl .text-display-script {
+  font-size: clamp(2.35rem, 4.4vw, 3.35rem);
+  line-height: 1.32;
+  letter-spacing: 0.01em;
+}
+
+html.rtl .text-display-script-sm {
+  font-size: clamp(1.55rem, 2.6vw, 2rem);
+  line-height: 1.3;
+  letter-spacing: 0.01em;
+}
+
+html.rtl .text-headline-xl {
+  font-size: 56px;
+}
+
+html.rtl .text-headline-lg {
+  font-size: 42px;
+}
+
+html.rtl .text-headline-md {
+  font-size: 28px;
+}
+
+html.rtl .text-headline-sm {
+  font-size: 22px;
+}
+
+html.rtl input[type="email"],
+html.rtl input[type="tel"] {
+  direction: ltr;
+  text-align: left;
+}
+
+html.rtl .input-ltr {
+  direction: ltr;
+  text-align: left;
+}
+
+html.rtl .border-l-2 {
+  border-left-width: 0;
+  border-right-width: 2px;
+  border-right-style: solid;
+}
+
+html.rtl .border-l-4 {
+  border-left-width: 0;
+  border-right-width: 4px;
+  border-right-style: solid;
+}
+
+html.rtl .rounded-r {
+  border-top-right-radius: 0;
+  border-bottom-right-radius: 0;
+  border-top-left-radius: 0.25rem;
+  border-bottom-left-radius: 0.25rem;
+}
+
+html.rtl .carousel-card-caption {
+  left: auto;
+  right: 0;
+  text-align: start;
+}
+
+html.rtl .family-hero-caption {
+  left: auto;
+  right: 2rem;
+}
+
+@media (min-width: 768px) {
+  html.rtl .family-hero-caption {
+    right: 3rem;
+  }
+}
+
+html.rtl .bento-caption,
+html.rtl .scroll-story-caption {
+  left: auto;
+  right: 1.5rem;
+}
+
+html.rtl .trust-stat-divider {
+  border-right-width: 0;
+  border-left-width: 1px;
+  padding-right: 0;
+  padding-left: 1rem;
+}
+
+html.rtl .trust-stat-divider:last-child {
+  border-left-width: 0;
+}
+
+html.rtl .chat-user-row {
+  flex-direction: row;
+  margin-left: 0;
+  margin-right: auto;
+}
+
+html.rtl .chat-concierge-row {
+  flex-direction: row-reverse;
+  margin-right: 0;
+  margin-left: auto;
+}
+
+/* —— Resort page (`/year-round`) —— */
+.pura-resort {
+  --background-cream: #f7f3ea;
+  --background-light: #fcfaf5;
+  --deep-teal: #0C4B45;
+  --deep-teal-dark: #083b37;
+  --muted-gold: #c6b992;
+  --body-text: #66615a;
+  --heading-light: #fffdf7;
+  --border-gold: rgba(198, 185, 146, 0.5);
+  --overlay-green: rgba(5, 38, 32, 0.42);
+  --header-height: 96px;
+  background: var(--background-cream);
+  color: var(--body-text);
+}
+
+.pura-resort [id^="resort-"] {
+  scroll-margin-top: calc(var(--header-height) + 12px);
+}
+
+.pura-resort__shell {
+  width: min(100% - 40px, 1320px);
+  margin-inline: auto;
+}
+
+@media (min-width: 768px) {
+  .pura-resort__shell {
+    width: min(100% - 56px, 1440px);
+  }
+}
+
+.pura-resort__eyebrow {
+  margin: 0 0 8px;
+  font-family: var(--font-sans);
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 0.24em;
+  text-transform: uppercase;
+  color: var(--muted-gold);
+}
+
+.pura-resort__eyebrow--on-hero,
+.pura-resort__eyebrow--on-teal {
+  color: var(--muted-gold);
+}
+
+.pura-resort__section-title {
+  margin: 0;
+  max-width: 20ch;
+  margin-inline: auto;
+  font-family: var(--font-serif);
+  font-size: clamp(1.7rem, 2.8vw, 2.5rem);
+  font-weight: 400;
+  line-height: 1.15;
+  letter-spacing: -0.02em;
+  color: var(--deep-teal);
+  text-wrap: balance;
+}
+
+html.rtl .pura-resort__section-title {
+  font-family: "Frank Ruhl Libre", Georgia, serif;
+  letter-spacing: 0;
+  max-width: 24ch;
+}
+
+.pura-resort__hero {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  min-height: 70svh;
+  height: auto;
+}
+
+.pura-resort__hero--teal {
+  background: var(--deep-teal);
+  min-height: clamp(420px, 54svh, 560px);
+  padding-block: clamp(88px, 10vw, 124px) clamp(56px, 7vw, 88px);
+}
+
+@media (min-width: 900px) {
+  .pura-resort__hero {
+    min-height: 620px;
+    height: calc(100vh - var(--header-height));
+    max-height: 760px;
+  }
+
+  .pura-resort__hero--teal {
+    min-height: clamp(480px, 58vh, 620px);
+    height: auto;
+    max-height: none;
+    padding-block: clamp(104px, 12vw, 144px) clamp(72px, 8vw, 104px);
+  }
+}
+
+.pura-resort__hero-texture {
+  position: absolute;
+  inset: 0;
+  opacity: 0.12;
+  pointer-events: none;
+  background-image:
+    url("data:image/svg+xml,%3Csvg width='220' height='220' viewBox='0 0 220 220' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' stroke='%23F7F3EA' stroke-width='1.2'%3E%3Cpath d='M28 190c28-48 52-76 82-98 24-18 48-28 72-34'/%3E%3Cpath d='M12 206c34-44 62-74 98-96'/%3E%3Cpath d='M168 24c-16 34-22 62-14 96'/%3E%3Cpath d='M44 40c18 26 22 48 12 78'/%3E%3C/g%3E%3C/svg%3E");
+  background-size: 220px 220px;
+  mask-image: linear-gradient(90deg, #000 0%, transparent 28%, transparent 72%, #000 100%);
+}
+
+.pura-resort__hero-media {
+  position: absolute;
+  inset: 0;
+  transform-origin: center center;
+  will-change: transform;
+}
+
+.pura-resort__hero-overlay {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  background: var(--overlay-green);
+  pointer-events: none;
+}
+
+.pura-resort__hero-content {
+  position: relative;
+  z-index: 2;
+  width: min(100% - 40px, 720px);
+  margin-inline: auto;
+  padding: 6.5rem 0 3.25rem;
+  text-align: center;
+}
+
+.pura-resort__hero--teal .pura-resort__hero-content {
+  padding-block: 0;
+  width: min(100% - 40px, 920px);
+}
+
+.pura-resort__hero-title {
+  margin: 0 auto 16px;
+  max-width: 18ch;
+  font-family: var(--font-serif);
+  font-size: clamp(2.5rem, 4.6vw, 4.35rem);
+  font-weight: 400;
+  line-height: 1.05;
+  letter-spacing: -0.03em;
+  color: var(--heading-light);
+  text-wrap: balance;
+}
+
+.pura-resort__hero-title-gold {
+  color: var(--muted-gold);
+}
+
+@media (max-width: 899px) {
+  .pura-resort__hero-title {
+    font-size: clamp(2.25rem, 7.2vw, 2.9rem);
+  }
+
+  .pura-resort__hero--teal {
+    min-height: 420px;
+    padding-block: 92px 68px;
+  }
+}
+
+html.rtl .pura-resort__hero-title {
+  font-family: "Frank Ruhl Libre", Georgia, serif;
+  letter-spacing: 0;
+  line-height: 1.1;
+  max-width: 20ch;
+}
+
+.pura-resort__hero-body {
+  margin: 0 auto;
+  max-width: 38rem;
+  font-family: var(--font-sans);
+  font-size: clamp(0.98rem, 1.25vw, 1.1rem);
+  line-height: 1.6;
+  font-weight: 400;
+  color: rgba(255, 253, 247, 0.88);
+}
+
+.pura-resort__hero-nav {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 8px 0;
+  margin-top: clamp(28px, 4vw, 40px);
+  max-width: 52rem;
+  margin-inline: auto;
+}
+
+.pura-resort__hero-nav-link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 44px;
+  padding: 8px 16px;
+  font-family: var(--font-sans);
+  font-size: clamp(0.82rem, 1vw, 0.95rem);
+  font-weight: 500;
+  letter-spacing: 0.04em;
+  color: rgba(255, 253, 247, 0.88);
+  text-decoration: none;
+  transition: color 220ms ease;
+}
+
+.pura-resort__hero-nav-link:hover {
+  color: var(--muted-gold);
+}
+
+@media (min-width: 700px) {
+  .pura-resort__hero-nav-link + .pura-resort__hero-nav-link {
+    border-inline-start: 1px solid var(--border-gold);
+  }
+}
+
+.pura-resort__btn-outline {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 188px;
+  min-height: 44px;
+  padding: 0 22px;
+  border: 1px solid var(--muted-gold);
+  border-radius: 0;
+  background: rgba(5, 38, 32, 0.22);
+  color: var(--heading-light);
+  font-family: var(--font-sans);
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  text-decoration: none;
+  transition: background 280ms ease, color 280ms ease;
+}
+
+.pura-resort__btn-outline--gold {
+  background: transparent;
+  color: var(--muted-gold);
+  border-color: var(--muted-gold);
+  min-width: 240px;
+  min-height: 48px;
+  font-size: 11px;
+  font-weight: 700;
+}
+
+.pura-resort__btn-outline--gold:hover {
+  background: var(--muted-gold);
+  color: var(--deep-teal-dark);
+}
+
+.pura-resort__btn-outline:hover {
+  background: var(--muted-gold);
+  color: var(--deep-teal-dark);
+}
+
+.pura-resort__btn-outline:focus-visible,
+.pura-resort__btn-solid:focus-visible,
+.pura-resort__text-link:focus-visible,
+.pura-resort__facility-nav-link:focus-visible {
+  outline: 2px solid var(--muted-gold);
+  outline-offset: 3px;
+}
+
+.pura-resort__highlights {
+  padding-block: clamp(48px, 6vw, 80px);
+  background: var(--background-cream);
+  text-align: center;
+}
+
+.pura-resort__highlights--page-start {
+  padding-top: clamp(48px, 6vw, 80px);
+}
+
+.pura-resort__highlights .pura-resort__section-title {
+  font-size: clamp(2.15rem, 4.2vw, 3.35rem);
+  max-width: 16ch;
+  line-height: 1.12;
+}
+
+html.rtl .pura-resort__highlights .pura-resort__section-title {
+  max-width: 18ch;
+}
+
+.pura-resort__highlights .pura-resort__eyebrow {
+  font-size: 11px;
+  letter-spacing: 0.28em;
+}
+
+.pura-resort__facility-nav {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 4px 0;
+  margin-top: 28px;
+  max-width: 52rem;
+  margin-inline: auto;
+}
+
+@media (min-width: 900px) {
+  .pura-resort__facility-nav {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    gap: 8px 0;
+    max-width: 58rem;
+  }
+}
+
+.pura-resort__facility-nav-link {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 48px;
+  padding: 10px 18px;
+  font-family: var(--font-sans);
+  font-size: clamp(0.95rem, 1.15vw, 1.12rem);
+  font-weight: 500;
+  letter-spacing: 0.01em;
+  color: var(--deep-teal);
+  text-decoration: none;
+  text-align: center;
+  transition: color 220ms ease;
+}
+
+.pura-resort__facility-nav-link:hover {
+  color: var(--muted-gold);
+}
+
+@media (min-width: 900px) {
+  .pura-resort__facility-nav-link + .pura-resort__facility-nav-link {
+    border-inline-start: 1px solid var(--border-gold);
+  }
+}
+
+.pura-resort__featured {
+  position: relative;
+  padding-block: clamp(56px, 7vw, 104px);
+  background: var(--background-cream);
+}
+
+.pura-resort__featured-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: clamp(28px, 4vw, 72px);
+  align-items: center;
+}
+
+@media (min-width: 900px) {
+  .pura-resort__featured-grid {
+    grid-template-columns: minmax(0, 1.15fr) minmax(0, 0.85fr);
+  }
+
+  .pura-resort__featured-grid--pool {
+    grid-template-columns: minmax(0, 1.25fr) minmax(0, 0.75fr);
+  }
+
+  .pura-resort__featured-grid--reversed {
+    grid-template-columns: minmax(0, 0.85fr) minmax(0, 1.15fr);
+  }
+
+  .pura-resort__featured-grid--reversed .pura-resort__featured-media {
+    order: 2;
+  }
+
+  .pura-resort__featured-grid--reversed .pura-resort__featured-copy {
+    order: 1;
+  }
+}
+
+.pura-resort__featured-frame {
+  width: 100%;
+  aspect-ratio: 3 / 2;
+  height: auto;
+  max-height: none;
+  overflow: hidden;
+  border-radius: 0;
+}
+
+.pura-resort__featured-frame--pool {
+  aspect-ratio: 3 / 2;
+}
+
+@media (min-width: 900px) {
+  .pura-resort__featured-frame {
+    aspect-ratio: 3 / 2;
+    height: clamp(380px, 42vw, 560px);
+  }
+
+  .pura-resort__featured-frame--pool {
+    aspect-ratio: 3 / 2;
+    height: clamp(400px, 44vw, 580px);
+  }
+}
+
+.pura-resort__featured-copy {
+  max-width: 28rem;
+}
+
+.pura-resort__facility-label {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.4rem;
+  margin: 0 0 12px;
+  font-family: var(--font-sans);
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--muted-gold);
+}
+
+.pura-resort__facility-sep {
+  opacity: 0.85;
+}
+
+.pura-resort__facility-title {
+  margin: 0 0 16px;
+  font-family: var(--font-serif);
+  font-size: clamp(1.55rem, 2.4vw, 2.35rem);
+  font-weight: 400;
+  line-height: 1.15;
+  letter-spacing: -0.02em;
+  color: var(--deep-teal);
+  text-wrap: balance;
+}
+
+html.rtl .pura-resort__facility-title {
+  font-family: "Frank Ruhl Libre", Georgia, serif;
+  letter-spacing: 0;
+}
+
+.pura-resort__facility-body {
+  margin: 0;
+  font-family: var(--font-sans);
+  font-size: 0.98rem;
+  line-height: 1.65;
+  color: var(--body-text);
+  max-width: 38ch;
+}
+
+.pura-resort__gold-rule {
+  width: min(100% - 40px, 1440px);
+  margin: 0 auto;
+  border: 0;
+  border-top: 1px solid var(--border-gold);
+}
+
+.pura-resort__featured .pura-resort__gold-rule {
+  margin-top: clamp(40px, 4.5vw, 64px);
+}
+
+.pura-resort__more {
+  padding-block: clamp(48px, 5.5vw, 80px) 0;
+  background: var(--background-cream);
+}
+
+.pura-resort__more-intro {
+  text-align: center;
+  margin-bottom: clamp(28px, 3.5vw, 44px);
+}
+
+.pura-resort__more-body {
+  margin: 10px auto 0;
+  max-width: 34rem;
+  font-family: var(--font-sans);
+  font-size: 0.98rem;
+  line-height: 1.55;
+  color: var(--body-text);
+}
+
+.pura-resort__more-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 28px;
+}
+
+@media (min-width: 900px) {
+  .pura-resort__more-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 28px;
+  }
+
+  .pura-resort__more-grid--count-1 {
+    grid-template-columns: minmax(0, 22rem);
+    justify-content: center;
+  }
+
+  .pura-resort__more-grid--count-2 {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    max-width: 48rem;
+    margin-inline: auto;
+  }
+}
+
+.pura-resort__more-frame {
+  aspect-ratio: 16 / 11;
+  overflow: hidden;
+  border-radius: 0;
+}
+
+.pura-resort__more-copy {
+  display: flex;
+  align-items: stretch;
+  gap: 12px;
+  margin-top: 14px;
+}
+
+.pura-resort__more-number {
+  flex: 0 0 auto;
+  margin: 0;
+  padding-top: 3px;
+  font-family: var(--font-sans);
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  color: var(--muted-gold);
+  line-height: 1.2;
+}
+
+.pura-resort__more-rule {
+  flex: 0 0 1px;
+  width: 1px;
+  align-self: stretch;
+  min-height: 2.75rem;
+  background: var(--muted-gold);
+  opacity: 0.85;
+}
+
+.pura-resort__more-text {
+  min-width: 0;
+  padding-top: 1px;
+}
+
+.pura-resort__more-title {
+  margin: 0 0 6px;
+  font-family: var(--font-serif);
+  font-size: clamp(1.25rem, 1.6vw, 1.55rem);
+  font-weight: 400;
+  line-height: 1.15;
+  color: var(--deep-teal);
+}
+
+html.rtl .pura-resort__more-title {
+  font-family: "Frank Ruhl Libre", Georgia, serif;
+}
+
+.pura-resort__more-desc {
+  margin: 0;
+  font-family: var(--font-sans);
+  font-size: 0.9rem;
+  line-height: 1.5;
+  color: var(--body-text);
+}
+
+.pura-resort__more .pura-resort__gold-rule {
+  margin-top: clamp(40px, 4.5vw, 64px);
+}
+
+.pura-resort__stat-row {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: stretch;
+  gap: 0;
+  margin: 22px 0 0;
+  padding: 0;
+  list-style: none;
+}
+
+.pura-resort__stat-item {
+  flex: 1 1 auto;
+  min-width: 7.5rem;
+  padding: 0 16px;
+  font-family: var(--font-sans);
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--deep-teal);
+  line-height: 1.35;
+}
+
+.pura-resort__stat-item:first-child {
+  padding-inline-start: 0;
+}
+
+.pura-resort__stat-item + .pura-resort__stat-item {
+  border-inline-start: 1px solid var(--border-gold);
+}
+
+.pura-resort__detail-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 0;
+  margin: 22px 0 0;
+  padding: 0;
+  list-style: none;
+  max-width: 26rem;
+}
+
+@media (min-width: 600px) {
+  .pura-resort__detail-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+.pura-resort__detail-grid li {
+  padding: 12px 0;
+  border-top: 1px solid var(--border-gold);
+  font-family: var(--font-serif);
+  font-size: 1.05rem;
+  color: var(--deep-teal);
+  line-height: 1.3;
+}
+
+html.rtl .pura-resort__detail-grid li {
+  font-family: "Frank Ruhl Libre", Georgia, serif;
+}
+
+.pura-resort__detail-list {
+  margin: 22px 0 0;
+  padding: 0;
+  list-style: none;
+  max-width: 34rem;
+}
+
+.pura-resort__detail-list li {
+  position: relative;
+  padding: 12px 0 12px 1.1rem;
+  border-top: 1px solid var(--border-gold);
+  font-family: var(--font-sans);
+  font-size: 0.95rem;
+  line-height: 1.5;
+  color: var(--body-text);
+}
+
+.pura-resort__detail-list li::before {
+  content: "";
+  position: absolute;
+  inset-inline-start: 0;
+  top: 1.35rem;
+  width: 12px;
+  height: 1px;
+  background: var(--muted-gold);
+}
+
+.pura-resort__detail-list li:last-child {
+  border-bottom: 1px solid var(--border-gold);
+}
+
+.pura-resort__featured-frame--thermal {
+  aspect-ratio: 4 / 3;
+  max-width: 520px;
+  height: auto;
+}
+
+@media (min-width: 900px) {
+  .pura-resort__featured-frame--thermal {
+    height: clamp(280px, 30vw, 380px);
+    max-width: none;
+  }
+}
+
+.pura-resort__featured-frame--spa {
+  aspect-ratio: 16 / 7;
+  height: auto;
+}
+
+@media (min-width: 900px) {
+  .pura-resort__featured-frame--spa {
+    height: clamp(280px, 28vw, 360px);
+    aspect-ratio: auto;
+  }
+}
+
+.pura-resort__facility-title--center {
+  text-align: center;
+  margin-inline: auto;
+}
+
+.pura-resort__nature {
+  padding-block: clamp(56px, 7vw, 104px);
+  background: var(--background-cream);
+}
+
+.pura-resort__nature-intro,
+.pura-resort__activities-intro,
+.pura-resort__amenities-intro {
+  text-align: center;
+  margin-bottom: clamp(28px, 4vw, 48px);
+}
+
+.pura-resort__nature-lead {
+  margin: 14px auto 0;
+  max-width: 42rem;
+  font-family: var(--font-sans);
+  font-size: 0.98rem;
+  line-height: 1.65;
+  color: var(--body-text);
+}
+
+.pura-resort__nature-mosaic {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 28px;
+}
+
+@media (min-width: 900px) {
+  .pura-resort__nature-mosaic {
+    grid-template-columns: minmax(0, 1.35fr) minmax(0, 0.9fr);
+    gap: 28px;
+    align-items: start;
+  }
+}
+
+.pura-resort__nature-hero-frame {
+  aspect-ratio: 3 / 2;
+  overflow: hidden;
+}
+
+.pura-resort__nature-side {
+  display: grid;
+  gap: 28px;
+}
+
+.pura-resort__nature-side-frame {
+  aspect-ratio: 4 / 3;
+  max-width: 100%;
+  overflow: hidden;
+}
+
+.pura-resort__nature-copy {
+  margin-top: 14px;
+}
+
+.pura-resort__nature-title {
+  margin: 0 0 8px;
+  font-family: var(--font-serif);
+  font-size: clamp(1.2rem, 1.6vw, 1.45rem);
+  font-weight: 400;
+  color: var(--deep-teal);
+}
+
+html.rtl .pura-resort__nature-title {
+  font-family: "Frank Ruhl Libre", Georgia, serif;
+}
+
+.pura-resort__nature-body {
+  margin: 0;
+  font-family: var(--font-sans);
+  font-size: 0.92rem;
+  line-height: 1.55;
+  color: var(--body-text);
+  max-width: 36ch;
+}
+
+.pura-resort__nature .pura-resort__gold-rule,
+.pura-resort__events .pura-resort__gold-rule,
+.pura-resort__activities .pura-resort__gold-rule {
+  margin-top: clamp(40px, 4.5vw, 64px);
+}
+
+.pura-resort__prayer {
+  background: var(--deep-teal);
+  padding-block: clamp(64px, 8vw, 112px);
+  text-align: center;
+}
+
+.pura-resort__prayer-title {
+  margin: 0 auto 18px;
+  max-width: 18ch;
+  font-family: var(--font-serif);
+  font-size: clamp(1.85rem, 3.2vw, 2.75rem);
+  font-weight: 400;
+  line-height: 1.15;
+  letter-spacing: -0.02em;
+  color: var(--heading-light);
+  text-wrap: balance;
+}
+
+html.rtl .pura-resort__prayer-title {
+  font-family: "Frank Ruhl Libre", Georgia, serif;
+  letter-spacing: 0;
+}
+
+.pura-resort__prayer-body {
+  margin: 0 auto 28px;
+  max-width: 40rem;
+  font-family: var(--font-sans);
+  font-size: 1rem;
+  line-height: 1.65;
+  color: rgba(255, 253, 247, 0.88);
+}
+
+.pura-resort__prayer-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  margin: 0 auto;
+  padding: 0;
+  list-style: none;
+  max-width: 28rem;
+  border-top: 1px solid var(--border-gold);
+}
+
+.pura-resort__prayer-list li {
+  padding: 14px 0;
+  border-bottom: 1px solid var(--border-gold);
+  font-family: var(--font-serif);
+  font-size: clamp(1.05rem, 1.5vw, 1.25rem);
+  color: var(--heading-light);
+}
+
+html.rtl .pura-resort__prayer-list li {
+  font-family: "Frank Ruhl Libre", Georgia, serif;
+}
+
+.pura-resort__events {
+  padding-block: clamp(56px, 7vw, 104px);
+  background: var(--background-cream);
+}
+
+.pura-resort__events-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: clamp(28px, 4vw, 56px);
+  align-items: center;
+}
+
+@media (min-width: 900px) {
+  .pura-resort__events-grid {
+    grid-template-columns: minmax(0, 1.15fr) minmax(0, 0.7fr);
+  }
+}
+
+.pura-resort__events-frame {
+  width: min(100%, 420px);
+  margin-inline: auto;
+  aspect-ratio: 4 / 3;
+  overflow: hidden;
+}
+
+.pura-resort__events-list {
+  margin: 24px 0 0;
+  padding: 0;
+  list-style: none;
+  max-width: 30rem;
+}
+
+.pura-resort__events-list li {
+  display: grid;
+  gap: 4px;
+  padding: 14px 0;
+  border-top: 1px solid var(--border-gold);
+}
+
+.pura-resort__events-list li:last-child {
+  border-bottom: 1px solid var(--border-gold);
+}
+
+.pura-resort__events-item-title {
+  font-family: var(--font-serif);
+  font-size: 1.15rem;
+  color: var(--deep-teal);
+}
+
+html.rtl .pura-resort__events-item-title {
+  font-family: "Frank Ruhl Libre", Georgia, serif;
+}
+
+.pura-resort__events-item-body {
+  font-family: var(--font-sans);
+  font-size: 0.92rem;
+  line-height: 1.5;
+  color: var(--body-text);
+}
+
+.pura-resort__activities {
+  padding-block: clamp(48px, 6vw, 88px);
+  background: var(--background-light);
+}
+
+.pura-resort__activity-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 0;
+  max-width: 44rem;
+  margin-inline: auto;
+}
+
+@media (min-width: 700px) {
+  .pura-resort__activity-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    column-gap: 40px;
+  }
+}
+
+.pura-resort__activity-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 14px 0;
+  border-top: 1px solid var(--border-gold);
+  font-family: var(--font-serif);
+  font-size: 1.1rem;
+  color: var(--deep-teal);
+}
+
+html.rtl .pura-resort__activity-item {
+  font-family: "Frank Ruhl Libre", Georgia, serif;
+}
+
+.pura-resort__activity-mark {
+  flex: 0 0 auto;
+  width: 18px;
+  height: 1px;
+  background: var(--muted-gold);
+}
+
+.pura-resort__amenities {
+  padding-block: clamp(56px, 7vw, 104px);
+  background: var(--background-cream);
+}
+
+.pura-resort__amenities-list {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 0;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  max-width: 52rem;
+  margin-inline: auto;
+}
+
+@media (min-width: 800px) {
+  .pura-resort__amenities-list {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    column-gap: 48px;
+  }
+}
+
+.pura-resort__amenities-item {
+  padding: 18px 0;
+  border-top: 1px solid var(--border-gold);
+}
+
+.pura-resort__amenities-title {
+  margin: 0;
+  font-family: var(--font-serif);
+  font-size: 1.15rem;
+  font-weight: 400;
+  color: var(--deep-teal);
+}
+
+html.rtl .pura-resort__amenities-title {
+  font-family: "Frank Ruhl Libre", Georgia, serif;
+}
+
+.pura-resort__amenities-body {
+  margin: 8px 0 0;
+  font-family: var(--font-sans);
+  font-size: 0.9rem;
+  line-height: 1.55;
+  color: var(--body-text);
+}
+
+.pura-resort__text-link--inline {
+  margin-top: 10px;
+}
+
+.pura-resort-carousel {
+  background: var(--deep-teal);
+  padding-block: clamp(56px, 6vw, 96px) clamp(40px, 5vw, 64px);
+  overflow: hidden;
+}
+
+.pura-resort-carousel__header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  gap: 24px;
+  max-width: var(--container-max, 1280px);
+  margin-inline: auto;
+  padding-inline: clamp(24px, 5vw, 64px);
+  margin-bottom: clamp(28px, 4vw, 48px);
+}
+
+.pura-resort-carousel__title {
+  margin: 0;
+  font-family: var(--font-serif);
+  font-size: clamp(1.7rem, 3vw, 2.55rem);
+  font-weight: 400;
+  line-height: 1.15;
+  letter-spacing: -0.02em;
+  color: var(--heading-light);
+}
+
+html.rtl .pura-resort-carousel__title {
+  font-family: "Frank Ruhl Libre", Georgia, serif;
+  letter-spacing: 0;
+}
+
+.pura-resort-carousel__nav {
+  display: flex;
+  gap: 12px;
+  flex-shrink: 0;
+}
+
+.pura-resort-carousel__nav-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
+  border: 1px solid rgba(255, 253, 247, 0.9);
+  border-radius: 50%;
+  background: transparent;
+  color: var(--heading-light);
+  cursor: pointer;
+  transition: border-color 0.2s ease, color 0.2s ease;
+}
+
+.pura-resort-carousel__nav-btn:hover {
+  border-color: var(--muted-gold);
+  background: transparent;
+  color: var(--muted-gold);
+}
+
+.pura-resort-carousel__viewport {
+  width: 100%;
+}
+
+.pura-resort-carousel__scroller {
+  width: 100%;
+  overflow-x: auto;
+  scroll-behavior: smooth;
+}
+
+.pura-resort-carousel__track {
+  display: flex;
+  flex-wrap: nowrap;
+  width: max-content;
+  gap: 24px;
+  padding-inline: clamp(24px, 5vw, 64px);
+  padding-bottom: 8px;
+}
+
+.pura-resort-carousel__card {
+  position: relative;
+  flex: none;
+  width: 82.935vw;
+  min-width: 82.935vw;
+  max-width: 82.935vw;
+  height: 420px;
+}
+
+@media (min-width: 768px) {
+  .pura-resort-carousel__card {
+    width: 640px;
+    min-width: 640px;
+    max-width: 640px;
+    height: 480px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .pura-resort-carousel__card {
+    width: 780px;
+    min-width: 780px;
+    max-width: 780px;
+    height: 520px;
+  }
+}
+
+.pura-resort-carousel__caption {
+  position: absolute;
+  inset-inline-start: 0;
+  bottom: 0;
+  padding: 28px 32px;
+  color: var(--heading-light);
+  text-shadow: 0 2px 8px rgba(1, 78, 80, 0.55);
+}
+
+html.rtl .pura-resort-carousel__caption {
+  text-align: right;
+}
+
+.pura-resort-carousel__label {
+  display: block;
+  margin-bottom: 4px;
+  font-family: var(--font-sans);
+  font-size: 0.625rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--muted-gold);
+}
+
+.pura-resort-carousel__card-title {
+  margin: 0;
+  font-family: var(--font-serif);
+  font-size: clamp(1.25rem, 2vw, 1.6rem);
+  font-weight: 400;
+  line-height: 1.2;
+  color: var(--heading-light);
+}
+
+html.rtl .pura-resort-carousel__card-title {
+  font-family: "Frank Ruhl Libre", Georgia, serif;
+}
+
+.pura-resort__cta-band {
+  position: relative;
+  overflow: hidden;
+  background: var(--deep-teal);
+  padding-block: clamp(56px, 6.5vw, 88px);
+  text-align: center;
+}
+
+.pura-resort__cta-texture {
+  position: absolute;
+  inset: 0;
+  opacity: 0.11;
+  pointer-events: none;
+  background-image:
+    url("data:image/svg+xml,%3Csvg width='220' height='220' viewBox='0 0 220 220' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' stroke='%23F7F3EA' stroke-width='1.2'%3E%3Cpath d='M28 190c28-48 52-76 82-98 24-18 48-28 72-34'/%3E%3Cpath d='M12 206c34-44 62-74 98-96'/%3E%3Cpath d='M168 24c-16 34-22 62-14 96'/%3E%3Cpath d='M44 40c18 26 22 48 12 78'/%3E%3C/g%3E%3C/svg%3E");
+  background-size: 220px 220px;
+  background-position: left center, right center;
+  mask-image: linear-gradient(90deg, #000 0%, transparent 28%, transparent 72%, #000 100%);
+}
+
+.pura-resort__cta-inner {
+  position: relative;
+  z-index: 1;
+  max-width: 640px;
+}
+
+.pura-resort__cta-title {
+  margin: 0 auto 12px;
+  max-width: 18ch;
+  font-family: var(--font-serif);
+  font-size: clamp(1.7rem, 3vw, 2.55rem);
+  font-weight: 400;
+  line-height: 1.15;
+  letter-spacing: -0.02em;
+  color: var(--heading-light);
+  text-wrap: balance;
+}
+
+html.rtl .pura-resort__cta-title {
+  font-family: "Frank Ruhl Libre", Georgia, serif;
+  letter-spacing: 0;
+  max-width: 22ch;
+}
+
+.pura-resort__cta-body {
+  margin: 0 auto 26px;
+  max-width: 32rem;
+  font-family: var(--font-sans);
+  font-size: 0.98rem;
+  line-height: 1.55;
+  color: rgba(255, 253, 247, 0.84);
+}
+
+.pura-resort__cta-actions {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.pura-resort__btn-solid {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 240px;
+  min-height: 48px;
+  padding: 0 28px;
+  border: 1px solid var(--muted-gold);
+  border-radius: 0;
+  background: var(--muted-gold);
+  color: var(--deep-teal-dark);
+  font-family: var(--font-sans);
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  text-decoration: none;
+  transition: background 280ms ease, color 280ms ease, border-color 280ms ease;
+}
+
+.pura-resort__btn-solid--gold {
+  background: #c6b992;
+  border-color: #c6b992;
+  color: var(--deep-teal-dark);
+}
+
+.pura-resort__btn-solid:hover,
+.pura-resort__btn-solid--gold:hover {
+  background: transparent;
+  color: var(--muted-gold);
+  border-color: var(--muted-gold);
+}
+
+.pura-resort__text-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-family: var(--font-sans);
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  text-decoration: none;
+  color: var(--heading-light);
+  transition: color 220ms ease;
+}
+
+.pura-resort__text-link:hover {
+  color: var(--muted-gold);
+}
+
+.pura-resort__inquiry {
+  padding-block: clamp(56px, 6.5vw, 96px);
+  background: var(--background-cream);
+}
+
+.pura-resort__inquiry-intro {
+  text-align: center;
+  margin-bottom: clamp(24px, 3.5vw, 40px);
+}
+
+.pura-resort__inquiry-form {
+  max-width: 48rem;
+  margin-inline: auto;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .pura-resort__btn-outline,
+  .pura-resort__btn-solid,
+  .pura-resort__text-link,
+  .pura-resort__facility-nav-link {
+    transition: none;
+  }
+
+  .pura-resort__hero-media {
+    transform: none !important;
+  }
+}
+
+/* —— Dining page (`/dining`) —— */
+.pura-dining {
+  --dining-cream: #f7f3ea;
+  --dining-teal: var(--pura-band-teal);
+  --dining-teal-deep: #083b37;
+  --dining-gold: var(--pura-band-gold);
+  --dining-body: #66615a;
+  --dining-border: rgba(184, 154, 88, 0.4);
+  background: var(--dining-cream);
+  color: var(--dining-body);
+  padding-top: 0;
+}
+
+.pura-dining__shell {
+  width: min(100% - 40px, 1100px);
+  margin-inline: auto;
+}
+
+.pura-dining-coverflow {
+  position: relative;
+  width: 100%;
+  background: var(--dining-teal);
+  padding: clamp(3.5rem, 6.5vw, 5.5rem) 0 clamp(1.5rem, 2.5vw, 2.25rem);
+}
+
+.pura-dining-coverflow__brand {
+  width: min(100% - 40px, 1400px);
+  margin: 0 auto 1.1rem;
+  font-family: var(--font-sans);
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: rgba(247, 243, 234, 0.45);
+}
+
+.pura-dining-coverflow__frame {
+  position: relative;
+  width: 100%;
+  padding-inline: 0;
+}
+
+.pura-dining-coverflow__swiper {
+  width: 100%;
+  padding-block: 0.35rem 1rem;
+  overflow: hidden;
+}
+
+.pura-dining-coverflow__slide {
+  height: auto;
+  background: transparent;
+  box-sizing: border-box;
+}
+
+.pura-dining-coverflow__stack {
+  display: grid;
+  grid-template-rows: auto auto;
+  gap: 12px;
+  height: auto;
+}
+
+.pura-dining-coverflow__media {
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  min-height: 0;
+  overflow: hidden;
+  background: rgba(0, 0, 0, 0.2);
+}
+
+.pura-dining-coverflow__image {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  pointer-events: none;
+}
+
+.pura-dining-coverflow__arrow {
+  position: absolute;
+  top: 50%;
+  z-index: 30;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
+  margin-top: -22px;
+  border: 0;
+  background: transparent;
+  color: #f7f3ea;
+  cursor: pointer;
+  transition: color 200ms ease, opacity 200ms ease;
+}
+
+.pura-dining-coverflow__arrow--prev {
+  inset-inline-start: 8px;
+}
+
+.pura-dining-coverflow__arrow--next {
+  inset-inline-end: 8px;
+}
+
+.pura-dining-coverflow__arrow:hover {
+  color: var(--dining-gold);
+}
+
+.pura-dining-coverflow__arrow:focus-visible,
+.pura-dining-coverflow__pagination .swiper-pagination-bullet:focus-visible,
+.pura-dining__faq-link:focus-visible,
+.pura-dining__btn-solid:focus-visible,
+.pura-dining__btn-ghost:focus-visible {
+  outline: 2px solid var(--dining-gold);
+  outline-offset: 3px;
+}
+
+.pura-dining-coverflow__arrow svg {
+  width: 28px;
+  height: 28px;
+}
+
+.pura-dining-coverflow__pagination {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+  margin-top: 0.35rem;
+  min-height: 18px;
+}
+
+.pura-dining-coverflow__pagination .swiper-pagination-bullet {
+  width: 8px;
+  height: 8px;
+  margin: 0 !important;
+  border-radius: 0;
+  background: rgba(247, 243, 234, 0.3);
+  opacity: 1;
+  transition: background 200ms ease, transform 200ms ease;
+}
+
+.pura-dining-coverflow__pagination .swiper-pagination-bullet-active {
+  background: var(--dining-gold);
+  transform: scaleX(1.35);
+}
+
+.pura-dining__intro {
+  text-align: center;
+  padding: clamp(28px, 4vw, 48px) 0 clamp(20px, 3vw, 32px);
+}
+
+.pura-dining__title {
+  margin: 0 0 18px;
+  font-family: var(--font-serif);
+  font-size: clamp(2rem, 4vw, 3rem);
+  font-weight: 400;
+  line-height: 1.1;
+  letter-spacing: -0.02em;
+  color: var(--dining-teal);
+}
+
+html.rtl .pura-dining__title {
+  font-family: "Frank Ruhl Libre", Georgia, serif;
+  letter-spacing: 0;
+}
+
+.pura-dining__lead {
+  margin: 0 auto;
+  max-width: 46rem;
+  font-family: var(--font-sans);
+  font-size: clamp(1rem, 1.3vw, 1.1rem);
+  line-height: 1.75;
+  color: var(--dining-body);
+  text-align: start;
+}
+
+.pura-dining__drop {
+  float: inline-start;
+  margin-inline-end: 0.35rem;
+  margin-top: 0.1rem;
+  font-family: var(--font-serif);
+  font-size: 3.4rem;
+  line-height: 0.82;
+  color: var(--dining-gold);
+  font-weight: 400;
+}
+
+html.rtl .pura-dining__drop {
+  font-family: "Frank Ruhl Libre", Georgia, serif;
+}
+
+.pura-dining__offer {
+  max-width: 40rem;
+  margin: 0 auto;
+  padding-bottom: clamp(28px, 4vw, 44px);
+}
+
+.pura-dining__offer-title {
+  margin: 0 0 14px;
+  font-family: var(--font-sans);
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--dining-teal);
+  text-align: center;
+}
+
+.pura-dining__offer-list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.pura-dining__offer-list li {
+  position: relative;
+  padding: 0.7rem 0 0.7rem 1.15rem;
+  border-bottom: 1px solid var(--dining-border);
+  font-family: var(--font-sans);
+  font-size: 0.98rem;
+  line-height: 1.55;
+  color: var(--dining-body);
+}
+
+html.rtl .pura-dining__offer-list li {
+  padding: 0.7rem 1.15rem 0.7rem 0;
+}
+
+.pura-dining__offer-list li::before {
+  content: "";
+  position: absolute;
+  inset-inline-start: 0;
+  top: 1.15rem;
+  width: 6px;
+  height: 1px;
+  background: var(--dining-gold);
+}
+
+.pura-dining__divider {
+  width: min(100%, 420px);
+  margin: 0 auto;
+  border-top: 1px solid var(--dining-border);
+}
+
+.pura-dining__block {
+  max-width: 42rem;
+  margin: 0 auto;
+  padding: clamp(28px, 4vw, 44px) 0;
+  text-align: center;
+}
+
+.pura-dining__eyebrow {
+  margin: 0 0 8px;
+  font-family: var(--font-sans);
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--dining-gold);
+}
+
+.pura-dining__heading {
+  margin: 0 0 14px;
+  font-family: var(--font-serif);
+  font-size: clamp(1.55rem, 2.6vw, 2.15rem);
+  font-weight: 400;
+  line-height: 1.15;
+  color: var(--dining-teal);
+}
+
+html.rtl .pura-dining__heading {
+  font-family: "Frank Ruhl Libre", Georgia, serif;
+}
+
+.pura-dining__copy {
+  margin: 0 auto;
+  max-width: 38rem;
+  font-family: var(--font-sans);
+  font-size: 1rem;
+  line-height: 1.7;
+  color: var(--dining-body);
+}
+
+.pura-dining__note {
+  margin: 14px auto 0;
+  max-width: 34rem;
+  font-family: var(--font-sans);
+  font-size: 0.92rem;
+  line-height: 1.55;
+  color: rgba(102, 97, 90, 0.88);
+  font-style: italic;
+}
+
+.pura-dining__faq {
+  text-align: center;
+  padding: 8px 0 clamp(36px, 5vw, 56px);
+}
+
+.pura-dining__faq-link {
+  font-family: var(--font-sans);
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  text-decoration: none;
+  color: var(--dining-gold);
+  border-bottom: 1px solid rgba(184, 154, 88, 0.45);
+  padding-bottom: 2px;
+  transition: color 200ms ease, border-color 200ms ease;
+}
+
+.pura-dining__faq-link:hover {
+  color: var(--dining-teal);
+  border-color: var(--dining-teal);
+}
+
+.pura-dining__cta {
+  --dining-teal: var(--pura-band-teal);
+  --dining-gold: var(--pura-band-gold);
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+  background: #0C4B45;
+  padding: clamp(56px, 7vw, 88px) 0;
+  text-align: center;
+}
+
+.pura-dining__cta-texture {
+  position: absolute;
+  inset: 0;
+  opacity: 0.11;
+  pointer-events: none;
+  background-image:
+    url("data:image/svg+xml,%3Csvg width='220' height='220' viewBox='0 0 220 220' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' stroke='%23F7F3EA' stroke-width='1.2'%3E%3Cpath d='M28 190c28-48 52-76 82-98 24-18 48-28 72-34'/%3E%3Cpath d='M12 206c34-44 62-74 98-96'/%3E%3Cpath d='M168 24c-16 34-22 62-14 96'/%3E%3Cpath d='M44 40c18 26 22 48 12 78'/%3E%3C/g%3E%3C/svg%3E");
+  background-size: 220px 220px;
+  mask-image: linear-gradient(90deg, #000 0%, transparent 28%, transparent 72%, #000 100%);
+}
+
+.pura-dining__cta-inner {
+  position: relative;
+  z-index: 1;
+}
+
+.pura-dining__cta-title {
+  margin: 0 0 12px;
+  font-family: var(--font-serif);
+  font-size: clamp(1.6rem, 3vw, 2.4rem);
+  font-weight: 400;
+  line-height: 1.15;
+  color: #fffdf7;
+}
+
+html.rtl .pura-dining__cta-title {
+  font-family: "Frank Ruhl Libre", Georgia, serif;
+}
+
+.pura-dining__cta-body {
+  margin: 0 auto 26px;
+  max-width: 34rem;
+  font-family: var(--font-sans);
+  font-size: 1rem;
+  line-height: 1.6;
+  color: rgba(255, 253, 247, 0.84);
+}
+
+.pura-dining__cta-actions {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+}
+
+@media (min-width: 640px) {
+  .pura-dining__cta-actions {
+    flex-direction: row;
+    justify-content: center;
+    gap: 14px;
+  }
+}
+
+.pura-dining__btn-solid {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 180px;
+  min-height: 46px;
+  padding: 0 22px;
+  border: 1px solid var(--pura-band-gold);
+  background: var(--pura-band-gold);
+  color: #fffdf7;
+  font-family: var(--font-sans);
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  text-decoration: none;
+  transition: background 220ms ease, color 220ms ease;
+}
+
+.pura-dining__btn-solid:hover {
+  background: transparent;
+  color: #fffdf7;
+}
+
+/* Footer CTA — outline by default, gold fill on hover */
+.pura-dining .pura-dining__cta .pura-dining__btn-solid,
+.pura-dining__cta--outline-btn .pura-dining__btn-solid {
+  background: transparent;
+  color: #fffdf7;
+  border-color: var(--pura-band-gold);
+}
+
+.pura-dining .pura-dining__cta .pura-dining__btn-solid:hover,
+.pura-dining__cta--outline-btn .pura-dining__btn-solid:hover {
+  background: var(--pura-band-gold);
+  color: #fffdf7;
+}
+
+.pura-dining__btn-ghost {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 160px;
+  min-height: 46px;
+  padding: 0 20px;
+  border: 1px solid rgba(255, 253, 247, 0.35);
+  color: #fffdf7;
+  font-family: var(--font-sans);
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  text-decoration: none;
+  transition: background 220ms ease;
+}
+
+.pura-dining__btn-ghost:hover {
+  background: rgba(255, 253, 247, 0.08);
+}
+
+@media (max-width: 767px) {
+  .pura-dining-coverflow {
+    padding-top: clamp(2.75rem, 10vw, 3.5rem);
+  }
+
+  .pura-dining-coverflow__stack {
+    gap: 8px;
+  }
+
+  .pura-dining-coverflow__arrow {
+    display: none;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .pura-dining-coverflow__slide {
+    transition: none;
+  }
+}
+
+
+/* —— Resort facility zones (`/year-round`) —— */
+.resort-facility {
+  padding-block: clamp(48px, 6vw, 88px);
+  background: var(--background-cream);
+  overflow-x: clip;
+}
+
+.resort-facility--alt {
+  background: var(--background-light);
+}
+
+.resort-facility__grid {
+  display: grid;
+  gap: clamp(28px, 4vw, 48px);
+  align-items: center;
+}
+
+@media (min-width: 900px) {
+  .resort-facility__grid {
+    grid-template-columns: minmax(0, 1.38fr) minmax(0, 1fr);
+    gap: clamp(36px, 4vw, 56px);
+  }
+
+  .resort-facility--media-end .resort-facility__grid {
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1.38fr);
+  }
+
+  .resort-facility--media-end .resort-facility__media {
+    order: 2;
+  }
+
+  .resort-facility--media-end .resort-facility__copy {
+    order: 1;
+  }
+}
+
+.resort-facility__media {
+  min-width: 0;
+  width: 100%;
+}
+
+.resort-facility__copy {
+  min-width: 0;
+}
+
+.resort-facility__label-row {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 10px 14px;
+  margin-bottom: 4px;
+}
+
+.resort-facility__status {
+  display: inline-flex;
+  align-items: center;
+  min-height: 24px;
+  padding: 2px 10px;
+  border: 1px solid var(--border-gold);
+  font-family: var(--font-sans);
+  font-size: 9px;
+  font-weight: 600;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--muted-gold);
+}
+
+.resort-facility__features {
+  list-style: none;
+  margin: 22px 0 0;
+  padding: 0;
+  display: grid;
+  gap: 10px;
+}
+
+.resort-facility__features li {
+  position: relative;
+  padding-inline-start: 18px;
+  font-family: var(--font-sans);
+  font-size: 0.92rem;
+  line-height: 1.5;
+  color: var(--body-text);
+}
+
+.resort-facility__features li::before {
+  content: "";
+  position: absolute;
+  inset-inline-start: 0;
+  top: 0.55em;
+  width: 6px;
+  height: 6px;
+  background: var(--muted-gold);
+}
+
+.resort-carousel {
+  width: 100%;
+  outline: none;
+}
+
+.resort-carousel__stage {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  overflow: hidden;
+  border-radius: var(--radius);
+  background: #d8d2c6;
+  box-shadow: 0 8px 28px rgba(8, 59, 55, 0.08);
+}
+
+.resort-carousel__image {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 1;
+}
+
+.resort-carousel__image--enter {
+  animation: resort-carousel-fade-in 300ms ease both;
+}
+
+.resort-carousel__image--exit {
+  animation: resort-carousel-fade-out 300ms ease both;
+}
+
+@keyframes resort-carousel-fade-in {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes resort-carousel-fade-out {
+  from { opacity: 1; }
+  to { opacity: 0; }
+}
+
+.resort-carousel__nav {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 3;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
+  border: 1px solid rgba(255, 253, 247, 0.9);
+  border-radius: 50%;
+  background: transparent;
+  color: #fffdf7;
+  cursor: pointer;
+  transition: border-color 200ms ease, color 200ms ease, background-color 200ms ease;
+}
+
+.resort-carousel__nav:hover {
+  background: transparent;
+  border-color: var(--muted-gold);
+  color: var(--muted-gold);
+}
+
+.resort-carousel__nav:focus-visible {
+  outline: 2px solid var(--muted-gold);
+  outline-offset: 2px;
+}
+
+.resort-carousel__nav--prev {
+  inset-inline-start: 12px;
+}
+
+.resort-carousel__nav--next {
+  inset-inline-end: 12px;
+}
+
+.resort-carousel__meta {
+  position: absolute;
+  inset-inline-end: 12px;
+  bottom: 12px;
+  z-index: 3;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 6px 10px;
+  background: rgba(8, 59, 55, 0.55);
+  color: var(--heading-light);
+}
+
+.resort-carousel__counter {
+  font-family: var(--font-sans);
+  font-size: 10px;
+  letter-spacing: 0.08em;
+  opacity: 0.9;
+}
+
+.resort-carousel__dots {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.resort-carousel__dot {
+  width: 8px;
+  height: 8px;
+  min-width: 44px;
+  min-height: 44px;
+  margin: -18px;
+  padding: 18px;
+  border: 0;
+  background:
+    radial-gradient(circle at center, rgba(247, 243, 234, 0.55) 0 3.5px, transparent 4px);
+  cursor: pointer;
+}
+
+.resort-carousel__dot.is-active {
+  background:
+    radial-gradient(circle at center, var(--muted-gold) 0 3.5px, transparent 4px);
+}
+
+.resort-carousel__dot:focus-visible {
+  outline: 2px solid var(--muted-gold);
+  outline-offset: 2px;
+}
+
+.resort-inquiry {
+  padding-block: clamp(48px, 6vw, 80px);
+  background: var(--background-cream);
+}
+
+.resort-inquiry__inner {
+  max-width: 720px;
+  text-align: center;
+}
+
+.resort-inquiry__body {
+  margin: 12px auto 28px;
+  max-width: 36rem;
+  font-family: var(--font-sans);
+  font-size: 0.98rem;
+  line-height: 1.55;
+  color: var(--body-text);
+}
+
+.resort-inquiry__form {
+  text-align: start;
+  max-width: 640px;
+  margin-inline: auto;
+}
+
+@media (max-width: 899px) {
+  .resort-facility {
+    padding-inline: 0;
+  }
+
+  .resort-facility .pura-resort__shell {
+    width: min(100% - 48px, 1320px);
+  }
+
+  .resort-facility__grid {
+    grid-template-columns: 1fr;
+  }
+
+  .resort-facility__media {
+    order: -1;
+  }
+
+  .resort-carousel__nav--prev {
+    inset-inline-start: 8px;
+  }
+
+  .resort-carousel__nav--next {
+    inset-inline-end: 8px;
+  }
+}
+
+.resort-carousel__layer {
+  position: absolute;
+  inset: 0;
+}
+
+.pura-resort .sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+.resort-nature__features {
+  max-width: 40rem;
+  margin-inline: auto;
+  margin-top: 22px;
+  text-align: start;
+}
+
+.resort-nature__num {
+  letter-spacing: 0.12em;
+}
+
+.resort-nature__grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 16px;
+}
+
+@media (min-width: 700px) {
+  .resort-nature__grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 20px;
+  }
+}
+
+.resort-nature__card {
+  min-width: 0;
+}
+
+.resort-nature__frame {
+  position: relative;
+  display: block;
+  aspect-ratio: 16 / 10;
+  overflow: hidden;
+  border-radius: var(--radius);
+}
+
+.resort-nature__image {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.resort-nature__overlay {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  pointer-events: none;
+  background: linear-gradient(
+    to top,
+    rgba(5, 38, 32, 0.72) 0%,
+    rgba(5, 38, 32, 0.28) 42%,
+    rgba(5, 38, 32, 0.08) 100%
+  );
+}
+
+.resort-nature__caption {
+  position: absolute;
+  inset-inline: 0;
+  bottom: 0;
+  z-index: 2;
+  padding: clamp(18px, 2.4vw, 28px);
+  color: var(--heading-light);
+}
+
+.resort-nature__card-title {
+  margin: 0 0 6px;
+  font-family: var(--font-serif);
+  font-size: clamp(1.15rem, 1.8vw, 1.45rem);
+  font-weight: 400;
+  line-height: 1.2;
+  color: var(--heading-light);
+  text-wrap: balance;
+}
+
+html.rtl .resort-nature__card-title {
+  font-family: "Frank Ruhl Libre", Georgia, serif;
+}
+
+.resort-nature__card-body {
+  margin: 0;
+  max-width: 34ch;
+  font-family: var(--font-sans);
+  font-size: 0.88rem;
+  line-height: 1.5;
+  color: rgba(255, 253, 247, 0.9);
+}
+
+/* —— Contact page (`/contact`) —— */
+.pura-contact {
+  --background-cream: #f7f3ea;
+  --deep-teal: #0C4B45;
+  --muted-gold: #c6b992;
+  --heading-light: #fffdf7;
+  --header-height: 96px;
+  background: var(--background-cream);
+}
+
+.pura-contact__hero {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  background: var(--pura-band-teal);
+  min-height: clamp(400px, 52svh, 540px);
+  padding-block: clamp(96px, 11vw, 132px) clamp(52px, 6.5vw, 84px);
+}
+
+@media (min-width: 900px) {
+  .pura-contact__hero {
+    min-height: clamp(460px, 56vh, 600px);
+    padding-block: clamp(112px, 12vw, 148px) clamp(68px, 7.5vw, 96px);
+  }
+}
+
+.pura-contact__hero-texture {
+  position: absolute;
+  inset: 0;
+  opacity: 0.1;
+  pointer-events: none;
+  background-image:
+    url("data:image/svg+xml,%3Csvg width='220' height='220' viewBox='0 0 220 220' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' stroke='%23F7F3EA' stroke-width='1.2'%3E%3Cpath d='M28 190c28-48 52-76 82-98 24-18 48-28 72-34'/%3E%3Cpath d='M12 206c34-44 62-74 98-96'/%3E%3Cpath d='M168 24c-16 34-22 62-14 96'/%3E%3Cpath d='M44 40c18 26 22 48 12 78'/%3E%3C/g%3E%3C/svg%3E");
+  background-size: 220px 220px;
+  mask-image: linear-gradient(90deg, #000 0%, transparent 30%, transparent 70%, #000 100%);
+}
+
+.pura-contact__hero-content {
+  position: relative;
+  z-index: 1;
+  width: min(100% - 40px, 44rem);
+  margin-inline: auto;
+  text-align: center;
+}
+
+.pura-contact__eyebrow {
+  margin: 0 0 14px;
+  font-family: var(--font-sans);
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 0.24em;
+  text-transform: uppercase;
+  color: #c6b992;
+}
+
+.pura-contact__title {
+  margin: 0 auto 16px;
+  max-width: 16ch;
+  font-family: var(--font-serif);
+  font-size: clamp(2.05rem, 4.8vw, 3.35rem);
+  font-weight: 400;
+  line-height: 1.14;
+  letter-spacing: -0.025em;
+  color: #fffdf7;
+  text-wrap: balance;
+}
+
+html.rtl .pura-contact__title {
+  font-family: "Frank Ruhl Libre", Georgia, serif;
+  letter-spacing: 0;
+}
+
+.pura-contact__body {
+  margin: 0 auto;
+  max-width: 34rem;
+  font-family: var(--font-sans);
+  font-size: clamp(0.95rem, 1.2vw, 1.05rem);
+  line-height: 1.65;
+  color: rgba(255, 253, 247, 0.82);
+  text-wrap: pretty;
+}
+
+/* —— Accommodations page (`/rooms`) —— */
+.pura-rooms {
+  --background-cream: #f7f3ea;
+  --background-light: #fcfaf5;
+  --deep-teal: #0C4B45;
+  --deep-teal-dark: #083b37;
+  --muted-gold: #c6b992;
+  --body-text: #66615a;
+  --heading-light: #fffdf7;
+  --border-gold: rgba(198, 185, 146, 0.5);
+  --header-height: 96px;
+  background: var(--background-cream);
+  color: var(--body-text);
+}
+
+.pura-rooms [id^="room-"] {
+  scroll-margin-top: calc(var(--header-height) + 12px);
+}
+
+.pura-rooms__shell {
+  width: min(100% - 40px, 1320px);
+  margin-inline: auto;
+}
+
+@media (min-width: 768px) {
+  .pura-rooms__shell {
+    width: min(100% - 56px, 1440px);
+  }
+}
+
+.pura-rooms__eyebrow {
+  margin: 0 0 8px;
+  font-family: var(--font-sans);
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 0.24em;
+  text-transform: uppercase;
+  color: var(--muted-gold);
+}
+
+.pura-rooms__eyebrow--on-teal {
+  color: var(--muted-gold);
+}
+
+.pura-rooms__hero {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  background: var(--deep-teal);
+  min-height: clamp(400px, 52svh, 540px);
+  padding-block: clamp(96px, 11vw, 132px) clamp(52px, 6.5vw, 84px);
+}
+
+@media (min-width: 900px) {
+  .pura-rooms__hero {
+    min-height: clamp(460px, 56vh, 600px);
+    padding-block: clamp(112px, 12vw, 148px) clamp(68px, 7.5vw, 96px);
+  }
+}
+
+.pura-rooms__hero-texture {
+  position: absolute;
+  inset: 0;
+  opacity: 0.1;
+  pointer-events: none;
+  background-image:
+    url("data:image/svg+xml,%3Csvg width='220' height='220' viewBox='0 0 220 220' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' stroke='%23F7F3EA' stroke-width='1.2'%3E%3Cpath d='M28 190c28-48 52-76 82-98 24-18 48-28 72-34'/%3E%3Cpath d='M12 206c34-44 62-74 98-96'/%3E%3Cpath d='M168 24c-16 34-22 62-14 96'/%3E%3Cpath d='M44 40c18 26 22 48 12 78'/%3E%3C/g%3E%3C/svg%3E");
+  background-size: 220px 220px;
+  mask-image: linear-gradient(90deg, #000 0%, transparent 30%, transparent 70%, #000 100%);
+}
+
+.pura-rooms__hero-content {
+  position: relative;
+  z-index: 1;
+  text-align: center;
+  max-width: 44rem;
+}
+
+.pura-rooms__hero .pura-rooms__eyebrow {
+  margin-bottom: 14px;
+}
+
+.pura-rooms__hero-title {
+  margin: 0 auto 16px;
+  max-width: 16ch;
+  font-family: var(--font-serif);
+  font-size: clamp(2.05rem, 4.8vw, 3.35rem);
+  font-weight: 400;
+  line-height: 1.14;
+  letter-spacing: -0.025em;
+  color: var(--heading-light);
+  text-wrap: balance;
+}
+
+.pura-rooms__hero-title-gold {
+  color: var(--muted-gold);
+}
+
+html.rtl .pura-rooms__hero-title {
+  font-family: "Frank Ruhl Libre", Georgia, serif;
+  letter-spacing: 0;
+  max-width: 14ch;
+}
+
+.pura-rooms__hero-body {
+  margin: 0 auto 32px;
+  max-width: 34rem;
+  font-family: var(--font-sans);
+  font-size: clamp(0.95rem, 1.2vw, 1.05rem);
+  line-height: 1.65;
+  color: rgba(255, 253, 247, 0.82);
+  text-wrap: pretty;
+}
+
+.pura-rooms__hero-nav {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: stretch;
+  gap: 0;
+  margin: 0 auto;
+  max-width: 42rem;
+  padding-top: 4px;
+  border-top: 1px solid var(--border-gold);
+}
+
+.pura-rooms__hero-nav-link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 44px;
+  padding: 10px 14px;
+  font-family: var(--font-sans);
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  text-decoration: none;
+  text-align: center;
+  color: rgba(255, 253, 247, 0.72);
+  transition: color 220ms ease;
+}
+
+.pura-rooms__hero-nav-link:hover {
+  color: var(--muted-gold);
+}
+
+@media (max-width: 899px) {
+  .pura-rooms__hero-nav {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    max-width: 22rem;
+  }
+
+  .pura-rooms__hero-nav-link {
+    border-bottom: 1px solid rgba(198, 185, 146, 0.28);
+    letter-spacing: 0.12em;
+    padding: 12px 8px;
+  }
+
+  .pura-rooms__hero-nav-link:nth-child(odd) {
+    border-inline-end: 1px solid rgba(198, 185, 146, 0.28);
+  }
+
+  .pura-rooms__hero-nav-link:last-child:nth-child(odd) {
+    grid-column: 1 / -1;
+    border-inline-end: 0;
+  }
+}
+
+@media (min-width: 900px) {
+  .pura-rooms__hero-nav-link + .pura-rooms__hero-nav-link {
+    border-inline-start: 1px solid rgba(198, 185, 146, 0.35);
+  }
+}
+
+.pura-rooms__promise {
+  padding-block: clamp(36px, 4.5vw, 56px);
+  background: var(--background-light);
+  border-bottom: 1px solid var(--border-gold);
+}
+
+.pura-rooms__promise-text {
+  margin: 0 auto;
+  max-width: 36rem;
+  text-align: center;
+  font-family: var(--font-sans);
+  font-size: 1rem;
+  line-height: 1.65;
+  color: var(--body-text);
+}
+
+.pura-rooms__room {
+  padding-block: clamp(48px, 6vw, 88px);
+  background: var(--background-cream);
+}
+
+.pura-rooms__room--alt {
+  background: var(--background-light);
+}
+
+.pura-rooms__room-grid {
+  display: grid;
+  gap: clamp(28px, 3.5vw, 48px);
+  align-items: center;
+}
+
+@media (min-width: 960px) {
+  .pura-rooms__room-grid {
+    grid-template-columns: minmax(0, 1.22fr) minmax(0, 1fr);
+    gap: clamp(40px, 4.5vw, 72px);
+  }
+
+  .pura-rooms__room--media-end .pura-rooms__room-grid {
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1.22fr);
+  }
+
+  .pura-rooms__room--media-end .pura-rooms__room-media {
+    order: 2;
+  }
+
+  .pura-rooms__room--media-end .pura-rooms__room-copy {
+    order: 1;
+  }
+}
+
+.pura-rooms__room-media {
+  min-width: 0;
+}
+
+.pura-rooms .resort-carousel__stage {
+  aspect-ratio: 3 / 2;
+  border-radius: 0;
+  box-shadow: none;
+}
+
+.pura-rooms__room-copy {
+  min-width: 0;
+}
+
+.pura-rooms__room-label {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.4rem;
+  margin: 0 0 12px;
+  font-family: var(--font-sans);
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--muted-gold);
+}
+
+.pura-rooms__room-sep {
+  opacity: 0.85;
+}
+
+.pura-rooms__room-title {
+  margin: 0 0 14px;
+  font-family: var(--font-serif);
+  font-size: clamp(1.55rem, 2.4vw, 2.35rem);
+  font-weight: 400;
+  line-height: 1.15;
+  letter-spacing: -0.02em;
+  color: var(--deep-teal);
+  text-wrap: balance;
+}
+
+html.rtl .pura-rooms__room-title {
+  font-family: "Frank Ruhl Libre", Georgia, serif;
+  letter-spacing: 0;
+}
+
+.pura-rooms__room-prose {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-bottom: 22px;
+  max-width: 42ch;
+}
+
+.pura-rooms__room-body {
+  margin: 0;
+  font-family: var(--font-sans);
+  font-size: 0.95rem;
+  line-height: 1.7;
+  color: var(--body-text);
+}
+
+.pura-rooms__room-includes {
+  max-width: 30rem;
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.pura-rooms__detail-block {
+  margin: 0;
+}
+
+.pura-rooms__includes-label {
+  display: block;
+  margin: 0 0 10px;
+  font-family: var(--font-sans);
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: rgba(102, 97, 90, 0.72);
+}
+
+.pura-rooms__detail-list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  border-top: 1px solid var(--border-gold);
+}
+
+.pura-rooms__detail-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  padding: 10px 0;
+  border-bottom: 1px solid var(--border-gold);
+  font-family: var(--font-sans);
+  font-size: 0.92rem;
+  line-height: 1.45;
+  color: var(--deep-teal);
+}
+
+.pura-rooms__detail-icon {
+  flex: 0 0 auto;
+  width: 15px;
+  height: 15px;
+  margin-top: 2px;
+  color: var(--muted-gold);
+}
+
+.pura-rooms__detail-dash {
+  flex: 0 0 auto;
+  color: var(--muted-gold);
+  line-height: 1.45;
+}
+
+.pura-rooms__confirm-note {
+  margin: 2px 0 0;
+  font-family: var(--font-sans);
+  font-size: 0.84rem;
+  line-height: 1.55;
+  color: rgba(102, 97, 90, 0.82);
+  font-style: italic;
+}
+
+.pura-rooms__includes-list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  border-top: 1px solid var(--border-gold);
+}
+
+.pura-rooms__includes-list li {
+  padding: 10px 0;
+  border-bottom: 1px solid var(--border-gold);
+  font-family: var(--font-sans);
+  font-size: 0.92rem;
+  line-height: 1.45;
+  color: var(--deep-teal);
+}
+
+.pura-rooms__includes-list li::before {
+  content: "—";
+  margin-inline-end: 0.55rem;
+  color: var(--muted-gold);
+}
+
+.pura-rooms__room-cta {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 22px;
+  min-height: 44px;
+  padding: 0 22px;
+  border: 1px solid var(--deep-teal);
+  border-radius: 0;
+  background: transparent;
+  color: var(--deep-teal);
+  font-family: var(--font-sans);
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  text-decoration: none;
+  transition: background 240ms ease, color 240ms ease, border-color 240ms ease;
+}
+
+.pura-rooms__room-cta:hover {
+  background: var(--deep-teal);
+  color: var(--heading-light);
+}
+
+.pura-rooms__room-cta:focus-visible {
+  outline: 2px solid var(--muted-gold);
+  outline-offset: 3px;
+}
+
+.pura-rooms__standards {
+  padding-block: clamp(28px, 3.5vw, 40px);
+  background: var(--background-cream);
+  border-block: 1px solid var(--border-gold);
+}
+
+.pura-rooms__standards-list {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 18px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  text-align: center;
+}
+
+@media (min-width: 768px) {
+  .pura-rooms__standards-list {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 24px;
+  }
+}
+
+.pura-rooms__standards-list span {
+  font-family: var(--font-sans);
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--deep-teal);
+  line-height: 1.45;
+}
+
+.pura-rooms__cta {
+  position: relative;
+  overflow: hidden;
+  background: var(--deep-teal);
+  padding-block: clamp(56px, 6.5vw, 88px);
+  text-align: center;
+}
+
+.pura-rooms__cta-texture {
+  position: absolute;
+  inset: 0;
+  opacity: 0.11;
+  pointer-events: none;
+  background-image:
+    url("data:image/svg+xml,%3Csvg width='220' height='220' viewBox='0 0 220 220' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' stroke='%23F7F3EA' stroke-width='1.2'%3E%3Cpath d='M28 190c28-48 52-76 82-98 24-18 48-28 72-34'/%3E%3Cpath d='M12 206c34-44 62-74 98-96'/%3E%3Cpath d='M168 24c-16 34-22 62-14 96'/%3E%3Cpath d='M44 40c18 26 22 48 12 78'/%3E%3C/g%3E%3C/svg%3E");
+  background-size: 220px 220px;
+  mask-image: linear-gradient(90deg, #000 0%, transparent 28%, transparent 72%, #000 100%);
+}
+
+.pura-rooms__cta-inner {
+  position: relative;
+  z-index: 1;
+  max-width: 640px;
+}
+
+.pura-rooms__cta-title {
+  margin: 0 auto 12px;
+  max-width: 18ch;
+  font-family: var(--font-serif);
+  font-size: clamp(1.7rem, 3vw, 2.55rem);
+  font-weight: 400;
+  line-height: 1.15;
+  letter-spacing: -0.02em;
+  color: var(--heading-light);
+  text-wrap: balance;
+}
+
+html.rtl .pura-rooms__cta-title {
+  font-family: "Frank Ruhl Libre", Georgia, serif;
+  letter-spacing: 0;
+  max-width: 22ch;
+}
+
+.pura-rooms__cta-body {
+  margin: 0 auto 26px;
+  max-width: 32rem;
+  font-family: var(--font-sans);
+  font-size: 0.98rem;
+  line-height: 1.55;
+  color: rgba(255, 253, 247, 0.84);
+}
+
+.pura-rooms__cta-actions {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.pura-rooms__btn-gold {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 240px;
+  min-height: 48px;
+  padding: 0 28px;
+  border: 1px solid #c6b992;
+  border-radius: 0;
+  background: transparent;
+  color: #c6b992;
+  font-family: var(--font-sans);
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  text-decoration: none;
+  transition: background 280ms ease, color 280ms ease, border-color 280ms ease;
+}
+
+.pura-rooms__btn-gold:hover {
+  background: transparent;
+  color: #d4c9a8;
+  border-color: #d4c9a8;
+}
+
+.pura-rooms__btn-gold:focus-visible,
+.pura-rooms__hero-nav-link:focus-visible {
+  outline: 2px solid var(--muted-gold);
+  outline-offset: 3px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .pura-rooms__btn-gold,
+  .pura-rooms__hero-nav-link {
+    transition: none;
+  }
+}

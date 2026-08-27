@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <url><loc>/</loc><changefreq>weekly</changefreq><priority>1.0</priority></url>
+  <url><loc>/rooms</loc><changefreq>weekly</changefreq><priority>0.9</priority></url>
+  <url><loc>/holidays</loc><changefreq>weekly</changefreq><priority>0.9</priority></url>
+  <url><loc>/pesach</loc><changefreq>weekly</changefreq><priority>0.9</priority></url>
+  <url><loc>/sukkot</loc><changefreq>weekly</changefreq><priority>0.8</priority></url>
+  <url><loc>/year-round</loc><changefreq>weekly</changefreq><priority>0.8</priority></url>
+  <url><loc>/kosher-jewish-life</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>/costa-rica-guide</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>/faq</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>/contact</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+</urlset>

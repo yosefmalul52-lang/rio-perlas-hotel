@@ -1,0 +1,6 @@
+{
+  "name": "Altura Kosher Retreat",
+  "description": "Luxury Glatt Kosher retreat nestled in the volcanic mountains of Cartago, Costa Rica. Features custom itinerary planning, dining selections, and bespoke Jewish life arrangements.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

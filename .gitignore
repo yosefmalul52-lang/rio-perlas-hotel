@@ -1,0 +1,14 @@
+node_modules/
+dist/
+.DS_Store
+*.log
+.env
+.env.*
+!.env.example
+.vite/
+.tools/
+.tmp/
+.tmp-screenshots/
+.vercel/
+*.zip
+hebrew-copy-review.md

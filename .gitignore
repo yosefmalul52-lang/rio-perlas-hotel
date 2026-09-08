@@ -12,3 +12,5 @@ dist/
 .vercel/
 *.zip
 hebrew-copy-review.md
+.vercel
+.env*

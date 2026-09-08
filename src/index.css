@@ -577,11 +577,11 @@ html.rtl .pura-header__link {
   background:
     linear-gradient(
       90deg,
-      rgba(13, 63, 57, 0.82) 0%,
-      rgba(13, 63, 57, 0.58) 32%,
-      rgba(13, 63, 57, 0.28) 58%,
-      rgba(13, 63, 57, 0.08) 78%,
-      rgba(13, 63, 57, 0.02) 100%
+      rgba(8, 42, 38, 0.92) 0%,
+      rgba(10, 50, 45, 0.78) 28%,
+      rgba(13, 63, 57, 0.45) 52%,
+      rgba(13, 63, 57, 0.16) 72%,
+      rgba(13, 63, 57, 0.03) 100%
     ),
     linear-gradient(
       0deg,
@@ -595,11 +595,11 @@ html.rtl .pura-hero__overlay {
   background:
     linear-gradient(
       270deg,
-      rgba(13, 63, 57, 0.82) 0%,
-      rgba(13, 63, 57, 0.58) 32%,
-      rgba(13, 63, 57, 0.28) 58%,
-      rgba(13, 63, 57, 0.08) 78%,
-      rgba(13, 63, 57, 0.02) 100%
+      rgba(8, 42, 38, 0.92) 0%,
+      rgba(10, 50, 45, 0.78) 28%,
+      rgba(13, 63, 57, 0.45) 52%,
+      rgba(13, 63, 57, 0.16) 72%,
+      rgba(13, 63, 57, 0.03) 100%
     ),
     linear-gradient(
       0deg,

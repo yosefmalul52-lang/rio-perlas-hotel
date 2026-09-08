@@ -1277,6 +1277,22 @@ a.pura-inquire__contact:focus-visible .pura-inquire__icon {
   height: 1px;
   background: var(--pura-gold);
   pointer-events: none;
+  display: none;
+}
+
+.pura-inquire__copyright {
+  position: relative;
+  z-index: 2;
+  grid-column: 1 / -1;
+  margin: 0;
+  padding: 14px 24px 18px;
+  text-align: center;
+  font-family: var(--font-sans);
+  font-size: 11px;
+  line-height: 1.45;
+  font-weight: 400;
+  color: rgba(247, 243, 234, 0.72);
+  border-top: 1px solid rgba(198, 185, 146, 0.35);
 }
 
 .pura-inquire__panel {

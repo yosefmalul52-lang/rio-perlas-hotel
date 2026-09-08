@@ -159,9 +159,6 @@ export default function HomeView({ onStartPlanning }: HomeViewProps) {
         <StaggerGroup stagger={0.12} className="grid grid-cols-1 lg:grid-cols-3 gap-5 md:gap-8 mb-8 md:mb-12">
           {t.experiences.cards.map((card, index) => {
             const isWide = index === 0 || index === 3;
-            const titleClass =
-              index === 0 || index === 3 ? "font-headline-md text-headline-md" : "font-headline-sm text-headline-sm";
-            const badgeClass = index === 0 || index === 3 ? "bg-pura-green" : "bg-pura-green/85";
             return (
               <StaggerItem
                 key={card.title}
@@ -180,12 +177,10 @@ export default function HomeView({ onStartPlanning }: HomeViewProps) {
                   aria-hidden="true"
                 />
                 <div className="absolute bottom-0 left-0 right-0 p-5 sm:p-8 text-on-primary bento-caption pointer-events-none">
-                  <span
-                    className={`font-label-caps text-xs uppercase ${badgeClass} px-3 py-1 mb-2 sm:mb-3 inline-block rounded-sm text-pura-gold-soft`}
-                  >
+                  <span className="font-label-caps text-xs uppercase bg-pura-green px-3 py-1 mb-2 sm:mb-3 inline-block rounded-sm text-pura-gold-soft">
                     {card.badge}
                   </span>
-                  <h3 className={`${titleClass} text-on-primary`}>{card.title}</h3>
+                  <h3 className="font-headline-sm text-headline-sm text-on-primary">{card.title}</h3>
                 </div>
               </StaggerItem>
             );

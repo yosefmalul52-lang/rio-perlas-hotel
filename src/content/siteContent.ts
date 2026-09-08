@@ -171,10 +171,10 @@ export const siteContent = {
       title: "Adventure, curated for the observant.",
       subtitle: "Private tours that respect your kashrut and your schedule.",
       cards: [
-        { badge: "Private Peak Tour", title: "Irazú Volcano Expedition", alt: "Irazu Volcano Crater" },
-        { badge: "Secluded Hike", title: "Secret Waterfalls", alt: "Secret Waterfall" },
-        { badge: "Thrills", title: "Jungle Canopy Tour", alt: "Jungle Canopy Zip line" },
-        { badge: "Ocean Escape", title: "Private Sunset Sail", alt: "Sunset catamaran cruise" },
+        { badge: "Peak Tour", title: "Irazú Volcano Expedition", alt: "Irazu Volcano Crater" },
+        { badge: "Waterfall Hike", title: "Highland Waterfalls", alt: "Highland waterfall in the Costa Rican hills" },
+        { badge: "Canopy Tour", title: "Jungle Canopy Adventure", alt: "Jungle canopy zip line" },
+        { badge: "Sunset Sail", title: "Pacific Sunset Cruise", alt: "Sunset catamaran cruise" },
       ],
     },
     rooms: {
@@ -593,10 +593,10 @@ What can I help you with today? Feel free to ask about our rooms, dining, Shabba
       title: "הרפתקה, מותאמת לשומרי מצוות.",
       subtitle: "טיולים פרטיים שמכבדים את הכשרות ואת לוח הזמנים שלכם.",
       cards: [
-        { badge: "טיול פסגה פרטי", title: "משלחת ל הר איראסו", alt: "מכתש הר הגעש איראסו" },
-        { badge: "טיול מבודד", title: "מפלי מים סודיים", alt: "מפל מים סודי" },
-        { badge: "ריגוש", title: "מסלול Zipline ביער", alt: "מסלול zip line ביער הג'ונגל" },
-        { badge: "בריחה לים", title: "שייט שקיעה פרטי", alt: "שייט קטמרן בשקיעה" },
+        { badge: "טיול פסגה", title: "משלחת להר איראסו", alt: "מכתש הר הגעש איראסו" },
+        { badge: "טיול מפלים", title: "מפלי ההרים", alt: "מפל מים בהרי קוסטה ריקה" },
+        { badge: "טיול חופות", title: "חוויית חופות בג'ונגל", alt: "מסלול zip line ביער הג'ונגל" },
+        { badge: "שייט שקיעה", title: "שייט שקיעה באוקיינוס", alt: "שייט קטמרן בשקיעה" },
       ],
     },
     rooms: {

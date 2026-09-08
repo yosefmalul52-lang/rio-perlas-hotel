@@ -95,7 +95,7 @@ const EMPTY_FORM: FormState = {
 const panelTransition = { duration: 0.65, ease: [0.22, 1, 0.36, 1] as const };
 
 export default function HomeConciergeInquiry() {
-  const { language, isRtl } = useLanguage();
+  const { language, isRtl, t } = useLanguage();
   const copy = COPY[language === "he" ? "he" : "en"];
   const locale = language === "he" ? "he" : "en";
   const reduceMotion = useReducedMotion();
@@ -384,6 +384,8 @@ export default function HomeConciergeInquiry() {
           </form>
         )}
       </motion.div>
+
+      <p className="pura-inquire__copyright">{t.footer.copyright}</p>
     </section>
   );
 }

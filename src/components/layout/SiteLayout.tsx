@@ -10,14 +10,15 @@ export default function SiteLayout() {
   const { pathname, hash } = useLocation();
   useSmoothScroll(pathname, hash);
   usePageSeo(pathnameToSeoKey(pathname));
+  const hideSiteFooter = pathname === "/";
 
   return (
-    <div className="bg-surface text-on-surface font-body-md min-h-screen flex flex-col justify-between overflow-x-clip selection:bg-pura-green/20 selection:text-pura-green-dark">
+    <div className="bg-surface text-on-surface font-body-md min-h-screen flex flex-col justify-between overflow-x-clip">
       <Navbar />
       <main className="flex-1">
         <Outlet />
       </main>
-      <Footer />
+      {hideSiteFooter ? null : <Footer />}
     </div>
   );
 }

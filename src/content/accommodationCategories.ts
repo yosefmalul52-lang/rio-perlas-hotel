@@ -325,7 +325,7 @@ export const accommodationCategories: readonly AccommodationCategory[] = [
     },
     accommodationDetails: [
       { icon: "count", label: { en: "Nine distinct Suite Villas", he: "תשע וילות סוויטה שונות" } },
-      { icon: "layout", label: { en: "Individual villa designs", he: "עיצובים אישיים לכל וילה" } },
+      { icon: "layout", label: { en: "Varied villa designs", he: "עיצובי וילה מגוונים" } },
       {
         icon: "setting",
         label: {
@@ -336,8 +336,8 @@ export const accommodationCategories: readonly AccommodationCategory[] = [
       {
         icon: "layout",
         label: {
-          en: "Units shown separately in the property documentation",
-          he: "יחידות המוצגות בנפרד בתיעוד הנכס",
+          en: "Individual villa layouts available on request",
+          he: "פריסות הווילות זמינות לפי בקשה",
         },
       },
     ],

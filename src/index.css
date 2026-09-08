@@ -577,10 +577,11 @@ html.rtl .pura-header__link {
   background:
     linear-gradient(
       90deg,
-      rgba(13, 63, 57, 0.70) 0%,
-      rgba(13, 63, 57, 0.48) 28%,
-      rgba(13, 63, 57, 0.18) 58%,
-      rgba(13, 63, 57, 0.03) 100%
+      rgba(13, 63, 57, 0.82) 0%,
+      rgba(13, 63, 57, 0.58) 32%,
+      rgba(13, 63, 57, 0.28) 58%,
+      rgba(13, 63, 57, 0.08) 78%,
+      rgba(13, 63, 57, 0.02) 100%
     ),
     linear-gradient(
       0deg,
@@ -594,10 +595,11 @@ html.rtl .pura-hero__overlay {
   background:
     linear-gradient(
       270deg,
-      rgba(13, 63, 57, 0.70) 0%,
-      rgba(13, 63, 57, 0.48) 28%,
-      rgba(13, 63, 57, 0.18) 58%,
-      rgba(13, 63, 57, 0.03) 100%
+      rgba(13, 63, 57, 0.82) 0%,
+      rgba(13, 63, 57, 0.58) 32%,
+      rgba(13, 63, 57, 0.28) 58%,
+      rgba(13, 63, 57, 0.08) 78%,
+      rgba(13, 63, 57, 0.02) 100%
     ),
     linear-gradient(
       0deg,
@@ -1139,12 +1141,20 @@ html.rtl .pura-pesach__label::before {
   inset: 0;
   z-index: 1;
   pointer-events: none;
-  background: linear-gradient(
-    180deg,
-    rgba(1, 78, 80, 0.32) 0%,
-    rgba(2, 119, 122, 0.38) 48%,
-    rgba(1, 78, 80, 0.46) 100%
-  );
+  background:
+    linear-gradient(
+      90deg,
+      rgba(1, 78, 80, 0.78) 0%,
+      rgba(1, 78, 80, 0.48) 38%,
+      rgba(1, 78, 80, 0.18) 68%,
+      rgba(1, 78, 80, 0.1) 100%
+    ),
+    linear-gradient(
+      180deg,
+      rgba(1, 78, 80, 0.32) 0%,
+      rgba(2, 119, 122, 0.38) 48%,
+      rgba(1, 78, 80, 0.46) 100%
+    );
 }
 
 .pura-inquire__info {

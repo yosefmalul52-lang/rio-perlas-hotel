@@ -175,6 +175,10 @@ export default function HomeView({ onStartPlanning }: HomeViewProps) {
                   />
                 </ImageReveal>
                 <div className="absolute inset-0 bg-pura-green-dark/20 group-hover:bg-pura-green-dark/12 transition-all duration-500 pointer-events-none" />
+                <div
+                  className="absolute inset-x-0 bottom-0 h-[55%] bg-gradient-to-t from-black/55 via-black/20 to-transparent pointer-events-none"
+                  aria-hidden="true"
+                />
                 <div className="absolute bottom-0 left-0 right-0 p-5 sm:p-8 text-on-primary bento-caption pointer-events-none">
                   <span
                     className={`font-label-caps text-xs uppercase ${badgeClass} px-3 py-1 mb-2 sm:mb-3 inline-block rounded-sm text-pura-gold-soft`}

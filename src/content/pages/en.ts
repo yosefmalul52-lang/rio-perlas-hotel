@@ -71,7 +71,7 @@ export const pagesEn = {
   },
   kosherJewishLife: {
     hero: {
-      title: "Dining & Decor",
+      title: "Meals & Hospitality",
       body: "Pura Shalom features a refined Glatt kosher dining experience in the Costa Rica highlands — chef-driven menus, thoughtful presentation, and a traditional holiday table without compromising on kashrut.",
     },
     offer: {
@@ -398,7 +398,7 @@ export const pagesEn = {
     items: [
       { category: "Kashrut", q: "What kashrut standards do you follow?", a: "We maintain strict Glatt kosher operations with on-site supervision. Mehadrin preferences can be accommodated when arranged in advance." },
       { category: "Shabbat", q: "How is Shabbat observed at the retreat?", a: "Shabbat is central to the experience—communal meals, tefillah, and a calm, respectful atmosphere throughout the estate." },
-      { category: "Families", q: "Is the retreat suitable for families?", a: "Yes. Family suites, children's programming, and flexible dining make the retreat ideal for multi-generational travel." },
+      { category: "Families", q: "Is the retreat suitable for families?", a: "Yes. Family suites, children’s programs, and flexible dining make the retreat ideal for multi-generational travel." },
       { category: "Children", q: "Are there activities for children?", a: "Supervised nature activities, family-friendly excursions, and dedicated spaces for children are available seasonally." },
       { category: "Travel", q: "How do I reach the retreat?", a: "The estate is located in the Cartago highlands. Private transfers from San José can be arranged through our concierge." },
       { category: "Rooms", q: "How many room categories are available?", a: "Four categories: Luxury Suite, Family Suite, Mountain View Villa, and Private Retreat Residence. Our team will help you choose." },
@@ -592,7 +592,7 @@ export const pagesEn = {
         },
         {
           q: "Are children’s programs included?",
-          a: "Yes, children’s programming is part of the Pesach experience when arranged in advance — we'll confirm specifics closer to the holiday.",
+          a: "Yes, children’s programs are part of the Pesach experience when arranged in advance — we'll confirm specifics closer to the holiday.",
         },
         {
           q: "How do I choose Full Pesach vs custom dates?",
@@ -668,7 +668,7 @@ export const pagesEn = {
     children: {
       eyebrow: "For Children",
       title: "Children’s programs",
-      body: "Family-minded holiday programming for children — we’ll confirm the exact offerings closer to the holiday.",
+      body: "Family-minded children’s programs — we’ll confirm the exact offerings closer to the holiday.",
       points: [
         "Family-friendly holiday activities",
         "Programming suited to different ages",

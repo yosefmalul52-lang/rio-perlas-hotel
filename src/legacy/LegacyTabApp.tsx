@@ -411,7 +411,16 @@ export default function LegacyTabApp() {
         </div>
         <div className="max-w-container-max mx-auto text-center pt-8 border-t border-pura-border-soft">
           <p className="font-body-md text-xs text-pura-text-light">
-            {t.footer.copyright}
+            {t.footer.copyright.prefix}
+            <a
+              href="https://www.jt-solutions.org/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="underline underline-offset-2 hover:text-pura-gold transition-colors"
+            >
+              {t.footer.copyright.company}
+            </a>
+            .
           </p>
         </div>
         </FadeUp>

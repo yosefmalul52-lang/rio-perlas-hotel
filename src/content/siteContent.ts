@@ -249,7 +249,10 @@ export const siteContent = {
       inquireTitle: "Inquire",
       inquireLinks: ["Plan Your Stay", "Concierge AI"],
       location: "Cartago, Costa Rica",
-      copyright: "© 2026 Pura Shalom. All rights reserved. A Glatt kosher mountain retreat in Costa Rica.",
+      copyright: {
+        prefix: "© 2026 Rio Perlas. All rights reserved to ",
+        company: "JT Solutions",
+      },
     },
     planner: {
       eyebrow: "Retreat Planner",
@@ -671,7 +674,10 @@ What can I help you with today? Feel free to ask about our rooms, dining, Shabba
       inquireTitle: "פנו אלינו",
       inquireLinks: ["חבילה מותאמת", "קונסיירז' AI"],
       location: "קרטגו, קוסטה ריקה",
-      copyright: "© 2026 Pura Shalom. כל הזכויות שמורות. ריטריט הרים כשר יוקרתי בקוסטה ריקה.",
+      copyright: {
+        prefix: "© 2026 Rio Perlas. כל הזכויות שמורות ל־",
+        company: "JT Solutions",
+      },
     },
     planner: {
       eyebrow: "מתכנן Sanctuary",

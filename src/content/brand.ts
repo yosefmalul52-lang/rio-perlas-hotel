@@ -15,9 +15,14 @@ export const CONTACT_EMAIL = "hello@purashalomcr.com";
 export const CONTACT_PHONE = "+1 (786) 123-4567";
 export const CONTACT_PHONE_TEL = "+17861234567";
 
-/** Transparent PNGs — navy for light surfaces, light for dark/hero overlays. */
-export const BRAND_LOGO = "/images/brand/pura-shalom-logo.png";
-export const BRAND_LOGO_LIGHT = "/images/brand/pura-shalom-logo-light.png";
+/** Transparent PNGs — teal for light surfaces, white for dark/hero overlays. */
+export const BRAND_LOGO = "/images/brand/rio-perlas-logo.png";
+export const BRAND_LOGO_LIGHT = "/images/brand/rio-perlas-logo-light.png";
+export const BRAND_LOGO_ALT = "Rio Perlas";
 
 /** WhatsApp deep link — only used when HAS_REAL_WHATSAPP is true. */
 export const WHATSAPP_URL = "https://wa.me/15553004000";
+
+/** Site owner / rights holder */
+export const COMPANY_NAME = "JT Solutions";
+export const COMPANY_URL = "https://www.jt-solutions.org/";

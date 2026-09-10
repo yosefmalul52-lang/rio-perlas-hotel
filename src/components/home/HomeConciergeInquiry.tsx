@@ -4,12 +4,15 @@ import { Clock, Loader2, Mail, Phone } from "lucide-react";
 import { useLanguage } from "../../context/LanguageContext";
 import OptimizedImage from "../OptimizedImage";
 import { hotelGallery } from "../../lib/hotelGallery";
+import FooterCopyright from "../layout/FooterCopyright";
 import {
   CONTACT_EMAIL,
   CONTACT_PHONE,
   CONTACT_PHONE_TEL,
   HAS_REAL_WHATSAPP,
   WHATSAPP_URL,
+  BRAND_LOGO_LIGHT,
+  BRAND_LOGO_ALT,
 } from "../../content/brand";
 import {
   EMAIL_PATTERN,
@@ -95,7 +98,7 @@ const EMPTY_FORM: FormState = {
 const panelTransition = { duration: 0.65, ease: [0.22, 1, 0.36, 1] as const };
 
 export default function HomeConciergeInquiry() {
-  const { language, isRtl, t } = useLanguage();
+  const { language, isRtl } = useLanguage();
   const copy = COPY[language === "he" ? "he" : "en"];
   const locale = language === "he" ? "he" : "en";
   const reduceMotion = useReducedMotion();
@@ -385,7 +388,17 @@ export default function HomeConciergeInquiry() {
         )}
       </motion.div>
 
-      <p className="pura-inquire__copyright">{t.footer.copyright}</p>
+      <div className="pura-inquire__copyright">
+        <img
+          src={BRAND_LOGO_LIGHT}
+          alt={BRAND_LOGO_ALT}
+          className="pura-inquire__copyright-logo"
+          width={910}
+          height={301}
+          decoding="async"
+        />
+        <FooterCopyright linkClassName="pura-inquire__company-link" />
+      </div>
     </section>
   );
 }

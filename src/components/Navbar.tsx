@@ -122,17 +122,14 @@ export default function Navbar() {
       </div>
 
       {mobileOpen ? (
-        <div className="min-[1200px]:hidden border-t border-pura-border-soft bg-pura-bg-soft max-h-[calc(100dvh-84px)] overflow-y-auto">
-          <nav className="flex flex-col px-5 py-3 max-w-[1400px] mx-auto">
+        <div className="pura-header__mobile min-[1200px]:hidden">
+          <nav className="pura-header__mobile-nav" aria-label="Mobile">
             {SITE_NAV_ITEMS.map((item) => (
               <NavLink
                 key={item.to}
                 to={item.to}
                 className={({ isActive }) =>
-                  [
-                    "pura-header__link py-3 !opacity-100",
-                    isActive ? "is-active" : "",
-                  ].join(" ")
+                  ["pura-header__mobile-link", isActive ? "is-active" : ""].join(" ")
                 }
               >
                 {item.label[locale]}

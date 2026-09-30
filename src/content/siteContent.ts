@@ -168,8 +168,8 @@ export const siteContent = {
     },
     experiences: {
       eyebrow: "Alpine Adventures",
-      title: "Adventure, curated for the observant.",
-      subtitle: "Private tours that respect your kashrut and your schedule.",
+      title: "Exciting Adventures & Excursions",
+      subtitle: "Private & group tours for all ages.",
       cards: [
         { badge: "Peak Tour", title: "Irazú Volcano Expedition", alt: "Irazu Volcano Crater" },
         { badge: "Waterfall Hike", title: "Highland Waterfalls", alt: "Highland waterfall in the Costa Rican hills" },
@@ -223,12 +223,12 @@ export const siteContent = {
       ],
     },
     trust: {
-      title: "The details matter. We plan for them.",
+      title: "Every detail perfectly planned to fully enjoy your vacation.",
       stats: [
-        { value: "100%", label: "Glatt Kosher Certification" },
-        { value: "24/7", label: "Dedicated Concierge" },
+        { value: "Full", label: "Kosher & Jewish Amenities" },
+        { value: "24/7", label: "Front Desk & Concierge" },
         { value: "Private", label: "Airport Transfers" },
-        { value: "Secure", label: "Private Mountain Estate" },
+        { value: "Secure", label: "Fully Enclosed Property, Secured 24/7" },
       ],
     },
     finalCta: {
@@ -593,8 +593,8 @@ What can I help you with today? Feel free to ask about our rooms, dining, Shabba
     },
     experiences: {
       eyebrow: "הרפתקאות אלפיניות",
-      title: "הרפתקה, מותאמת לשומרי מצוות.",
-      subtitle: "טיולים פרטיים שמכבדים את הכשרות ואת לוח הזמנים שלכם.",
+      title: "הרפתקאות וטיולים מרגשים",
+      subtitle: "טיולים פרטיים וקבוצתיים לכל הגילאים.",
       cards: [
         { badge: "טיול פסגה", title: "משלחת להר איראסו", alt: "מכתש הר הגעש איראסו" },
         { badge: "טיול מפלים", title: "מפלי ההרים", alt: "מפל מים בהרי קוסטה ריקה" },
@@ -648,12 +648,12 @@ What can I help you with today? Feel free to ask about our rooms, dining, Shabba
       ],
     },
     trust: {
-      title: "הפרטים חשובים. אנחנו מתכננים אותם.",
+      title: "כל פרט מתוכנן בקפידה כדי שתהנו מהחופשה במלואה.",
       stats: [
-        { value: "100%", label: "תעודת גלאט כשר" },
-        { value: "24/7", label: "קונסיירז' ייעודי" },
+        { value: "מלא", label: "שירותי כשרות ויהדות" },
+        { value: "24/7", label: "דלפק קבלה וקונסיירז'" },
         { value: "פרטי", label: "הסעות שדה תעופה" },
-        { value: "מאובטח", label: "אחוזה וולקנית פרטית" },
+        { value: "מאובטח", label: "מתחם סגור ומאובטח 24/7" },
       ],
     },
     finalCta: {

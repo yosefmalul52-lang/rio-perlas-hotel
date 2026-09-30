@@ -38,14 +38,18 @@ type HomeViewProps = {
 };
 
 export default function HomeView({ onStartPlanning }: HomeViewProps) {
-  const { t, language } = useLanguage();
+  const { t } = useLanguage();
   const home = t.pages.home;
 
   return (
     <div className="bg-surface select-text">
       <HomeHero onPlanStay={onStartPlanning} />
 
-      {/* Intro — luxury kosher retreat */}
+      <Pesach2027Band />
+
+      <div className="pura-intro__divider" aria-hidden="true" />
+
+      {/* Hotel / about the resort */}
       <section
         id="retreat-intro"
         className="scroll-mt-24 py-16 md:py-24 px-5 sm:px-6 md:px-margin-desktop max-w-container-max mx-auto"
@@ -95,27 +99,11 @@ export default function HomeView({ onStartPlanning }: HomeViewProps) {
         </FadeUp>
       </section>
 
-      <div className="pura-intro__divider" aria-hidden="true" />
-
-      <Pesach2027Band />
-
-      {/* Trust — details matter */}
+      {/* Trust — details planned for the vacation */}
       <section className="bg-primary-container text-on-primary pt-8 md:pt-12 pb-16 md:pb-24">
         <div className="max-w-container-max mx-auto px-5 sm:px-6 md:px-margin-desktop text-center">
           <FadeUp>
-            <h2 className="pura-trust__title">
-              {language === "he" ? (
-                <>
-                  הפרטים חשובים.{" "}
-                  <span className="pura-hero__title-gold">אנחנו מתכננים אותם.</span>
-                </>
-              ) : (
-                <>
-                  The details matter.{" "}
-                  <span className="pura-hero__title-gold">We plan for them.</span>
-                </>
-              )}
-            </h2>
+            <h2 className="pura-trust__title">{t.trust.title}</h2>
           </FadeUp>
 
           <StaggerGroup stagger={0.12} className="grid grid-cols-4 gap-2 sm:gap-6 md:gap-8">
@@ -137,15 +125,19 @@ export default function HomeView({ onStartPlanning }: HomeViewProps) {
                     />
                   </div>
                 </SoftScale>
-                <h4 className="font-headline-sm text-base sm:text-xl md:text-headline-sm text-pura-gold-soft mb-1 sm:mb-2">{stat.value}</h4>
-                <p className="font-label-caps text-[9px] sm:text-[10px] md:text-xs uppercase tracking-wider text-on-primary leading-snug">{stat.label}</p>
+                <h4 className="font-headline-sm text-base sm:text-xl md:text-headline-sm text-pura-gold-soft mb-1 sm:mb-2">
+                  {stat.value}
+                </h4>
+                <p className="font-label-caps text-[9px] sm:text-[10px] md:text-xs uppercase tracking-wider text-on-primary leading-snug">
+                  {stat.label}
+                </p>
               </StaggerItem>
             ))}
           </StaggerGroup>
         </div>
       </section>
 
-      {/* Experiences — adventure curated */}
+      {/* Experiences */}
       <section className="py-16 md:py-24 px-5 sm:px-6 md:px-margin-desktop max-w-container-max mx-auto" id="experiences">
         <div className="text-center mb-10 md:mb-16 max-w-2xl mx-auto">
           <FadeUp>

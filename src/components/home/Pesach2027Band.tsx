@@ -6,12 +6,12 @@ const COPY = {
   en: {
     eyebrow: "Join Us",
     title: "Pesach – 2027",
-    subtitle: "Pura Shalom Costa Rica — Pesach Retreat",
+    subtitle: "Rio Perlas Costa Rica — Pesach Retreat",
   },
   he: {
     eyebrow: "הצטרפו אלינו",
     title: "פסח – 2027",
-    subtitle: "פורה שלום קוסטה ריקה — ריטריט פסח",
+    subtitle: "ריו פרלס קוסטה ריקה — ריטריט פסח",
   },
 } as const;
 
@@ -20,24 +20,32 @@ const CARDS = {
     {
       to: "/dining",
       label: "Dining",
+      detail:
+        "Three full kosher meals a day, kids’ dinner, late-night BBQs, poolside treats, 24/7 tea room, and more.",
       src: "/images/pesach/elegant-dining-experience.webp",
-      alt: "Kosher Pesach dining at Pura Shalom",
+      alt: "Kosher Pesach dining at Rio Perlas",
     },
     {
       to: "/rooms",
       label: "Accommodations",
+      detail:
+        "Natural, luxurious rooms that immerse you in your setting — curated for a deeply relaxing stay. See our accommodation options.",
       src: "/images/hotel-gallery/private-villa-garden-entrance.webp",
-      alt: "Private villa accommodations at Pura Shalom",
+      alt: "Private villa accommodations at Rio Perlas",
     },
     {
       to: "/year-round",
       label: "Resort",
+      detail:
+        "Pools, tropical gardens, wellness spaces, and gathering areas across the resort.",
       src: "/images/passover/resort/pool-main-8k.jpg",
-      alt: "Swimming pool surrounded by tropical gardens at Pura Shalom",
+      alt: "Swimming pool surrounded by tropical gardens at Rio Perlas",
     },
     {
-      to: "/pesach#pesach-activities",
-      label: "Day Camp",
+      to: "/contact",
+      label: "Program",
+      detail:
+        "We’re shaping an unforgettable Pesach program. Want an early look? Reach out — we’d love to share what’s coming.",
       src: "/images/home-originals/family-hero.webp",
       alt: "Family time at a Pesach retreat in Costa Rica",
     },
@@ -46,24 +54,31 @@ const CARDS = {
     {
       to: "/dining",
       label: "אוכל",
+      detail:
+        "שלוש ארוחות כשרות מלאות ביום, ארוחת ילדים, ברביקיו בלילה, פינוקים ליד הבריכה, חדר תה 24/7 ועוד.",
       src: "/images/pesach/elegant-dining-experience.webp",
-      alt: "ארוחות פסח כשרות בפורה שלום",
+      alt: "ארוחות פסח כשרות בריו פרלס",
     },
     {
       to: "/rooms",
       label: "לינה",
+      detail:
+        "חדרים יוקרתיים בטבע שמרגישים חלק מהסביבה — מותאמים לשהייה רגועה במיוחד. גלו את אפשרויות הלינה.",
       src: "/images/hotel-gallery/private-villa-garden-entrance.webp",
-      alt: "וילות פרטיות בפורה שלום",
+      alt: "וילות פרטיות בריו פרלס",
     },
     {
       to: "/year-round",
       label: "הריזורט",
+      detail: "בריכות, גנים טרופיים, אזורי וולנס ומקומות להתכנס בכל הריזורט.",
       src: "/images/passover/resort/pool-main-8k.jpg",
-      alt: "בריכת שחייה מוקפת גנים טרופיים בפורה שלום",
+      alt: "בריכת שחייה מוקפת גנים טרופיים בריו פרלס",
     },
     {
-      to: "/pesach#pesach-activities",
-      label: "קייטנה",
+      to: "/contact",
+      label: "תוכנית",
+      detail:
+        "אנחנו בונים תוכנית פסח מיוחדת. רוצים לשמוע מה מתגבש? צרו קשר — נשמח לשתף.",
       src: "/images/home-originals/family-hero.webp",
       alt: "זמן משפחתי בריטריט פסח בקוסטה ריקה",
     },
@@ -95,6 +110,7 @@ export default function Pesach2027Band() {
               <OptimizedImage src={card.src} alt={card.alt} sizes="25vw" />
               <span className="pura-pesach__label">{card.label}</span>
             </div>
+            <p className="pura-pesach__detail">{card.detail}</p>
           </Link>
         ))}
       </div>

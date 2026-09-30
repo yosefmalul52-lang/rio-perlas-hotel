@@ -488,8 +488,8 @@ export const pagesEn = {
     highlights: {
       eyebrow: "A Pesach Experience Like No Other",
       title: "Luxury. Tradition. Freedom.",
-      body: "A festive mountain Pesach built around refined hospitality, Jewish life, and experiences the whole family can share.",
-      cta: "View Full Program",
+      body: "A festive mountain Pesach built around refined hospitality and Jewish life. The full program is still taking shape — contact us for what’s confirmed so far.",
+      cta: "Contact Us for Program Details",
       values: [
         {
           title: "Glatt / Mehadrin Dining",
@@ -501,17 +501,19 @@ export const pagesEn = {
         },
         {
           title: "Kids & Teen Programs",
-          body: "Programs for children and teens as part of the Pesach experience — we'll confirm the schedule closer to the holiday.",
+          body: "Children’s and teen programming is part of the plan — details are still being finalized. Reach out for the latest.",
         },
         {
           title: "Costa Rica Excursions",
-          body: "Guided nature outings and Costa Rica experiences, planned for the whole family.",
+          body: "Guided nature outings and Costa Rica experiences — we’ll confirm options when you inquire.",
         },
       ],
     },
     activities: {
-      eyebrow: "Day Camp",
-      title: "Day camp for children & teens",
+      eyebrow: "Program",
+      title: "We’re building the Pesach program",
+      body: "The full schedule of activities and entertainment is still taking shape. For the latest details — and what’s already confirmed — please contact us. We’d love to share what’s coming.",
+      cta: "Contact Us",
       items: [
         { id: "kids", title: "Kids Programs" },
         { id: "sports", title: "Sports & Recreation" },
@@ -1043,8 +1045,8 @@ export const pagesEn = {
   },
   home: {
     intro: {
-      title: "A luxury kosher retreat designed around your stay",
-      body: "A private retreat in Costa Rica combining refined hospitality, Jewish life and thoughtfully planned experiences for families and groups.",
+      title: "Luxury Kosher resort combining the beauty of nature & elegance",
+      body: "A private highland stay shaped around Jewish life, kosher hospitality, and time together as a family or group.",
       bridge: "Discover our holiday retreats and year-round stays",
       values: [
         {

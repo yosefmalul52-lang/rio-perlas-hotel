@@ -17,30 +17,30 @@ const COPY = {
     badge: "Pesach 2027 · Now Accepting Inquiries",
     title: (
       <>
-        A Private Kosher
+        Luxury kosher getaway
         <br />
-        Retreat in the <span className="pura-hero__title-gold">Costa</span>
+        in the <span className="pura-hero__title-gold">Costa Rican</span>
         <br />
-        <span className="pura-hero__title-gold">Rican Highlands</span>
+        <span className="pura-hero__title-gold">Forest</span>
       </>
     ),
-    body: "Kosher living, family time, and Costa Rica’s extraordinary nature — together in one refined mountain sanctuary.",
+    body: "Surrounded by Costa Rica’s natural springs, captivating beauty, and mesmerizing jungle — encompassed in a luxury resort to meet all your Jewish and kosher needs.",
     primary: "Plan Your Stay",
-    secondary: "Explore Pura Shalom",
+    secondary: "Explore the Resort",
     mediaAlt: "Private mountain cabin overlooking the Costa Rican highlands",
   },
   he: {
     badge: "פסח 2027 · מקבלים פניות",
     title: (
       <>
-        ריטריט כשר פרטי
+        חופשה כשרה יוקרתית
         <br />
-        בהרי <span className="pura-hero__title-gold">קוסטה ריקה</span>
+        ביערות <span className="pura-hero__title-gold">קוסטה ריקה</span>
       </>
     ),
-    body: "חיים כשרים, זמן משפחתי והטבע יוצא הדופן של קוסטה ריקה — יחד במקלט הררי מעודן.",
+    body: "מוקפים במעיינות טבעיים, ביופי עוצר נשימה ובג׳ונגל מסחרר — בריזורט יוקרתי שעונה על כל הצרכים היהודיים והכשרים שלכם.",
     primary: "תכננו את השהות",
-    secondary: "גלו את פורה שלום",
+    secondary: "גלו את הריזורט",
     mediaAlt: "בקתה הררית פרטית עם נוף לרמות קוסטה ריקה",
   },
 } as const;
@@ -100,55 +100,59 @@ export default function HomeHero({ onPlanStay }: HomeHeroProps) {
 
   return (
     <section ref={heroSectionRef} className="pura-hero" aria-label={copy.mediaAlt}>
-        <motion.div className="pura-hero__media" style={{ y: mediaY }}>
-          {reduceMotion ? (
-            <img
-              src={HERO_POSTER}
-              alt={copy.mediaAlt}
-              className="pura-hero__image select-none pointer-events-none"
-              decoding="sync"
-              fetchPriority="high"
-            />
-          ) : (
-            <video
-              key={heroVideoSrc}
-              ref={heroVideoRef}
-              className="pura-hero__image select-none pointer-events-none"
-              autoPlay
-              muted
-              loop
-              playsInline
-              preload="metadata"
-              poster={HERO_POSTER}
-              aria-label={copy.mediaAlt}
-            >
-              <source src={heroVideoSrc} type="video/mp4" />
-            </video>
-          )}
-        </motion.div>
-        <div className="pura-hero__overlay" aria-hidden />
+      <motion.div className="pura-hero__media" style={{ y: mediaY }}>
+        {reduceMotion ? (
+          <img
+            src={HERO_POSTER}
+            alt={copy.mediaAlt}
+            className="pura-hero__image select-none pointer-events-none"
+            decoding="sync"
+            fetchPriority="high"
+          />
+        ) : (
+          <video
+            key={heroVideoSrc}
+            ref={heroVideoRef}
+            className="pura-hero__image select-none pointer-events-none"
+            autoPlay
+            muted
+            loop
+            playsInline
+            preload="metadata"
+            poster={HERO_POSTER}
+            aria-label={copy.mediaAlt}
+          >
+            <source src={heroVideoSrc} type="video/mp4" />
+          </video>
+        )}
+      </motion.div>
+      <div className="pura-hero__overlay" aria-hidden />
 
-        <div className="pura-hero__container">
-          <div className="pura-hero__content">
-            <motion.span className="pura-hero__badge" {...enter(10, 0.6, 0)}>
-              {copy.badge}
-            </motion.span>
-            <motion.h1 className="pura-hero__title" {...enter(18, 0.75, 0.1)}>
-              {copy.title}
-            </motion.h1>
-            <motion.p className="pura-hero__body" {...enter(12, 0.65, 0.22)}>
-              {copy.body}
-            </motion.p>
-            <motion.div className="pura-hero__actions" {...enter(10, 0.6, 0.32)}>
-              <button type="button" onClick={onPlanStay} className="pura-hero__cta pura-hero__cta--primary">
-                {copy.primary}
-              </button>
-              <a href="#retreat-intro" className="pura-hero__cta pura-hero__cta--secondary">
-                {copy.secondary}
-              </a>
-            </motion.div>
-          </div>
+      <div className="pura-hero__container">
+        <div className="pura-hero__content">
+          <motion.a
+            href="#inquire"
+            className="pura-hero__badge"
+            {...enter(10, 0.6, 0)}
+          >
+            {copy.badge}
+          </motion.a>
+          <motion.h1 className="pura-hero__title" {...enter(18, 0.75, 0.1)}>
+            {copy.title}
+          </motion.h1>
+          <motion.p className="pura-hero__body" {...enter(12, 0.65, 0.22)}>
+            {copy.body}
+          </motion.p>
+          <motion.div className="pura-hero__actions" {...enter(10, 0.6, 0.32)}>
+            <button type="button" onClick={onPlanStay} className="pura-hero__cta pura-hero__cta--primary">
+              {copy.primary}
+            </button>
+            <a href="#retreat-intro" className="pura-hero__cta pura-hero__cta--secondary">
+              {copy.secondary}
+            </a>
+          </motion.div>
         </div>
-      </section>
+      </div>
+    </section>
   );
 }

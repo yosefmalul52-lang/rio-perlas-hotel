@@ -33,7 +33,7 @@ export default function Navbar() {
   const { language, t } = useLanguage();
   const { pathname } = useLocation();
   const locale = language === "he" ? "he" : "en";
-  const isHome = pathname === "/";
+  const isHome = pathname === "/" || pathname === "/welcome" || pathname === "/rio-perlas";
   const [overHero, setOverHero] = React.useState(isHome);
   const transparent = isHome && overHero && !mobileOpen;
 
@@ -99,8 +99,8 @@ export default function Navbar() {
             id="nav-logo"
             src={transparent ? BRAND_LOGO_LIGHT : BRAND_LOGO}
             alt={BRAND_LOGO_ALT}
-            width={910}
-            height={301}
+            width={1100}
+            height={276}
             decoding="async"
           />
         </NavLink>

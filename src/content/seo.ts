@@ -26,11 +26,11 @@ const DEFAULT_OG = "/videos/hero-poster-web.jpg";
 export const pageSeo: Record<Language, Record<SeoPageKey, SeoEntry>> = {
   en: {
     home: {
-      title: `${BRAND_NAME} | Glatt Kosher Luxury Retreat`,
+      title: `${BRAND_NAME} | Costa Rica Kosher Resort`,
       description:
-        "A luxury Glatt kosher mountain retreat in Cartago, Costa Rica. Shabbat-friendly hospitality, family programs, and curated highland experiences.",
-      path: "/",
-      ogImage: DEFAULT_OG,
+        "Rio Perlas — a Glatt kosher mountain resort in Cartago, Costa Rica, with Shabbat-friendly hospitality, fine dining, and curated experiences.",
+      path: "/welcome",
+      ogImage: `${DEFAULT_OG}?v=rio-perlas-2026`,
     },
     rooms: {
       title: `Accommodations | ${BRAND_NAME}`,
@@ -104,11 +104,11 @@ export const pageSeo: Record<Language, Record<SeoPageKey, SeoEntry>> = {
   },
   he: {
     home: {
-      title: `${BRAND_NAME} | ריטריט כשר יוקרתי`,
+      title: `${BRAND_NAME} | ריזורט כשר בקוסטה ריקה`,
       description:
-        "ריטריט כשר יוקרתי ברמת גלאט בהרי קרטגו, קוסטה ריקה. אירוח מותאם שבת, תכניות משפחה וחוויות הרריות מותאמות.",
-      path: "/",
-      ogImage: DEFAULT_OG,
+        "Rio Perlas — ריזורט כשר ברמת גלאט בהרי קרטגו, קוסטה ריקה, עם אירוח מותאם שבת, אוכל מעודן וחוויות מותאמות.",
+      path: "/welcome",
+      ogImage: `${DEFAULT_OG}?v=rio-perlas-2026`,
     },
     rooms: {
       title: `לינה | ${BRAND_NAME}`,

@@ -511,7 +511,7 @@ export const pagesEn = {
     },
     activities: {
       eyebrow: "Program",
-      title: "We’re building the Pesach program",
+      title: "Pesach program details coming soon",
       body: "The full schedule of activities and entertainment is still taking shape. For the latest details — and what’s already confirmed — please contact us. We’d love to share what’s coming.",
       cta: "Contact Us",
       items: [

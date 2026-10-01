@@ -97,7 +97,7 @@ export const pageSeo: Record<Language, Record<SeoPageKey, SeoEntry>> = {
     },
     notFound: {
       title: `Page not found | ${BRAND_NAME}`,
-      description: "The requested page could not be found. Return to Pura Shalom to continue planning your stay.",
+      description: "The requested page could not be found. Return to Rio Perlas to continue planning your stay.",
       path: "/",
       ogImage: DEFAULT_OG,
     },
@@ -175,7 +175,7 @@ export const pageSeo: Record<Language, Record<SeoPageKey, SeoEntry>> = {
     },
     notFound: {
       title: `העמוד לא נמצא | ${BRAND_NAME}`,
-      description: "העמוד המבוקש לא נמצא. חזרו ל־Pura Shalom כדי להמשיך לתכנן את השהות.",
+      description: "העמוד המבוקש לא נמצא. חזרו ל־Rio Perlas כדי להמשיך לתכנן את השהות.",
       path: "/",
       ogImage: DEFAULT_OG,
     },

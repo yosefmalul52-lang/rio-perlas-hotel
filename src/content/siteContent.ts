@@ -8,7 +8,7 @@ export type SiteContent = (typeof siteContent)[Language];
 export const siteContent = {
   en: {
     nav: {
-      logo: "Pura Shalom",
+      logo: "Rio Perlas",
       home: "Home",
       rooms: "Rooms & Cabins",
       holidays: "Holidays & Stays",
@@ -25,7 +25,7 @@ export const siteContent = {
       experiences: "Experiences",
       searchPlaceholder: "Search",
       phone: "",
-      phoneAria: "Call Pura Shalom",
+      phoneAria: "Call Rio Perlas",
       contactLinkAria: "Contact us",
       menuOpenAria: "Open menu",
       menuCloseAria: "Close menu",
@@ -238,7 +238,7 @@ export const siteContent = {
       cta: "Plan Your Stay",
     },
     footer: {
-      brand: "Pura Shalom",
+      brand: "Rio Perlas",
       description: "A Glatt kosher mountain retreat in Cartago, Costa Rica.",
       badges: ["Glatt Kosher", "Shabbat Observant"],
       newsletterLabel: "Newsletter",
@@ -433,7 +433,7 @@ What can I help you with today? Feel free to ask about our rooms, dining, Shabba
   },
   he: {
     nav: {
-      logo: "Pura Shalom",
+      logo: "Rio Perlas",
       home: "בית",
       rooms: "חדרים ובקתות",
       holidays: "חגים וחופשות",
@@ -450,7 +450,7 @@ What can I help you with today? Feel free to ask about our rooms, dining, Shabba
       experiences: "חוויות",
       searchPlaceholder: "חיפוש",
       phone: "",
-      phoneAria: "התקשרו ל-Pura Shalom",
+      phoneAria: "התקשרו ל-Rio Perlas",
       contactLinkAria: "צרו קשר",
       menuOpenAria: "פתחו תפריט",
       menuCloseAria: "סגרו תפריט",
@@ -663,7 +663,7 @@ What can I help you with today? Feel free to ask about our rooms, dining, Shabba
       cta: "תכננו את השהייה",
     },
     footer: {
-      brand: "Pura Shalom",
+      brand: "Rio Perlas",
       description: "ריטריט כשר יוקרתי ברמת גלאט, בין הרי קרטגו הבתוליים בקוסטה ריקה.",
       badges: ["גלאט כשר 24/7", "שומר שבת"],
       newsletterLabel: "ניוזלטר VIP",

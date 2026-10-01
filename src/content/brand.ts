@@ -3,9 +3,12 @@ export const HAS_REAL_PHONE = false;
 export const HAS_REAL_EMAIL = false;
 export const HAS_REAL_WHATSAPP = false;
 
-export const BRAND_NAME = "Pura Shalom";
-export const BRAND_SHORT = "Pura Shalom";
+export const BRAND_NAME = "Rio Perlas";
+export const BRAND_SHORT = "Rio Perlas";
 export const BRAND_TAGLINE = "Costa Rica · Kosher Resort";
+
+/** Canonical public origin for Open Graph / link previews. */
+export const SITE_ORIGIN = "https://rio-perlas-hotel.vercel.app";
 
 /**
  * Public contact display. Still placeholders until HAS_REAL_* flags are true.

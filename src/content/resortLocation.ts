@@ -1,6 +1,6 @@
 import { CONTACT_EMAIL, CONTACT_PHONE, CONTACT_PHONE_TEL, HAS_REAL_EMAIL, HAS_REAL_PHONE } from "./brand";
 
-/** Verified Google Maps listing for the Rio Perlas property (Pura Shalom host site). */
+/** Verified Google Maps listing for the Rio Perlas property (Rio Perlas host site). */
 export const RESORT_MAP = {
   placeName: "Rio Perlas Thermal Resort & Spa",
   /** Line-by-line NAP address for contact / map block. */

@@ -43,7 +43,7 @@ export const resortPageCopy = {
     ],
     image: "/images/passover/resort/pool-main-8k.jpg",
     imageAlt: {
-      en: "Swimming pool surrounded by tropical gardens at Pura Shalom",
+      en: "Swimming pool surrounded by tropical gardens at Rio Perlas",
       he: "בריכת שחייה מוקפת גנים טרופיים בפורה שלום",
     },
     status: "confirmed" as const,

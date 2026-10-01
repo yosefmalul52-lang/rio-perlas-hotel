@@ -72,7 +72,7 @@ export const pagesEn = {
   kosherJewishLife: {
     hero: {
       title: "Meals & Hospitality",
-      body: "Pura Shalom features a refined Glatt kosher dining experience in the Costa Rica highlands — chef-driven menus, thoughtful presentation, and a traditional holiday table without compromising on kashrut.",
+      body: "Rio Perlas features a refined Glatt kosher dining experience in the Costa Rica highlands — chef-driven menus, thoughtful presentation, and a traditional holiday table without compromising on kashrut.",
     },
     offer: {
       title: "We Offer",
@@ -1008,7 +1008,7 @@ export const pagesEn = {
     hero: {
       eyebrow: "Holidays & Stays",
       title: "Holidays & Stays",
-      body: "Three clear pathways for celebrating and resting at Pura Shalom—Pesach, Sukkot, and year-round kosher stays in Costa Rica’s mountains.",
+      body: "Three clear pathways for celebrating and resting at Rio Perlas—Pesach, Sukkot, and year-round kosher stays in Costa Rica’s mountains.",
     },
     intro: {
       title: "Choose the stay that fits your season",

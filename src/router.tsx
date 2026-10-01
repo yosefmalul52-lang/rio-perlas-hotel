@@ -26,6 +26,7 @@ export const router = createBrowserRouter([
     children: [
       { index: true, element: <LazyPage><HomePage /></LazyPage> },
       { path: "welcome", element: <LazyPage><HomePage /></LazyPage> },
+      { path: "rio-perlas", element: <LazyPage><HomePage /></LazyPage> },
       { path: "rooms", element: <LazyPage><RoomsPage /></LazyPage> },
       { path: "holidays", element: <LazyPage><HolidaysPage /></LazyPage> },
       { path: "pesach", element: <LazyPage><PesachPage /></LazyPage> },

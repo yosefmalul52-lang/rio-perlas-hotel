@@ -29,8 +29,8 @@ export const pageSeo: Record<Language, Record<SeoPageKey, SeoEntry>> = {
       title: `${BRAND_NAME} | Costa Rica Kosher Resort`,
       description:
         "Rio Perlas — a Glatt kosher mountain resort in Cartago, Costa Rica, with Shabbat-friendly hospitality, fine dining, and curated experiences.",
-      path: "/welcome",
-      ogImage: `${DEFAULT_OG}?v=rio-perlas-2026`,
+      path: "/rio-perlas",
+      ogImage: "/videos/rio-perlas-share.jpg",
     },
     rooms: {
       title: `Accommodations | ${BRAND_NAME}`,
@@ -98,7 +98,7 @@ export const pageSeo: Record<Language, Record<SeoPageKey, SeoEntry>> = {
     notFound: {
       title: `Page not found | ${BRAND_NAME}`,
       description: "The requested page could not be found. Return to Rio Perlas to continue planning your stay.",
-      path: "/",
+      path: "/rio-perlas",
       ogImage: DEFAULT_OG,
     },
   },
@@ -107,8 +107,8 @@ export const pageSeo: Record<Language, Record<SeoPageKey, SeoEntry>> = {
       title: `${BRAND_NAME} | ריזורט כשר בקוסטה ריקה`,
       description:
         "Rio Perlas — ריזורט כשר ברמת גלאט בהרי קרטגו, קוסטה ריקה, עם אירוח מותאם שבת, אוכל מעודן וחוויות מותאמות.",
-      path: "/welcome",
-      ogImage: `${DEFAULT_OG}?v=rio-perlas-2026`,
+      path: "/rio-perlas",
+      ogImage: "/videos/rio-perlas-share.jpg",
     },
     rooms: {
       title: `לינה | ${BRAND_NAME}`,
@@ -176,7 +176,7 @@ export const pageSeo: Record<Language, Record<SeoPageKey, SeoEntry>> = {
     notFound: {
       title: `העמוד לא נמצא | ${BRAND_NAME}`,
       description: "העמוד המבוקש לא נמצא. חזרו ל־Rio Perlas כדי להמשיך לתכנן את השהות.",
-      path: "/",
+      path: "/rio-perlas",
       ogImage: DEFAULT_OG,
     },
   },
@@ -185,6 +185,8 @@ export const pageSeo: Record<Language, Record<SeoPageKey, SeoEntry>> = {
 export function pathnameToSeoKey(pathname: string): SeoPageKey {
   const routes: Record<string, SeoPageKey> = {
     "/": "home",
+    "/welcome": "home",
+    "/rio-perlas": "home",
     "/rooms": "rooms",
     "/holidays": "holidays",
     "/pesach": "pesach",

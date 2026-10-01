@@ -14,7 +14,7 @@ export const SITE_ORIGIN = "https://rio-perlas-hotel.vercel.app";
  * Public contact display. Still placeholders until HAS_REAL_* flags are true.
  * Homepage concierge uses these so copy lives in one place.
  */
-export const CONTACT_EMAIL = "hello@purashalomcr.com";
+export const CONTACT_EMAIL = "hello@rioperlas.com";
 export const CONTACT_PHONE = "+1 (786) 123-4567";
 export const CONTACT_PHONE_TEL = "+17861234567";
 

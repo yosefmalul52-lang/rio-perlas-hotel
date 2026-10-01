@@ -114,7 +114,7 @@ export const rioPerlasLeaseInventory: InventoryNote[] = [
     id: "casino",
     status: "internal_only",
     summary: "Casino license and dedicated space.",
-    reason: "Not part of Pura Shalom Pesach positioning.",
+    reason: "Not part of Rio Perlas Pesach positioning.",
   },
   {
     id: "bars-laundry-legacy-names",

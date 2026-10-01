@@ -40,7 +40,7 @@ const COPY = {
     phone: "Phone / WhatsApp",
     guests: "Number of Guests",
     message: "Tell us more about your stay...",
-    marketing: "I’d like to receive updates and special offers from Pura Shalom.",
+    marketing: "I’d like to receive updates and special offers from Rio Perlas.",
     submit: "Send Inquiry",
     sending: "Sending...",
     successTitle: "Thank you.",

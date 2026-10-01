@@ -75,7 +75,7 @@ export const siteContent = {
     scrollStory: {
       imageAlt: "Montage of luxury kosher moments in Costa Rica",
       imageEyebrow: "A Curated Escape",
-      imageTitle: "The Pura Shalom Experience",
+      imageTitle: "The Rio Perlas Experience",
       stages: [
         {
           label: "STAGE 01",
@@ -155,7 +155,7 @@ export const siteContent = {
       ],
     },
     carousel: {
-      eyebrow: "Life at Pura Shalom",
+      eyebrow: "Life at Rio Perlas",
       title: "Luxury at your fingertips.",
       items: [
         { label: "AQUATICS", title: "Infinity Cloud Pool", alt: "Infinity cloud pool at sunset" },
@@ -374,12 +374,12 @@ export const siteContent = {
       eyebrow: "Ask Us Anything",
       title: "Concierge AI",
       subtitle: "Ask about kashrut details, minyan schedules, babysitting, private excursions, or the weather in the mountains.",
-      conciergeName: "The Pura Shalom Concierge",
+      conciergeName: "The Rio Perlas Concierge",
       conciergeRole: "Hospitality Advisor",
       poweredBy: "Powered by Gemini",
       loading: "The Concierge is preparing a few suggestions...",
       placeholder: "Ask about kashrut, Shabbat, rooms, excursions, or the weather...",
-      welcome: `Shalom, and welcome. I'm the Pura Shalom Concierge, here to help you plan your stay.
+      welcome: `Shalom, and welcome. I'm the Rio Perlas Concierge, here to help you plan your stay.
 
 I can help with kosher details, volcano excursions, and anything related to Jewish life during your time here in the mountains of Cartago, Costa Rica.
 
@@ -389,7 +389,7 @@ What can I help you with today? Feel free to ask about our rooms, dining, Shabba
       suggestions: [
         "What are your kosher standards?",
         "Tell me about the Panorama Villa.",
-        "What's Shabbat like at Pura Shalom?",
+        "What's Shabbat like at Rio Perlas?",
         "What's the weather like in the mountains of Cartago?",
         "Can you arrange a private tour of the Irazú Volcano?",
       ],

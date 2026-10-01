@@ -65,7 +65,7 @@ export default function KosherJewishLifePage() {
 
   return (
     <div className="pura-dining select-text">
-      <DiningCoverflowCarousel slides={slides} label="Pura Shalom" />
+      <DiningCoverflowCarousel slides={slides} label="Rio Perlas" />
 
       <div className="pura-dining__shell">
         <header className="pura-dining__intro">

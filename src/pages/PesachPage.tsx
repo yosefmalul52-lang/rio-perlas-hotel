@@ -17,7 +17,7 @@ export default function PesachPage() {
             <img
               src={BRAND_LOGO_LIGHT}
               alt={BRAND_LOGO_ALT}
-              className="mx-auto mb-6 h-14 sm:h-16 w-auto max-w-[min(280px,78vw)] object-contain"
+              className="mx-auto mb-6 h-16 sm:h-20 w-auto max-w-[min(320px,82vw)] object-contain"
             />
             <p className="pura-contact__eyebrow">{copy.hero.eyebrow}</p>
             <h1 id="pesach-hero-title" className="pura-contact__title">

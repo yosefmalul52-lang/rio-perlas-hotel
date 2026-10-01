@@ -451,9 +451,10 @@ select:focus-visible {
 }
 
 .pura-header__logo img {
-  height: 68px;
+  height: 58px;
   width: auto;
-  max-height: 68px;
+  max-height: 58px;
+  max-width: min(280px, 42vw);
   object-fit: contain;
   object-position: center;
 }
@@ -510,10 +511,10 @@ select:focus-visible {
   }
 
   .pura-header__logo img {
-    height: 50px;
-    max-height: 50px;
+    height: 44px;
+    max-height: 44px;
     width: auto;
-    max-width: min(260px, calc(100vw - 68px));
+    max-width: min(220px, calc(100vw - 72px));
   }
 
   .pura-header__end {

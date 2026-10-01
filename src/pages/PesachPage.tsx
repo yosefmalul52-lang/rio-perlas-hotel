@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom";
 import { ArrowLeft, ArrowRight } from "lucide-react";
 import { FadeUp, SoftScale } from "../components/motion/PremiumReveal";
+import { BRAND_LOGO_LIGHT, BRAND_LOGO_ALT } from "../content/brand";
 import { useLanguage } from "../context/LanguageContext";
 
 export default function PesachPage() {
@@ -13,6 +14,11 @@ export default function PesachPage() {
         <div className="pura-contact__hero-texture" aria-hidden />
         <div className="pura-contact__hero-content">
           <SoftScale>
+            <img
+              src={BRAND_LOGO_LIGHT}
+              alt={BRAND_LOGO_ALT}
+              className="mx-auto mb-6 h-14 sm:h-16 w-auto max-w-[min(280px,78vw)] object-contain"
+            />
             <p className="pura-contact__eyebrow">{copy.hero.eyebrow}</p>
             <h1 id="pesach-hero-title" className="pura-contact__title">
               {copy.hero.title}

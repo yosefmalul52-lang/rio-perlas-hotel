@@ -18,9 +18,9 @@ export const CONTACT_EMAIL = "hello@rioperlas.com";
 export const CONTACT_PHONE = "+1 (786) 123-4567";
 export const CONTACT_PHONE_TEL = "+17861234567";
 
-/** Transparent PNGs — gold for light surfaces, cream for dark/hero overlays. */
-export const BRAND_LOGO = "/images/brand/rio-perlas-logo.png?v=2026-10-01c";
-export const BRAND_LOGO_LIGHT = "/images/brand/rio-perlas-logo-light.png?v=2026-10-01c";
+/** Transparent PNGs — brand gold (#C6B992) for light and dark surfaces. */
+export const BRAND_LOGO = "/images/brand/rio-perlas-logo.png?v=2026-10-05";
+export const BRAND_LOGO_LIGHT = "/images/brand/rio-perlas-logo-light.png?v=2026-10-05";
 export const BRAND_LOGO_ALT = "Rio Perlas";
 
 /** WhatsApp deep link — only used when HAS_REAL_WHATSAPP is true. */

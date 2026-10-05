@@ -10,7 +10,8 @@ export default function SiteLayout() {
   const { pathname, hash } = useLocation();
   useSmoothScroll(pathname, hash);
   usePageSeo(pathnameToSeoKey(pathname));
-  const hideSiteFooter = pathname === "/";
+  const hideSiteFooter =
+    pathname === "/" || pathname === "/welcome" || pathname === "/rio-perlas";
 
   return (
     <div className="bg-surface text-on-surface font-body-md min-h-screen flex flex-col justify-between overflow-x-clip">

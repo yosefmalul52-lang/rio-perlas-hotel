@@ -11,7 +11,7 @@ import {
   CONTACT_PHONE_TEL,
   HAS_REAL_WHATSAPP,
   WHATSAPP_URL,
-  BRAND_LOGO_LIGHT,
+  BRAND_LOGO,
   BRAND_LOGO_ALT,
 } from "../../content/brand";
 import {
@@ -390,11 +390,11 @@ export default function HomeConciergeInquiry() {
 
       <div className="pura-inquire__copyright">
         <img
-          src={BRAND_LOGO_LIGHT}
+          src={BRAND_LOGO}
           alt={BRAND_LOGO_ALT}
           className="pura-inquire__copyright-logo"
-          width={910}
-          height={301}
+          width={1100}
+          height={276}
           decoding="async"
         />
         <FooterCopyright linkClassName="pura-inquire__company-link" />

@@ -2,7 +2,7 @@ import React from "react";
 import { NavLink, useLocation } from "react-router-dom";
 import { Menu, X } from "lucide-react";
 import { useLanguage } from "../context/LanguageContext";
-import { BRAND_LOGO, BRAND_LOGO_LIGHT, BRAND_LOGO_ALT, BRAND_NAME } from "../content/brand";
+import { BRAND_LOGO, BRAND_LOGO_ALT, BRAND_NAME } from "../content/brand";
 import { SITE_NAV_ITEMS, type SiteNavItem } from "../content/navItems";
 
 const NAV_LEFT = SITE_NAV_ITEMS.slice(0, 3);
@@ -97,7 +97,7 @@ export default function Navbar() {
         <NavLink to="/" end className="pura-header__logo" aria-label={BRAND_NAME}>
           <img
             id="nav-logo"
-            src={transparent ? BRAND_LOGO_LIGHT : BRAND_LOGO}
+            src={BRAND_LOGO}
             alt={BRAND_LOGO_ALT}
             width={1100}
             height={276}

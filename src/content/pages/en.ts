@@ -437,7 +437,7 @@ export const pagesEn = {
       ],
     },
     details: {
-      phone: "Available upon request",
+      phone: "+1 862-232-4905 · +972 54-254-7404",
       email: "Available upon request",
       location: "Set in the Cartago highlands, within reach of San José and Costa Rica’s main international airport.",
       hours: "Sunday – Thursday, 9:00 – 18:00 (CST)",

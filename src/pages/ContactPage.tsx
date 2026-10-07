@@ -1,7 +1,7 @@
 import { Clock, Mail, MapPin, Phone } from "lucide-react";
 import { FadeUp, SoftScale } from "../components/motion/PremiumReveal";
 import InquiryForm from "../components/sections/InquiryForm";
-import { HAS_REAL_EMAIL, HAS_REAL_PHONE } from "../content/brand";
+import { HAS_REAL_EMAIL, HAS_REAL_PHONE, CONTACT_PHONES } from "../content/brand";
 import { getPublicContactChannels, RESORT_MAP } from "../content/resortLocation";
 import { useLanguage } from "../context/LanguageContext";
 
@@ -54,12 +54,17 @@ export default function ContactPage() {
                         {copy.details.phoneLabel}
                       </span>
                       {HAS_REAL_PHONE ? (
-                        <a
-                          href={`tel:${copy.details.phone.replace(/\s/g, "")}`}
-                          className="text-on-primary hover:text-pura-gold-soft transition-colors input-ltr"
-                        >
-                          {copy.details.phone}
-                        </a>
+                        <div className="space-y-1">
+                          {CONTACT_PHONES.map((phone) => (
+                            <a
+                              key={phone.tel}
+                              href={`tel:${phone.tel}`}
+                              className="block text-on-primary hover:text-pura-gold-soft transition-colors input-ltr"
+                            >
+                              {phone.display}
+                            </a>
+                          ))}
+                        </div>
                       ) : (
                         <p className="text-on-primary/80">{copy.details.phone}</p>
                       )}
@@ -143,10 +148,17 @@ export default function ContactPage() {
               ))}
               <p>
                 {copy.map.phoneLabel}:{" "}
-                {channels.phoneHref ? (
-                  <a href={channels.phoneHref} className="input-ltr hover:text-secondary transition-colors">
-                    {channels.phone}
-                  </a>
+                {channels.phones.length > 0 ? (
+                  <span className="inline-flex flex-wrap gap-x-2 gap-y-1">
+                    {channels.phones.map((phone, index) => (
+                      <span key={phone.tel} className="inline-flex items-center gap-2">
+                        {index > 0 ? <span aria-hidden>·</span> : null}
+                        <a href={`tel:${phone.tel}`} className="input-ltr hover:text-secondary transition-colors">
+                          {phone.display}
+                        </a>
+                      </span>
+                    ))}
+                  </span>
                 ) : (
                   <span className="input-ltr">{channels.phone}</span>
                 )}

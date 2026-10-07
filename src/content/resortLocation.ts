@@ -1,4 +1,9 @@
-import { CONTACT_EMAIL, CONTACT_PHONE, CONTACT_PHONE_TEL, HAS_REAL_EMAIL, HAS_REAL_PHONE } from "./brand";
+import {
+  CONTACT_EMAIL,
+  CONTACT_PHONES,
+  HAS_REAL_EMAIL,
+  HAS_REAL_PHONE,
+} from "./brand";
 
 /** Verified Google Maps listing for the Rio Perlas property (Rio Perlas host site). */
 export const RESORT_MAP = {
@@ -26,8 +31,9 @@ export const RESORT_MAP = {
 
 export function getPublicContactChannels(fallback: { phone: string; email: string }) {
   return {
-    phone: HAS_REAL_PHONE ? CONTACT_PHONE : fallback.phone,
-    phoneHref: HAS_REAL_PHONE ? `tel:${CONTACT_PHONE_TEL}` : null,
+    phone: HAS_REAL_PHONE ? CONTACT_PHONES.map((p) => p.display).join(" · ") : fallback.phone,
+    phones: HAS_REAL_PHONE ? CONTACT_PHONES : [],
+    phoneHref: HAS_REAL_PHONE ? `tel:${CONTACT_PHONES[0].tel}` : null,
     email: HAS_REAL_EMAIL ? CONTACT_EMAIL : fallback.email,
     emailHref: HAS_REAL_EMAIL ? `mailto:${CONTACT_EMAIL}` : null,
   };

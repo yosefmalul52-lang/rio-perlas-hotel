@@ -7,10 +7,7 @@ import { hotelGallery } from "../../lib/hotelGallery";
 import FooterCopyright from "../layout/FooterCopyright";
 import {
   CONTACT_EMAIL,
-  CONTACT_PHONE,
-  CONTACT_PHONE_TEL,
-  HAS_REAL_WHATSAPP,
-  WHATSAPP_URL,
+  CONTACT_PHONES,
   BRAND_LOGO,
   BRAND_LOGO_ALT,
 } from "../../content/brand";
@@ -32,12 +29,12 @@ const COPY = {
     title: "Let Us Plan Your Stay",
     body: "We’d love to help you create a meaningful and unforgettable experience for you and your family.\n\nInquire today and we’ll be in touch within 24 hours.",
     emailHint: "We reply within 24 hours",
-    phoneHint: "WhatsApp Available",
+    phoneHint: "US & Israel",
     hoursPrimary: "Office Hours",
     hoursSecondary: "Sunday – Thursday, 9am – 6pm EST",
     fullName: "Full Name",
     email: "Email Address",
-    phone: "Phone / WhatsApp",
+    phone: "Phone",
     guests: "Number of Guests",
     message: "Tell us more about your stay...",
     marketing: "I’d like to receive updates and special offers from Rio Perlas.",
@@ -53,15 +50,15 @@ const COPY = {
     title: "תנו לנו לתכנן את השהות",
     body: "נשמח לעזור לכם ליצור חוויה משמעותית ובלתי נשכחת עבורכם ועבור המשפחה.\n\nהשאירו פנייה ונחזור אליכם תוך 24 שעות.",
     emailHint: "נשיב תוך 24 שעות",
-    phoneHint: "זמינים ב־WhatsApp",
+    phoneHint: "ארה״ב וישראל",
     hoursPrimary: "שעות פעילות",
     hoursSecondary: "ראשון – חמישי, 9:00 – 18:00 שעון החוף המזרחי",
     fullName: "שם מלא",
     email: "כתובת אימייל",
-    phone: "טלפון / WhatsApp",
+    phone: "טלפון",
     guests: "מספר אורחים",
     message: "ספרו לנו עוד על השהות...",
-    marketing: "אשמח לקבל עדכונים והצעות מפורה שלום.",
+    marketing: "אשמח לקבל עדכונים והצעות מ־Rio Perlas.",
     submit: "שליחת פנייה",
     sending: "שולחים...",
     successTitle: "תודה.",
@@ -109,8 +106,6 @@ export default function HomeConciergeInquiry() {
   const [errors, setErrors] = React.useState<FieldErrors>({});
   const [status, setStatus] = React.useState<"idle" | "submitting" | "success" | "error">("idle");
   const submitting = status === "submitting";
-
-  const phoneHref = HAS_REAL_WHATSAPP ? WHATSAPP_URL : `tel:${CONTACT_PHONE_TEL}`;
 
   const update = <K extends keyof FormState>(field: K, value: FormState[K]) => {
     setForm((prev) => ({ ...prev, [field]: value }));
@@ -210,15 +205,23 @@ export default function HomeConciergeInquiry() {
               </span>
             </a>
 
-            <a className="pura-inquire__contact" href={phoneHref}>
+            <div className="pura-inquire__contact">
               <span className="pura-inquire__icon" aria-hidden="true">
                 <Phone strokeWidth={1.4} size={15} />
               </span>
               <span>
-                <span className="pura-inquire__contact-primary input-ltr">{CONTACT_PHONE}</span>
+                {CONTACT_PHONES.map((phone) => (
+                  <a
+                    key={phone.tel}
+                    className="pura-inquire__contact-primary input-ltr block hover:opacity-90"
+                    href={`tel:${phone.tel}`}
+                  >
+                    {phone.display}
+                  </a>
+                ))}
                 <span className="pura-inquire__contact-secondary">{copy.phoneHint}</span>
               </span>
-            </a>
+            </div>
 
             <div className="pura-inquire__contact">
               <span className="pura-inquire__icon" aria-hidden="true">

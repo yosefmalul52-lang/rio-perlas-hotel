@@ -15,6 +15,7 @@ import {
   EMAIL_PATTERN,
   type HomepageInquiryPayload,
 } from "../../lib/homepageInquiry";
+import { submitInquiry } from "../../lib/submitInquiry";
 
 const GUEST_OPTIONS = [
   { value: "2", en: "2 Guests", he: "2 אורחים" },
@@ -105,6 +106,7 @@ export default function HomeConciergeInquiry() {
   const [form, setForm] = React.useState<FormState>(EMPTY_FORM);
   const [errors, setErrors] = React.useState<FieldErrors>({});
   const [status, setStatus] = React.useState<"idle" | "submitting" | "success" | "error">("idle");
+  const [honeypot, setHoneypot] = React.useState("");
   const submitting = status === "submitting";
 
   const update = <K extends keyof FormState>(field: K, value: FormState[K]) => {
@@ -149,24 +151,20 @@ export default function HomeConciergeInquiry() {
 
     setStatus("submitting");
 
-    try {
-      const response = await fetch("/api/inquiries", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(payload),
-      });
+    const result = await submitInquiry({
+      ...payload,
+      website: honeypot,
+    });
 
-      if (!response.ok) {
-        setStatus("error");
-        return;
-      }
-
-      setForm(EMPTY_FORM);
-      setErrors({});
-      setStatus("success");
-    } catch {
+    if (!result.ok) {
       setStatus("error");
+      return;
     }
+
+    setForm(EMPTY_FORM);
+    setErrors({});
+    setHoneypot("");
+    setStatus("success");
   };
 
   return (
@@ -250,6 +248,22 @@ export default function HomeConciergeInquiry() {
           </div>
         ) : (
           <form className="pura-inquire__form" onSubmit={handleSubmit} noValidate>
+            <div
+              aria-hidden="true"
+              style={{ position: "absolute", left: "-10000px", top: "auto", width: 1, height: 1, overflow: "hidden" }}
+            >
+              <label>
+                Website
+                <input
+                  type="text"
+                  name="website"
+                  tabIndex={-1}
+                  autoComplete="off"
+                  value={honeypot}
+                  onChange={(e) => setHoneypot(e.target.value)}
+                />
+              </label>
+            </div>
             <div className="pura-inquire__fields">
               <div className="pura-inquire__field">
                 <label className="sr-only" htmlFor="inquire-fullName">

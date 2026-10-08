@@ -4,12 +4,7 @@ import { fileURLToPath } from "url";
 import dotenv from "dotenv";
 import { GoogleGenAI } from "@google/genai";
 import { createServer as createViteServer } from "vite";
-import {
-  EMAIL_PATTERN,
-  INQUIRY_INTERESTS,
-  type HomepageInquiryPayload,
-  type InquiryInterest,
-} from "./src/lib/homepageInquiry";
+import { getClientIp, handleInquirySubmission } from "./server/inquiries/handleInquiry";
 
 const PROJECT_ROOT = path.dirname(fileURLToPath(import.meta.url));
 
@@ -20,7 +15,7 @@ dotenv.config({ path: path.join(PROJECT_ROOT, ".env.local") });
 const app = express();
 const PORT = Number(process.env.PORT) || 3000;
 
-app.use(express.json());
+app.use(express.json({ limit: "64kb" }));
 
 // Initialize Gemini client on the server side
 const apiKey = process.env.GEMINI_API_KEY;
@@ -31,9 +26,9 @@ if (apiKey) {
     apiKey: apiKey,
     httpOptions: {
       headers: {
-        'User-Agent': 'aistudio-build',
-      }
-    }
+        "User-Agent": "aistudio-build",
+      },
+    },
   });
 } else {
   console.warn("GEMINI_API_KEY is not defined. Concierge chat will run in simulated fallback mode.");
@@ -122,70 +117,38 @@ Your Sanctuary Concierge`
   }
 });
 
-function optionalString(value: unknown): string | undefined {
-  if (typeof value !== "string") return undefined;
-  const trimmed = value.trim();
-  return trimmed ? trimmed : undefined;
-}
-
-// Homepage concierge inquiries.
-// TODO: Set INQUIRY_WEBHOOK_URL to a Zapier/Make/n8n/email worker endpoint.
-// TODO: Verify Cloudflare Turnstile here when the widget is added on the form.
+// Website inquiry forms → CloudLogin SMTP (+ optional webhook)
 app.post("/api/inquiries", async (req, res) => {
-  const body = (req.body ?? {}) as Record<string, unknown>;
-
-  const fullName = optionalString(body.fullName);
-  const email = optionalString(body.email);
-
-  if (!fullName || !email || !EMAIL_PATTERN.test(email)) {
-    return res.status(400).json({ error: "validation" });
+  const ip = getClientIp(req.headers, req.socket.remoteAddress || "unknown");
+  const result = await handleInquirySubmission(req.body, ip);
+  if (result.headers) {
+    for (const [key, value] of Object.entries(result.headers)) {
+      res.setHeader(key, value);
+    }
   }
+  return res.status(result.status).json(result.body);
+});
 
-  const interestRaw = optionalString(body.interest);
-  const interest = INQUIRY_INTERESTS.includes(interestRaw as InquiryInterest)
-    ? (interestRaw as InquiryInterest)
-    : undefined;
-
-  const payload: HomepageInquiryPayload = {
-    fullName,
-    email,
-    marketingConsent: body.marketingConsent === true,
-    source: "website-homepage",
-  };
-
-  const phone = optionalString(body.phone);
-  const travelDates = optionalString(body.travelDates);
-  const numberOfGuests = optionalString(body.numberOfGuests);
-  const message = optionalString(body.message);
-  if (phone) payload.phone = phone;
-  if (travelDates) payload.travelDates = travelDates;
-  if (numberOfGuests) payload.numberOfGuests = numberOfGuests;
-  if (interest) payload.interest = interest;
-  if (message) payload.message = message;
-
-  const webhook = process.env.INQUIRY_WEBHOOK_URL;
-  if (!webhook) {
-    console.warn("[inquiries] INQUIRY_WEBHOOK_URL is not set. Submission stored nowhere.");
-    return res.status(503).json({ error: "not_configured" });
+// Dev-only SMTP check — never auto-runs on deploy
+app.post("/api/inquiries/verify-smtp", async (req, res) => {
+  if (process.env.NODE_ENV === "production" && process.env.ALLOW_SMTP_VERIFY !== "true") {
+    return res.status(404).json({ error: "not_found" });
+  }
+  const token = process.env.SMTP_VERIFY_TOKEN;
+  if (token && req.headers["x-smtp-verify-token"] !== token) {
+    return res.status(401).json({ error: "unauthorized" });
   }
 
   try {
-    const response = await fetch(webhook, {
-      method: "POST",
-      headers: { "Content-Type": "application/json", Accept: "application/json" },
-      body: JSON.stringify(payload),
-      signal: AbortSignal.timeout(10000),
-    });
-
-    if (!response.ok) {
-      console.error("[inquiries] webhook failed", response.status);
-      return res.status(502).json({ error: "delivery_failed" });
+    const { readSmtpConfigFromEnv, verifySmtpConnection } = await import("./server/inquiries/sendInquiryEmail");
+    const smtp = readSmtpConfigFromEnv();
+    if (smtp.ok === false) {
+      return res.status(503).json({ error: "not_configured", missing: smtp.missing });
     }
-
+    await verifySmtpConnection(smtp.config);
     return res.json({ ok: true });
-  } catch (error) {
-    console.error("[inquiries] webhook error", error);
-    return res.status(502).json({ error: "delivery_failed" });
+  } catch {
+    return res.status(502).json({ error: "verify_failed" });
   }
 });
 

@@ -1,6 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import { HAS_REAL_WHATSAPP, WHATSAPP_URL } from "../../content/brand";
+import { submitInquiry } from "../../lib/submitInquiry";
 import { FadeUp } from "../motion/PremiumReveal";
 
 export type InquiryFormData = {
@@ -33,6 +34,8 @@ type InquiryFormProps = {
     roomOptions: readonly string[];
     requirementOptions: readonly string[];
     success: string;
+    error?: string;
+    sending?: string;
   };
   /** @deprecated Prefer variant — compact maps to contact fields */
   compact?: boolean;
@@ -54,19 +57,43 @@ const initialState: InquiryFormData = {
 
 export default function InquiryForm({ labels, compact = false, variant }: InquiryFormProps) {
   const [form, setForm] = React.useState<InquiryFormData>(initialState);
-  const [submitted, setSubmitted] = React.useState(false);
+  const [honeypot, setHoneypot] = React.useState("");
+  const [status, setStatus] = React.useState<"idle" | "submitting" | "success" | "error">("idle");
   const mode = variant ?? (compact ? "contact" : "full");
   const isContact = mode === "contact";
+  const submitting = status === "submitting";
 
   const update = (field: keyof InquiryFormData, value: string) => {
     setForm((prev) => ({ ...prev, [field]: value }));
   };
 
-  const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
+  const handleSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
-    // Ready for backend: POST /api/inquiries with InquiryFormData
-    console.info("[inquiry-form]", form);
-    setSubmitted(true);
+    if (submitting || status === "success") return;
+
+    setStatus("submitting");
+    const result = await submitInquiry({
+      fullName: form.fullName,
+      email: form.email,
+      phone: form.phone || undefined,
+      country: isContact ? undefined : form.country || undefined,
+      numberOfGuests: form.guests || undefined,
+      travelDates: isContact ? undefined : form.preferredDates || undefined,
+      roomPreference: isContact ? undefined : form.roomPreference || undefined,
+      requirements: isContact ? undefined : form.requirements || undefined,
+      message: form.message || undefined,
+      source: isContact ? "website-contact" : "website-contact-full",
+      website: honeypot,
+    });
+
+    if (!result.ok) {
+      setStatus("error");
+      return;
+    }
+
+    setForm(initialState);
+    setHoneypot("");
+    setStatus("success");
   };
 
   const inputClass =
@@ -78,7 +105,25 @@ export default function InquiryForm({ labels, compact = false, variant }: Inquir
         onSubmit={handleSubmit}
         className="bg-bg-card border border-surface-container-high p-5 sm:p-8 md:p-10 rounded-sm shadow-sm space-y-5"
         data-form="inquiry"
+        noValidate
       >
+        <div
+          aria-hidden="true"
+          style={{ position: "absolute", left: "-10000px", top: "auto", width: 1, height: 1, overflow: "hidden" }}
+        >
+          <label>
+            Website
+            <input
+              type="text"
+              name="website"
+              tabIndex={-1}
+              autoComplete="off"
+              value={honeypot}
+              onChange={(e) => setHoneypot(e.target.value)}
+            />
+          </label>
+        </div>
+
         <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
           <label className="block space-y-1.5">
             <span className="font-label-caps text-[10px] uppercase tracking-wider text-pura-text-muted">{labels.fullName}</span>
@@ -150,19 +195,26 @@ export default function InquiryForm({ labels, compact = false, variant }: Inquir
           </label>
         </div>
 
-        {submitted ? (
+        {status === "success" ? (
           <p className="text-sm text-secondary font-medium text-center pt-2" role="status">
             {labels.success}
           </p>
         ) : null}
 
-        {!submitted ? (
+        {status === "error" ? (
+          <p className="text-sm text-red-700 font-medium text-center pt-2" role="alert">
+            {labels.error ?? "We couldn’t send your inquiry. Please try again or contact us directly."}
+          </p>
+        ) : null}
+
+        {status !== "success" ? (
           <div className="flex flex-col sm:flex-row gap-3 pt-2">
             <button
               type="submit"
-              className="btn-premium-hover flex-1 btn-cta py-3.5 font-label-caps text-xs uppercase tracking-widest rounded-sm cursor-pointer"
+              disabled={submitting}
+              className="btn-premium-hover flex-1 btn-cta py-3.5 font-label-caps text-xs uppercase tracking-widest rounded-sm cursor-pointer disabled:opacity-60"
             >
-              {labels.submit}
+              {submitting ? labels.sending ?? "Sending..." : labels.submit}
             </button>
             {HAS_REAL_WHATSAPP ? (
               <a

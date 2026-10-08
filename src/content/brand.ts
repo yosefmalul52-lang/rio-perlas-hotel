@@ -1,6 +1,6 @@
 /** Contact channels — set to true only when real details are confirmed. */
 export const HAS_REAL_PHONE = true;
-export const HAS_REAL_EMAIL = false;
+export const HAS_REAL_EMAIL = true;
 export const HAS_REAL_WHATSAPP = false;
 
 export const BRAND_NAME = "Rio Perlas";
@@ -8,13 +8,13 @@ export const BRAND_SHORT = "Rio Perlas";
 export const BRAND_TAGLINE = "Costa Rica · Kosher Resort";
 
 /** Canonical public origin for Open Graph / link previews. */
-export const SITE_ORIGIN = "https://rio-perlas-hotel.vercel.app";
+export const SITE_ORIGIN = "https://www.rioperlasresort.com";
 
 /**
- * Public contact display. Still placeholders until HAS_REAL_* flags are true.
- * Homepage concierge uses these so copy lives in one place.
+ * Public contact display. Homepage concierge and mailto links use these.
+ * Inbound inquiries are delivered via SMTP to CONTACT_TO_EMAIL (server env).
  */
-export const CONTACT_EMAIL = "hello@rioperlas.com";
+export const CONTACT_EMAIL = "info@rioperlasresort.com";
 
 export const CONTACT_PHONES = [
   { display: "+1 862-232-4905", tel: "+18622324905" },

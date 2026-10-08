@@ -1,5 +1,5 @@
-import type { InquiryPayload } from "../../src/lib/homepageInquiry";
-import { SOURCE_LABELS } from "../../src/lib/homepageInquiry";
+import type { InquiryPayload } from "./types";
+import { SOURCE_LABELS } from "./types";
 
 export function escapeHtml(value: string): string {
   return value

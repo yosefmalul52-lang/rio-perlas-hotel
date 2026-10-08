@@ -1,5 +1,5 @@
-import type { InquiryPayload, InquirySource } from "../../src/lib/homepageInquiry";
-import { EMAIL_PATTERN, INQUIRY_INTERESTS, INQUIRY_SOURCES } from "../../src/lib/homepageInquiry";
+import type { InquiryPayload, InquirySource } from "./types";
+import { EMAIL_PATTERN, INQUIRY_INTERESTS, INQUIRY_SOURCES } from "./types";
 
 const MAX_TEXT = 2000;
 const MAX_SHORT = 200;

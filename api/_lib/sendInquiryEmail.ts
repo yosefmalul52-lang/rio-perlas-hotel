@@ -1,5 +1,5 @@
 import nodemailer from "nodemailer";
-import type { InquiryPayload } from "../../src/lib/homepageInquiry";
+import type { InquiryPayload } from "./types";
 import { buildInquiryEmail } from "./emailTemplate";
 
 export type SmtpConfig = {

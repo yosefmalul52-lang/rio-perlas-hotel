@@ -1,5 +1,5 @@
 import type { VercelRequest, VercelResponse } from "@vercel/node";
-import { getClientIp, handleInquirySubmission } from "../server/inquiries/handleInquiry";
+import { getClientIp, handleInquirySubmission } from "./_lib/handleInquiry";
 
 /** Nodemailer requires the Node.js runtime (not Edge). */
 export const config = {
@@ -30,4 +30,3 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
 
   return res.status(result.status).json(result.body);
 }
-

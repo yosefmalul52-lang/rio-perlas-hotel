@@ -4,7 +4,7 @@ import { fileURLToPath } from "url";
 import dotenv from "dotenv";
 import { GoogleGenAI } from "@google/genai";
 import { createServer as createViteServer } from "vite";
-import { getClientIp, handleInquirySubmission } from "./server/inquiries/handleInquiry";
+import { getClientIp, handleInquirySubmission } from "./api/_lib/handleInquiry";
 
 const PROJECT_ROOT = path.dirname(fileURLToPath(import.meta.url));
 
@@ -140,7 +140,7 @@ app.post("/api/inquiries/verify-smtp", async (req, res) => {
   }
 
   try {
-    const { readSmtpConfigFromEnv, verifySmtpConnection } = await import("./server/inquiries/sendInquiryEmail");
+    const { readSmtpConfigFromEnv, verifySmtpConnection } = await import("./api/_lib/sendInquiryEmail");
     const smtp = readSmtpConfigFromEnv();
     if (smtp.ok === false) {
       return res.status(503).json({ error: "not_configured", missing: smtp.missing });

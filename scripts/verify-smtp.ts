@@ -9,7 +9,7 @@
 import dotenv from "dotenv";
 import path from "path";
 import { fileURLToPath } from "url";
-import { readSmtpConfigFromEnv, verifySmtpConnection } from "../server/inquiries/sendInquiryEmail";
+import { readSmtpConfigFromEnv, verifySmtpConnection } from "../api/_lib/sendInquiryEmail";
 
 const root = path.dirname(fileURLToPath(import.meta.url));
 dotenv.config({ path: path.join(root, "..", ".env") });

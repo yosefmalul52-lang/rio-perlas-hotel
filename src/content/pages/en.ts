@@ -62,6 +62,12 @@ export const pagesEn = {
         imageObjectPosition: "center center",
       },
     ],
+    propertyMap: {
+      eyebrow: "Property map",
+      title: "Find your way around the resort",
+      body: "Cabins, restaurants, pool, spa, hot springs, and reception — see how the grounds connect.",
+      imageAlt: "Illustrated map of Rio Perlas Costa Rica Kosher Resort showing accommodations and facilities",
+    },
     cta: {
       eyebrow: "Available upon request",
       title: "Tell us who you’re traveling with",

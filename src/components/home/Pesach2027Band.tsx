@@ -42,7 +42,7 @@ const CARDS = {
       alt: "Swimming pool surrounded by tropical gardens at Rio Perlas",
     },
     {
-      to: "/contact",
+      to: "/pesach",
       label: "Program",
       detail:
         "We’re shaping an unforgettable Pesach program. Want an early look? Reach out — we’d love to share what’s coming.",
@@ -75,7 +75,7 @@ const CARDS = {
       alt: "בריכת שחייה מוקפת גנים טרופיים בריו פרלס",
     },
     {
-      to: "/contact",
+      to: "/pesach",
       label: "תוכנית",
       detail:
         "אנחנו בונים תוכנית פסח מיוחדת. רוצים לשמוע מה מתגבש? צרו קשר — נשמח לשתף.",

@@ -62,6 +62,12 @@ export const pagesHe = {
         imageObjectPosition: "center center",
       },
     ],
+    propertyMap: {
+      eyebrow: "מפת המתחם",
+      title: "התמצאו בריזורט",
+      body: "בקתות, מסעדות, בריכה, ספא, מעיינות חמים וקבלה — כך בנוי המתחם.",
+      imageAlt: "מפה מאוירת של ריו פרלס — ריזורט כשר בקוסטה ריקה, עם חדרי אירוח ומתקנים",
+    },
     cta: {
       eyebrow: "זמין לפי בקשה",
       title: "ספרו לנו עם מי אתם מגיעים",

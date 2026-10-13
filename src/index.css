@@ -4620,6 +4620,54 @@ html.rtl .pura-rooms__room-title {
   line-height: 1.45;
 }
 
+.pura-rooms__map {
+  padding: 4.5rem 0 4rem;
+  background: var(--cream, #f7f3ea);
+  border-top: 1px solid var(--border-gold);
+}
+
+.pura-rooms__map-title {
+  margin: 0 0 12px;
+  max-width: 18ch;
+  font-family: var(--font-serif);
+  font-size: clamp(1.75rem, 3.2vw, 2.35rem);
+  font-weight: 500;
+  line-height: 1.2;
+  letter-spacing: -0.01em;
+  color: var(--deep-teal);
+}
+
+html.rtl .pura-rooms__map-title {
+  font-family: "Frank Ruhl Libre", Georgia, serif;
+  letter-spacing: 0;
+  max-width: 22ch;
+}
+
+.pura-rooms__map-body {
+  margin: 0 0 1.75rem;
+  max-width: 36rem;
+  font-family: var(--font-sans);
+  font-size: 1rem;
+  line-height: 1.65;
+  color: rgba(102, 97, 90, 0.92);
+}
+
+.pura-rooms__map-figure {
+  margin: 0 auto;
+  max-width: 1024px;
+  border: 1px solid var(--border-gold);
+  background: var(--cream, #f7f3ea);
+  overflow: hidden;
+}
+
+.pura-rooms__map-image {
+  display: block;
+  width: 100%;
+  max-width: 1024px;
+  height: auto;
+  image-rendering: -webkit-optimize-contrast;
+}
+
 .pura-rooms__cta {
   position: relative;
   overflow: hidden;

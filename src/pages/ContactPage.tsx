@@ -1,7 +1,7 @@
-import { Clock, Mail, MapPin, Phone } from "lucide-react";
+import { Clock, Mail, MapPin, MessageCircle, Phone } from "lucide-react";
 import { FadeUp, SoftScale } from "../components/motion/PremiumReveal";
 import InquiryForm from "../components/sections/InquiryForm";
-import { HAS_REAL_EMAIL, HAS_REAL_PHONE, CONTACT_PHONES } from "../content/brand";
+import { HAS_REAL_EMAIL, HAS_REAL_PHONE, HAS_REAL_WHATSAPP, CONTACT_EMAIL, CONTACT_PHONES, WHATSAPP_URL } from "../content/brand";
 import { getPublicContactChannels, RESORT_MAP } from "../content/resortLocation";
 import { useLanguage } from "../context/LanguageContext";
 
@@ -78,10 +78,10 @@ export default function ContactPage() {
                       </span>
                       {HAS_REAL_EMAIL ? (
                         <a
-                          href={`mailto:${copy.details.email}`}
+                          href={`mailto:${CONTACT_EMAIL}`}
                           className="text-on-primary hover:text-pura-gold-soft transition-colors input-ltr"
                         >
-                          {copy.details.email}
+                          {CONTACT_EMAIL}
                         </a>
                       ) : (
                         <p className="text-on-primary/80">{copy.details.email}</p>
@@ -97,6 +97,24 @@ export default function ContactPage() {
                       <p className="text-on-primary/80 leading-relaxed">{copy.details.location}</p>
                     </div>
                   </div>
+                  {HAS_REAL_WHATSAPP ? (
+                    <div className="flex items-start gap-4">
+                      <MessageCircle className="w-5 h-5 text-pura-gold-soft shrink-0 mt-0.5" aria-hidden />
+                      <div>
+                        <span className="font-label-caps text-[10px] uppercase tracking-wider text-pura-gold-soft block mb-1">
+                          {copy.details.whatsappLabel}
+                        </span>
+                        <a
+                          href={WHATSAPP_URL}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="text-on-primary hover:text-pura-gold-soft transition-colors"
+                        >
+                          {CONTACT_PHONES[0].display}
+                        </a>
+                      </div>
+                    </div>
+                  ) : null}
                   <div className="flex items-start gap-4">
                     <Clock className="w-5 h-5 text-pura-gold-soft shrink-0 mt-0.5" aria-hidden />
                     <div>

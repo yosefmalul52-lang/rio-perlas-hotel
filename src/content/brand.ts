@@ -1,7 +1,7 @@
 /** Contact channels — set to true only when real details are confirmed. */
 export const HAS_REAL_PHONE = true;
 export const HAS_REAL_EMAIL = true;
-export const HAS_REAL_WHATSAPP = false;
+export const HAS_REAL_WHATSAPP = true;
 
 export const BRAND_NAME = "Rio Perlas";
 export const BRAND_SHORT = "Rio Perlas";

@@ -181,31 +181,6 @@ export default function RoomsPage() {
         );
       })}
 
-      <section className="pura-rooms__map" aria-labelledby="rooms-map-title">
-        <div className="pura-rooms__shell">
-          <FadeUp>
-            <p className="pura-rooms__eyebrow">{copy.propertyMap.eyebrow}</p>
-            <h2 id="rooms-map-title" className="pura-rooms__map-title">
-              {copy.propertyMap.title}
-            </h2>
-            <p className="pura-rooms__map-body">{copy.propertyMap.body}</p>
-          </FadeUp>
-          <FadeUp delay={0.08}>
-            <figure className="pura-rooms__map-figure">
-              <img
-                src="/images/resort/rio-perlas-property-map.jpg"
-                alt={copy.propertyMap.imageAlt}
-                className="pura-rooms__map-image"
-                width={1024}
-                height={768}
-                loading="eager"
-                decoding="sync"
-              />
-            </figure>
-          </FadeUp>
-        </div>
-      </section>
-
       <section className="pura-rooms__cta" aria-labelledby="rooms-cta-title">
         <div className="pura-rooms__cta-texture" aria-hidden />
         <div className="pura-rooms__shell pura-rooms__cta-inner">

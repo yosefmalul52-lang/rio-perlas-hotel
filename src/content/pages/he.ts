@@ -451,6 +451,7 @@ export const pagesHe = {
       emailLabel: "אימייל",
       locationLabel: "מיקום",
       hoursLabel: "שעות",
+      whatsappLabel: "WhatsApp",
       whatsappPlaceholder: "WhatsApp — זמין לפי בקשה",
     },
     map: {

@@ -451,6 +451,7 @@ export const pagesEn = {
       emailLabel: "Email",
       locationLabel: "Location",
       hoursLabel: "Hours",
+      whatsappLabel: "WhatsApp",
       whatsappPlaceholder: "WhatsApp — available upon request",
     },
     map: {

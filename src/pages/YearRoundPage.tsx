@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom";
 import OptimizedImage from "../components/OptimizedImage";
 import FacilityCarousel from "../components/resort/FacilityCarousel";
+import PropertyMapSection from "../components/sections/PropertyMapSection";
 import { FadeUp, ImageReveal, SoftScale } from "../components/motion/PremiumReveal";
 import { useLanguage } from "../context/LanguageContext";
 
@@ -176,6 +177,8 @@ export default function YearRoundPage() {
           </div>
         </section>
       ) : null}
+
+      <PropertyMapSection headingId="resort-map-title" />
 
       <section className="pura-resort__cta-band" aria-labelledby="resort-cta-title">
         <div className="pura-resort__cta-texture" aria-hidden />
